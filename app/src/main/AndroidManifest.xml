@@ -14,11 +14,14 @@
         android:theme="@style/Theme.Kelompok3OptimisA"
         tools:targetApi="31">
         <activity
+            android:name=".DetailKP"
+            android:exported="false" />
+        <activity
             android:name=".ListLogbook"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
