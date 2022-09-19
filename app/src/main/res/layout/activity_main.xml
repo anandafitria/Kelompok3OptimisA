@@ -32,7 +32,7 @@
                 app:srcCompat="@drawable/ic_baseline_home" />
 
             <ImageButton
-                android:id="@+id/btn_logbok"
+                android:id="@+id/btn_logbook"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -76,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textAlignment="center"
-            android:paddingTop="15dp"
+            android:paddingTop="13dp"
             android:fontFamily="@font/poppinssemibold"
             android:text="@string/kp_main"
             android:textColor="@color/black"
