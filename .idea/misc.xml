@@ -3,10 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/A409FJ/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_detail_kp.xml" value="0.1" />
-        <entry key="..\:/Users/A409FJ/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_list_logbook.xml" value="0.1" />
-        <entry key="..\:/Users/A409FJ/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_login.xml" value="0.1308876811594203" />
-        <entry key="..\:/Users/A409FJ/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/A409FJ/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/drawable-v24/button_shape.xml" value="0.1015" />
+        <entry key="..\:/Users/A409FJ/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/drawable-v24/ic_baseline_add_task.xml" value="0.1" />
+        <entry key="..\:/Users/A409FJ/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/drawable-v24/ic_baseline_arrow_back_ios_new.xml" value="0.1" />
+        <entry key="..\:/Users/A409FJ/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/drawable/btn_warning.xml" value="0.1" />
+        <entry key="..\:/Users/A409FJ/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/drawable/button_warning.xml" value="0.184" />
+        <entry key="..\:/Users/A409FJ/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_detail_kp.xml" value="0.22" />
+        <entry key="..\:/Users/A409FJ/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_list_logbook.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/A409FJ/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/A409FJ/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_main.xml" value="0.18611111111111112" />
         <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/drawable-v24/button_shape.xml" value="0.1" />
         <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/drawable-v24/ic_baseline_add_task.xml" value="0.1" />
         <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/drawable-v24/ic_baseline_arrow_back_ios_new.xml" value="0.1" />

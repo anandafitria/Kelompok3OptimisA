@@ -9,4 +9,12 @@
     <string name="btn_back">Back</string>
     <string name="kerja_praktek_monitoring">Kerja Praktek Monitoring</string>
     <string name="kp_main">Kerja Praktek Monitoring</string>
+    <string name="view_nama">Nama Mahasiswa</string>
+    <string name="view_nim">NIM</string>
+    <string name="view_ttl">TTL</string>
+    <string name="view_hp">Telepom</string>
+    <string name="view_alamat">Alamat</string>
+    <string name="view_namapt">Nama Perusahaan</string>
+    <string name="view_alamatpt">Alamat PT</string>
+
 </resources>
