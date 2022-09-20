@@ -16,6 +16,7 @@ import android.widget.Toast;
 public class DetailKP extends AppCompatActivity {
 
     ImageButton BtnBack;
+    Button BtnLogbook, BtnInputNilai, BtnSeminarKP,BtnPembatalanKP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,18 +24,49 @@ public class DetailKP extends AppCompatActivity {
         setContentView(R.layout.activity_detail_kp);
 
         BtnBack = findViewById(R.id.btn_back);
+        BtnLogbook = findViewById(R.id.btn_logbookkp);
+        BtnInputNilai = findViewById(R.id.btn_nilaikp);
+        BtnSeminarKP = findViewById(R.id.btn_seminarkp);
+        BtnPembatalanKP = findViewById(R.id.btn_pembatalankp);
 
         BtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DetailKP.this, MainActivity.class);
-                startActivity(intent);
+                Intent back = new Intent(DetailKP.this, MainActivity.class);
+                startActivity(back);
             }
         });
-    }
 
-    public void ke_logbook (View view) {
-        startActivity(new Intent(this, ListLogbook.class));
-        finish();
+        BtnLogbook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent logbook = new Intent (DetailKP.this, ListLogbook.class);
+                startActivity(logbook);
+            }
+        });
+
+        BtnInputNilai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent inputnilai = new Intent (DetailKP.this, InputNilai.class);
+                startActivity(inputnilai);
+            }
+        });
+
+        BtnSeminarKP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent seminarkp = new Intent (DetailKP.this, SeminarKP.class);
+                startActivity(seminarkp);
+            }
+        });
+
+        BtnPembatalanKP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pembatalankp = new Intent (DetailKP.this, PembatalanKP.class);
+                startActivity(pembatalankp);
+            }
+        });
     }
 }
