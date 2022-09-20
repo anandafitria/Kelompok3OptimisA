@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".DetailKP"
     android:background="@color/secondary_color">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -214,6 +214,7 @@
         android:fontFamily="@font/poppinssemibold"
         android:paddingTop="10dp"
         android:text="Logbook KP"
+        android:onClick="ke_logbook"
         android:textAlignment="center"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation_menu"

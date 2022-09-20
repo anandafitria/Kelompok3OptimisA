@@ -32,4 +32,9 @@ public class DetailKP extends AppCompatActivity {
             }
         });
     }
+
+    public void ke_logbook (View view) {
+        startActivity(new Intent(this, ListLogbook.class));
+        finish();
+    }
 }
