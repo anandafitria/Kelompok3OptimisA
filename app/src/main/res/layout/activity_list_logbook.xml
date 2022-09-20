@@ -62,22 +62,18 @@
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="369dp"
-        android:layout_height="32dp"
-        android:fontFamily="@font/poppinsmedium"
-        android:text="Laporan Kerja Praktek Monitoring"
-        android:textAllCaps="false"
-        android:textColor="#0B0A0A"
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Laporan Kegiatan Kerja Praktek"
+        android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="20dp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.157" />
-
+        app:layout_constraintVertical_bias="0.099"
+        tools:layout_editor_absoluteX="0dp" />
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/upper_navigation_menu"
         android:layout_width="match_parent"
