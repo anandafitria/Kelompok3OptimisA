@@ -84,7 +84,6 @@
         android:fontFamily="@font/poppinsmedium"
         android:paddingLeft="5dp"
         android:paddingTop="5dp"
-        android:text="Test"
         android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_menu"
