@@ -7,6 +7,7 @@
     <string name="btn_logbook">List Logbook</string>
     <string name="btn_seminar">List Seminar</string>
     <string name="btn_back">Back</string>
+    <string name="btn_password">Halaman Ganti Password</string>
     <string name="kerja_praktek_monitoring">Kerja Praktek Monitoring</string>
     <string name="kp_main">Kerja Praktek Monitoring</string>
     <string name="view_nama">Nama Mahasiswa</string>
@@ -20,8 +21,9 @@
     <string name="alamat_perusahaan">Alamat Perusahaan</string>
     <string name="btn_seminar_kp">Seminar KP</string>
     <string name="foto_dosen">Foto Dosen</string>
-    <string name="photo_dosen">Foto Dosen</string>
     <string name="seminar_kp">SEMINAR KP</string>
+    <string name="nama_dosen">HUSNIL KAMIL, M.T.</string>
+    <string name="nidn_dosen">NIDN 2001097562</string>
     <string-array name="namamhs">
         <item>Ananda Fitria</item>
         <item>Siti Nur Aisah</item>
