@@ -16,5 +16,11 @@
     <string name="view_alamat">Alamat</string>
     <string name="view_namapt">Nama Perusahaan</string>
     <string name="view_alamatpt">Alamat PT</string>
+    <string name="Berita_Acara_Kerja_Praktek">Berita Acara Kerja Praktek</string>
+    <string name="alamat_perusahaan">Alamat Perusahaan</string>
+    <string name="btn_seminar_kp">Seminar KP</string>
+    <string name="foto_dosen">Foto Dosen</string>
+    <string name="photo_dosen">Foto Dosen</string>
+    <string name="seminar_kp">SEMINAR KP</string>
 
 </resources>
