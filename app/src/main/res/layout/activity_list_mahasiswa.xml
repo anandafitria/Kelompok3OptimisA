@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ListMahasiswa"
+    android:background="@color/secondary_color">
+
+   <ImageView
+       android:id="@+id/fotomhs"
+       android:layout_width="100dp"
+       android:layout_height="100dp"
+       android:scaleType="fitXY"
+       android:layout_marginRight="10dp"/>
+
+   <TextView
+       android:id="@+id/namamhs"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_toRightOf="@id/fotomhs"
+       android:text="Nama"
+       android:textSize="18sp"
+       android:textStyle="bold" />
+
+   <TextView
+       android:id="@+id/nimmhs"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+      android:text="NIM"
+      android:layout_toRightOf="@id/fotomhs"
+      android:layout_below="@id/namamhs"
+       android:textStyle="bold"/>
+
+   <TextView
+       android:id="@+id/hariseminar"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Hari/Tanggal"
+       android:layout_toRightOf="@id/fotomhs"
+       android:layout_below="@id/nimmhs"/>
+
+   <TextView
+       android:id="@+id/jamseminar"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Pukul"
+       android:layout_toRightOf="@id/fotomhs"
+       android:layout_below="@id/hariseminar"/>
+
+   <TextView
+       android:id="@+id/pengujiseminar"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Dosen Penguji"
+       android:layout_toRightOf="@id/fotomhs"
+       android:layout_below="@id/jamseminar"/>
+
+</RelativeLayout>
