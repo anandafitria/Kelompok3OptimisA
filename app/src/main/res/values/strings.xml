@@ -24,6 +24,7 @@
     <string name="seminar_kp">SEMINAR KP</string>
     <string name="nama_dosen">HUSNIL KAMIL, M.T.</string>
     <string name="nidn_dosen">NIDN 2001097562</string>
+    <string name="input_nilai">INPUT NILAI KP</string>
     <string-array name="namamhs">
         <item>Ananda Fitria</item>
         <item>Siti Nur Aisah</item>

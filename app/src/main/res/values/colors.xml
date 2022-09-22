@@ -6,4 +6,6 @@
     <color name="secondary_color">#FFAFDFB1</color>
     <color name="hint">#807D7D</color>
     <color name="warning">#F44336</color>
+    <color name="caution">#FFEB3B</color>
+    <color name="save">#03A9F4</color>
 </resources>
