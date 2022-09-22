@@ -6,5 +6,7 @@
         <item name="colorSecondary">@color/secondary_color</item>
         <item name="colorError">@color/warning</item>
         <item name="colorOutline">@color/hint</item>
+        <item name="colorSurface">@color/caution</item>
+        <item name="colorContainer">@color/save</item>
     </style>
 </resources>
