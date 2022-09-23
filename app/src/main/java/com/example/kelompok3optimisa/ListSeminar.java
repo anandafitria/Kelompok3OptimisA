@@ -1,20 +1,32 @@
 package com.example.kelompok3optimisa;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import java.util.ArrayList;
+
 public class ListSeminar extends AppCompatActivity {
 
+    private RecyclerView rvMahasiswa;
+    private ArrayList<ModelMahasiswa> data = new ArrayList<>();
     ImageButton BtnHome, BtnListLogbook, BtnProfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_seminar);
+
+        rvMahasiswa = findViewById(R.id.rv_mahasiswa);
+        rvMahasiswa.setHasFixedSize(true);
+
+        data.addAll(DataMahasiswa.ambilDataMahasiswa());
+        tampilDataCard();
 
         BtnHome = findViewById(R.id.btn_home);
         BtnListLogbook = findViewById(R.id.btn_logbook);
@@ -43,5 +55,11 @@ public class ListSeminar extends AppCompatActivity {
                 startActivity(profil);
             }
         });
+    }
+
+    private void tampilDataCard() {
+        rvMahasiswa.setLayoutManager(new LinearLayoutManager(this));
+        AdapaterCard colokanCard = new AdapaterCard(data);
+        rvMahasiswa.setAdapter(colokanCard);
     }
 }
