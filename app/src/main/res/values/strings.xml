@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Kelompok 3 PTB A</string>
+    <string name="app_name">Home</string>
     <string name="title_activity_testing">testing</string>
     <string name="btn_profil">Profil</string>
     <string name="btn_home">Home</string>
@@ -25,39 +25,4 @@
     <string name="nama_dosen">HUSNIL KAMIL, M.T.</string>
     <string name="nidn_dosen">NIDN 2001097562</string>
     <string name="input_nilai">INPUT NILAI KP</string>
-    <string-array name="namamhs">
-        <item>Ananda Fitria</item>
-        <item>Siti Nur Aisah</item>
-        <item>Daeng Febrino</item>
-    </string-array>
-
-    <string-array name="nimmhs">
-        <item>2011522014</item>
-        <item>2011521018</item>
-        <item>2011521019</item>
-    </string-array>
-
-    <string-array name="hariseminar">
-        <item>Senin/10 Desember 2022</item>
-        <item>Rabu/12 Desember 2022</item>
-        <item>Jumat/14 Desember 2022</item>
-    </string-array>
-
-    <string-array name="jamseminar">
-    <item>11.00-13.00</item>
-    <item>14.00-16.00</item>
-    <item>08.00-10.00</item>
-    </string-array>
-
-    <string-array name="pengujiseminar">
-    <item>Prof. Ujang Khairul, M.Kom.</item>
-    <item>Fachrina, M.Kom.</item>
-    <item>Dachriyanus, M.T.</item>
-    </string-array>
-
-    <string-array name="fotomhs">
-        <item>@drawable/nanda</item>
-        <item>@drawable/nanda</item>
-        <item>@drawable/nanda</item>
-    </string-array>
 </resources>
