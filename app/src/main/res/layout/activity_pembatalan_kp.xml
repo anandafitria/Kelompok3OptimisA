@@ -32,7 +32,7 @@
                 app:srcCompat="@drawable/ic_baseline_home" />
 
             <ImageButton
-                android:id="@+id/btn_logbok"
+                android:id="@+id/btn_logbook"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -46,6 +46,7 @@
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:minHeight="48dp"
                 android:background="@color/primary_color"
                 android:contentDescription="@string/btn_seminar"
                 app:srcCompat="@drawable/ic_baseline_add_task" />

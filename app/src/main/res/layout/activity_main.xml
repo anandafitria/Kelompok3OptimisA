@@ -28,7 +28,7 @@
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:background="@color/primary_color"
-                android:contentDescription="@string/app_name"
+                android:contentDescription="@string/btn_home"
                 app:srcCompat="@drawable/ic_baseline_home" />
 
             <ImageButton
@@ -43,9 +43,8 @@
 
             <ImageButton
                 android:id="@+id/btn_seminar"
-                android:layout_width="60dp"
+                android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:background="@color/primary_color"
                 android:contentDescription="@string/btn_seminar"
                 app:srcCompat="@drawable/ic_baseline_add_task" />

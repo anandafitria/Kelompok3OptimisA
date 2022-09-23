@@ -13,29 +13,38 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton BtnLogbook, BtnSeminar;
+    ImageButton BtnListLogbook, BtnListSeminar, BtnProfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BtnLogbook = findViewById(R.id.btn_logbook);
-        BtnSeminar = findViewById(R.id.btn_seminar);
+        BtnListLogbook = findViewById(R.id.btn_logbook);
+        BtnListSeminar = findViewById(R.id.btn_seminar);
+        BtnProfil = findViewById(R.id.btn_profil);
 
-        BtnLogbook.setOnClickListener(new View.OnClickListener() {
+        BtnListLogbook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent detailkp = new Intent(MainActivity.this, DetailKP.class);
-                startActivity(detailkp);
+                Intent listlogbook = new Intent(MainActivity.this, ListLogbook.class);
+                startActivity(listlogbook);
             }
         });
 
-        BtnSeminar.setOnClickListener(new View.OnClickListener() {
+        BtnListSeminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent seminarkp = new Intent(MainActivity. this, ListSeminar.class);
-                startActivity(seminarkp);
+                Intent listseminar = new Intent(MainActivity. this, ListSeminar.class);
+                startActivity(listseminar);
+            }
+        });
+
+        BtnProfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent profil = new Intent(MainActivity.this, ProfilActivity.class);
+                startActivity(profil);
             }
         });
 

@@ -2,67 +2,46 @@ package com.example.kelompok3optimisa;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.res.TypedArray;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ListView;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.view.View;
+import android.widget.ImageButton;
 
 public class ListSeminar extends AppCompatActivity {
-    private ListView lvListMahasiswa;
-    private ListMahasiswaAdapter adapter;
 
-    private TypedArray dataFoto;
-    private String[] dataNama;
-    private String[] dataNIM;
-    private String[] dataHariTanggal;
-    private String[] dataJam;
-    private String[] dataPenguji;
-
-    private ArrayList<ListMahasiswa> listmhs;
-
-    public ListSeminar() {
-    }
+    ImageButton BtnHome, BtnListLogbook, BtnProfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_seminar);
 
-        lvListMahasiswa = findViewById(R.id.listmahasiswa);
-        adapter = new ListMahasiswaAdapter( this);
-        lvListMahasiswa.setAdapter(adapter);
+        BtnHome = findViewById(R.id.btn_home);
+        BtnListLogbook = findViewById(R.id.btn_logbook);
+        BtnProfil = findViewById(R.id.btn_profil);
 
-        tampungData();
-        tambahData();
-    }
+        BtnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(ListSeminar.this, MainActivity.class);
+                startActivity(home);
+            }
+        });
 
-    private void tampungData() {
-        dataFoto = getResources().obtainTypedArray(R.array.fotomhs);
-        dataNama = getResources().getStringArray(R.array.namamhs);
-        dataNIM = getResources().getStringArray(R.array.nimmhs);
-        dataHariTanggal = getResources().getStringArray(R.array.hariseminar);
-        dataJam = getResources().getStringArray(R.array.jamseminar);
-        dataPenguji = getResources().getStringArray(R.array.pengujiseminar);
-    }
+        BtnListLogbook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent listlogbook = new Intent(ListSeminar.this, ListLogbook.class);
+                startActivity(listlogbook);
+            }
+        });
 
-    private void tambahData() {
-        listmhs = new ArrayList<>();
-
-        for (int i = 0; i < dataNama.length; i++) {
-            ListMahasiswa listmhs = new ListMahasiswa();
-
-            listmhs.setFoto(dataFoto.getResourceId(i, -1));
-            listmhs.setNama(dataNama[i]);
-            listmhs.setNIM(dataNIM[i]);
-            listmhs.setHariTanggal(dataHariTanggal[i]);
-            listmhs.setJam(dataJam[i]);
-            listmhs.setPenguji((dataPenguji[i]));
-
-            listmhs.add(listmhs);
-        }
-
-        adapter.setListmhs(listmhs);
+        BtnProfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent profil = new Intent(ListSeminar.this, ProfilActivity.class);
+                startActivity(profil);
+            }
+        });
     }
 }
