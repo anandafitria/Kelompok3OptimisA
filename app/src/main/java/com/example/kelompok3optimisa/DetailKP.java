@@ -72,7 +72,7 @@ public class DetailKP extends AppCompatActivity {
         BtnLogbook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent logbook = new Intent (DetailKP.this, Logbook.class);
+                Intent logbook = new Intent (DetailKP.this, LaporanKp.class);
                 startActivity(logbook);
             }
         });
@@ -93,12 +93,5 @@ public class DetailKP extends AppCompatActivity {
             }
         });
 
-        BtnPembatalanKP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent pembatalankp = new Intent (DetailKP.this, PembatalanKP.class);
-                startActivity(pembatalankp);
-            }
-        });
     }
 }
