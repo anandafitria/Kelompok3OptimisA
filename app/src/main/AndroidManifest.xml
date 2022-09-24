@@ -14,6 +14,9 @@
         android:theme="@style/Theme.Kelompok3OptimisA"
         tools:targetApi="31">
         <activity
+            android:name=".DeActivity"
+            android:exported="false" />
+        <activity
             android:name=".DetailActivity"
             android:exported="false" />
         <activity
@@ -29,9 +32,6 @@
             android:name=".ProfilActivity"
             android:exported="false" />
         <activity
-            android:name=".PembatalanKP"
-            android:exported="false" />
-        <activity
             android:name=".BeritaAcaraKP"
             android:exported="false" />
         <activity
@@ -44,7 +44,7 @@
             android:name=".DetailKP"
             android:exported="false" />
         <activity
-            android:name=".Logbook"
+            android:name=".LaporanKp"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
