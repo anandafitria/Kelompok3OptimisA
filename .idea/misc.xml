@@ -41,7 +41,8 @@
         <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/drawable/ic_baseline_logout.xml" value="0.1245" />
         <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_berita_acara_kp.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_detail.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_detail_kp.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_detail_dashboard.xml" value="0.1" />
+        <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_detail_kp.xml" value="0.27935723114956734" />
         <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_ganti_password.xml" value="0.33" />
         <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_input_nilai.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_list_logbook.xml" value="0.22447916666666667" />
@@ -50,7 +51,9 @@
         <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_pembatalan_kp.xml" value="0.1" />
         <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/activity_profil.xml" value="0.23274974253347064" />
+        <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/card_dashboard.xml" value="0.33" />
         <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/card_mahasiswa.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/grid_dashboard.xml" value="0.1" />
         <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/layout/grid_mahasiswa.xml" value="0.22447916666666667" />
       </map>
     </option>
