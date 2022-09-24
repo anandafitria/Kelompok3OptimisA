@@ -17,13 +17,23 @@ public class DetailActivity extends AppCompatActivity {
     private TextView Nama, NIM, Hari, Pukul, Ruang;
     private String yNama, yNIM, yHari, yPukul, yRuang;
     Button BtnBerita;
+    ImageButton BtnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        BtnBack = findViewById(R.id.btn_back);
         BtnBerita = findViewById(R.id.btn_beritaacara);
+
+        BtnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent back = new Intent(DetailActivity.this, ListSeminar.class);
+                startActivity(back);
+            }
+        });
 
         BtnBerita.setOnClickListener(new View.OnClickListener() {
             @Override
