@@ -31,4 +31,7 @@
     <string name="password_baru">Password Baru</string>
     <string name="konfimasi_password_baru">Konfimasi Password Baru</string>
     <string name="simpan">Simpan</string>
+    <string name="agama">Agama</string>
+    <string name="alamat">Alamat</string>
+    <string name="tempat_tanggal_lahir">Tempat/Tanggal Lahir</string>
 </resources>

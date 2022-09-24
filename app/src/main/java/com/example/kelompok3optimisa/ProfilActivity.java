@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class ProfilActivity extends AppCompatActivity {
 
-    ImageButton BtnHome, BtnListLogbook, BtnListSeminar, BtnGantiPassword, BtnBack;
+    ImageButton BtnHome, BtnListLogbook, BtnListSeminar, BtnGantiPassword, BtnBack, BtnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +22,15 @@ public class ProfilActivity extends AppCompatActivity {
         BtnListSeminar = findViewById(R.id.btn_seminar);
         BtnGantiPassword = findViewById(R.id.btn_gantipassword);
         BtnBack = findViewById(R.id.btn_back);
+        BtnLogout = findViewById(R.id.btn_logout);
 
+        BtnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent logout = new Intent(ProfilActivity.this, LoginActivity.class);
+                startActivity(logout);
+            }
+        });
         BtnBack.setOnClickListener(view -> {
             Intent back = new Intent(ProfilActivity.this, MainActivity.class);
             startActivity(back);
@@ -45,5 +55,10 @@ public class ProfilActivity extends AppCompatActivity {
             Intent listseminar = new Intent(ProfilActivity.this, ListSeminar.class);
             startActivity(listseminar);
         });
+    }
+    public void onClickSimpan(View view) {
+        Toast.makeText(ProfilActivity.this, "Data Profil berhasil disimpan", Toast.LENGTH_SHORT).show();
+        Intent simpan = new Intent(ProfilActivity.this, MainActivity.class);
+        startActivity(simpan);
     }
 }
