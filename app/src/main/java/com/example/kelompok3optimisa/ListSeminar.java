@@ -61,5 +61,18 @@ public class ListSeminar extends AppCompatActivity {
         rvMahasiswa.setLayoutManager(new LinearLayoutManager(this));
         AdapaterCard colokanCard = new AdapaterCard(data);
         rvMahasiswa.setAdapter(colokanCard);
+
+        colokanCard.setOnItemClickCallBack(new AdapaterCard.OnItemClickCallBack() {
+            @Override
+            public void onItemClicked(ModelMahasiswa data) {
+                Intent pindah = new Intent(ListSeminar.this, DetailActivity.class);
+                pindah.putExtra("xNama", data.getNamamhs());
+                pindah.putExtra("xNIM", data.getNimmhs());
+                pindah.putExtra("xHari", data.getHaritanggal());
+                pindah.putExtra("xPukul", data.getPukul());
+                pindah.putExtra("xRuang",data.getRuang());
+                startActivity(pindah);
+            }
+        });
     }
 }

@@ -1,69 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/secondary_color"
     tools:context=".DetailActivity">
 
-    <LinearLayout
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_menu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="6dp"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_alignParentBottom="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_home"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@color/primary_color"
+                android:contentDescription="@string/app_name"
+                app:srcCompat="@drawable/ic_baseline_home" />
+
+            <ImageButton
+                android:id="@+id/btn_logbok"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/primary_color"
+                android:contentDescription="@string/btn_logbook"
+                android:minHeight="48dp"
+                app:srcCompat="@drawable/ic_baseline_calendar_today" />
+
+            <ImageButton
+                android:id="@+id/btn_seminar"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/primary_color"
+                android:contentDescription="@string/btn_seminar"
+                app:srcCompat="@drawable/ic_baseline_add_task" />
+
+            <ImageButton
+                android:id="@+id/btn_profil"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/primary_color"
+                android:contentDescription="@string/btn_profil"
+                app:srcCompat="@drawable/ic_baseline_person" />
+        </LinearLayout>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Seminar Kerja Praktek"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.099"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/show_nama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="225dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="Nama                  :"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/show_nim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="251dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="NIM                       :"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/show_hari"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="276dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="Hari/Tanggal  :"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/show_pukul"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="301dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="Pukul                   :"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/show_ruang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="326dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="Ruangan           :"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/upper_navigation_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppinssemibold"
+            android:paddingTop="15dp"
+            android:text="@string/kp_main"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="37dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/primary_color"
+            android:contentDescription="@string/btn_back"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new" />
+
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <LinearLayout
+        android:layout_width="405dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="6dp"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/iv_mhs"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"/>
+            android:layout_height="96dp"
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/tv_namamhs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="6dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/iv_mhs"
-            android:fontFamily="@font/poppinssemibold"
-            android:text="Ananda Fitria"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Nama Mahasiswa"
             android:textColor="@color/black"
-            android:textSize="25sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/tv_nimmhs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_namamhs"
-            android:layout_marginLeft="6dp"
+            android:layout_marginLeft="120dp"
             android:layout_toRightOf="@+id/iv_mhs"
-            android:fontFamily="@font/poppinssemibold"
-            android:text="2011522014"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="NIM"
             android:textColor="@color/black"
-            android:textSize="25sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/tv_haritanggal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_nimmhs"
-            android:layout_marginLeft="6dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginLeft="120dp"
             android:layout_toRightOf="@+id/iv_mhs"
-            android:fontFamily="@font/poppinsregular"
-            android:text="Senin/17 Mei 2022"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Hari/Tanggal"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/tv_pukul"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_haritanggal"
-            android:layout_marginLeft="6dp"
+            android:layout_marginLeft="120dp"
             android:layout_toRightOf="@+id/iv_mhs"
-            android:fontFamily="@font/poppinsregular"
-            android:text="11.00-13.00"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Jam"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/tv_ruang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_pukul"
+            android:layout_marginLeft="120dp"
+            android:layout_toRightOf="@+id/iv_mhs"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Ruangan"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
     </LinearLayout>
-</ScrollView>
+
+    <Button
+        android:id="@+id/btn_logbookkp"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/bottom_navigation_menu"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="244dp"
+        android:width="200dp"
+        android:background="@drawable/button_save"
+        android:fontFamily="@font/poppinssemibold"
+        android:paddingTop="5dp"
+        android:text="Berita Acara"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.116" />
+
+</RelativeLayout>
