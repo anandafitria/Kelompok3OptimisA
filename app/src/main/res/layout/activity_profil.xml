@@ -20,6 +20,97 @@
         android:contentDescription="@string/btn_gantipassword"
         app:srcCompat="@drawable/ic_password" />
 
+    <EditText
+        android:id="@+id/edit_ttl"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="390dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="20dp"
+        android:autofillHints=""
+        android:background="@color/white"
+        android:backgroundTint="@color/primary_color"
+        android:fontFamily="@font/poppinsmedium"
+        android:inputType="textPersonName"
+        android:textColor="#616161"
+        android:textSize="15sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/edit_agama"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="455dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/primary_color"
+        android:fontFamily="@font/poppinsmedium"
+        android:inputType="textPersonName"
+        android:textColor="#616161"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/edit_alamat"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="515dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="20dp"
+        android:autofillHints=""
+        android:background="@color/white"
+        android:backgroundTint="@color/primary_color"
+        android:fontFamily="@font/poppinsmedium"
+        android:inputType="textPersonName"
+        android:textColor="#616161"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/view_ttl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="365dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/poppinsbold"
+        android:text="@string/tempat_tanggal_lahir" />
+
+    <TextView
+        android:id="@+id/view_agama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="430dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/poppinsbold"
+        android:text="@string/agama" />
+
+    <TextView
+        android:id="@+id/view_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="495dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/poppinsbold"
+        android:text="@string/alamat" />
+
+    <Button
+        android:id="@+id/btn_simpan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="575dp"
+        android:background="@drawable/button_shape"
+        android:onClick="onClickSimpan"
+        android:text="@string/simpan" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_menu"
         android:layout_width="match_parent"
@@ -122,11 +213,24 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="20dp"
             android:background="@color/primary_color"
-            android:contentDescription="@string/foto_dosen"
+            android:contentDescription="@string/btn_back"
             android:minWidth="48dp"
             android:minHeight="48dp"
             app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new"
             tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <ImageButton
+            android:id="@+id/btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="350dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/primary_color"
+            android:contentDescription="@string/btn_back"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+
+            app:srcCompat="@drawable/ic_baseline_logout" />
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
