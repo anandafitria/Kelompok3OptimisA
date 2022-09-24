@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class GantiPassword extends AppCompatActivity {
 
@@ -45,5 +47,11 @@ public class GantiPassword extends AppCompatActivity {
             Intent listseminar = new Intent(GantiPassword.this, ListSeminar.class);
             startActivity(listseminar);
         });
+    }
+
+    public void onClickSimpan(View view) {
+        Toast.makeText(GantiPassword.this, "Password berhasil diubah", Toast.LENGTH_SHORT).show();
+        Intent simpan = new Intent(GantiPassword.this, ProfilActivity.class);
+        startActivity(simpan);
     }
 }

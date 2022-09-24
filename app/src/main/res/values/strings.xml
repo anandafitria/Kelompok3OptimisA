@@ -26,4 +26,9 @@
     <string name="nidn_dosen">NIDN 2001097562</string>
     <string name="input_nilai">INPUT NILAI KP</string>
     <string name="btn_editprofil">btn_editprofil</string>
+    <string name="masukkan_password_lama">Masukkan password lama</string>
+    <string name="password_lama">Password Lama</string>
+    <string name="password_baru">Password Baru</string>
+    <string name="konfimasi_password_baru">Konfimasi Password Baru</string>
+    <string name="simpan">Simpan</string>
 </resources>
