@@ -7,6 +7,16 @@ public class ModelMahasiswa {
     private String haritanggal;
     private String pukul;
 
+    public String getRuang() {
+        return ruang;
+    }
+
+    public void setRuang(String ruang) {
+        this.ruang = ruang;
+    }
+
+    private String ruang;
+
     public String getFoto() {
         return foto;
     }

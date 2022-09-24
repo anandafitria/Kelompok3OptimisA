@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Home</string>
+    <string name="app_name">Kerja Praktek Monitoring</string>
     <string name="title_activity_testing">testing</string>
     <string name="btn_profil">Profil</string>
     <string name="btn_home">Home</string>

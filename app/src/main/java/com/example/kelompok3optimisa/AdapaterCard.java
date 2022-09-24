@@ -19,6 +19,15 @@ public class AdapaterCard extends RecyclerView.Adapter<AdapaterCard.CardViewHold
         this.dataMahasiswa = dataMahasiswa;
     }
 
+    public interface OnItemClickCallBack {
+        void onItemClicked(ModelMahasiswa data);
+    }
+
+    private AdapaterCard.OnItemClickCallBack callBack;
+    public void setOnItemClickCallBack (AdapaterCard.OnItemClickCallBack callBack) {
+       this.callBack = callBack;
+    }
+
     @NonNull
     @Override
     public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -34,6 +43,14 @@ public class AdapaterCard extends RecyclerView.Adapter<AdapaterCard.CardViewHold
         holder.tvNimMahasiswa.setText(mahasiswa.getNimmhs());
         holder.tvHariTanggal.setText(mahasiswa.getHaritanggal());
         holder.tvPukul.setText(mahasiswa.getPukul());
+        holder.tvRuang.setText(mahasiswa.getRuang());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                callBack.onItemClicked(dataMahasiswa.get(holder.getAdapterPosition()));
+            }
+        });
 
     }
 
@@ -45,7 +62,7 @@ public class AdapaterCard extends RecyclerView.Adapter<AdapaterCard.CardViewHold
     public class CardViewHolder extends RecyclerView.ViewHolder {
 
         ImageView ivMahasiswa;
-        TextView tvNamaMahasiswa,tvNimMahasiswa, tvHariTanggal, tvPukul;
+        TextView tvNamaMahasiswa,tvNimMahasiswa, tvHariTanggal, tvPukul, tvRuang;
         public CardViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -54,6 +71,7 @@ public class AdapaterCard extends RecyclerView.Adapter<AdapaterCard.CardViewHold
             tvNimMahasiswa = itemView.findViewById(R.id.tv_nimmhs);
             tvHariTanggal = itemView.findViewById(R.id.tv_haritanggal);
             tvPukul = itemView.findViewById(R.id.tv_pukul);
+            tvRuang = itemView.findViewById(R.id.tv_ruang);
         }
     }
 }
