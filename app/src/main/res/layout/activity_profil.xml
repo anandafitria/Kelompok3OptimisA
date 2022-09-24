@@ -213,7 +213,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="20dp"
             android:background="@color/primary_color"
-            android:contentDescription="@string/btn_back"
+            android:contentDescription="@string/foto_dosen"
             android:minWidth="48dp"
             android:minHeight="48dp"
             app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new"
@@ -229,7 +229,6 @@
             android:contentDescription="@string/btn_back"
             android:minWidth="48dp"
             android:minHeight="48dp"
-
             app:srcCompat="@drawable/ic_baseline_logout" />
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:elevation="6dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp" >
+
+     <ImageView
+         android:id="@+id/iv_logbook"
+         android:layout_width="70dp"
+         android:layout_height="70dp"
+         android:scaleType="centerCrop"
+         android:src="@mipmap/ic_launcher"/>
+
+      <TextView
+          android:id="@+id/tv_nama_mhs"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@+id/iv_logbook"
+          android:layout_marginLeft="6dp"
+          android:text="Ananda Fitria"
+          android:textSize="18dp"
+          android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_nim_mhs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_logbook"
+            android:layout_marginLeft="6dp"
+            android:layout_below="@+id/tv_nama_mhs"
+            android:text="2011522014"
+            android:justificationMode="inter_word"/>
+    </RelativeLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>

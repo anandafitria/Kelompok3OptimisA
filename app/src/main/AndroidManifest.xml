@@ -32,9 +32,6 @@
             android:name=".ProfilActivity"
             android:exported="false" />
         <activity
-            android:name=".PembatalanKP"
-            android:exported="false" />
-        <activity
             android:name=".BeritaAcaraKP"
             android:exported="false" />
         <activity

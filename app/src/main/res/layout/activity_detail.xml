@@ -9,60 +9,6 @@
     android:background="@color/secondary_color"
     tools:context=".DetailActivity">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_menu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/primary_color"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_alignParentBottom="true" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/btn_home"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:background="@color/primary_color"
-                android:contentDescription="@string/app_name"
-                app:srcCompat="@drawable/ic_baseline_home" />
-
-            <ImageButton
-                android:id="@+id/btn_logbok"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/primary_color"
-                android:contentDescription="@string/btn_logbook"
-                android:minHeight="48dp"
-                app:srcCompat="@drawable/ic_baseline_calendar_today" />
-
-            <ImageButton
-                android:id="@+id/btn_seminar"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/primary_color"
-                android:contentDescription="@string/btn_seminar"
-                app:srcCompat="@drawable/ic_baseline_add_task" />
-
-            <ImageButton
-                android:id="@+id/btn_profil"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/primary_color"
-                android:contentDescription="@string/btn_profil"
-                app:srcCompat="@drawable/ic_baseline_person" />
-        </LinearLayout>
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
@@ -143,58 +89,55 @@
         android:textColor="@color/black"
         android:textSize="15sp" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/upper_navigation_menu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/primary_color"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fontFamily="@font/poppinssemibold"
-            android:paddingTop="15dp"
-            android:text="@string/kp_main"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/btn_back"
-            android:layout_width="37dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/primary_color"
-            android:contentDescription="@string/btn_back"
-            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new" />
-
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
     <LinearLayout
-        android:layout_width="405dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/upper_navigation_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppinssemibold"
+                android:paddingTop="15dp"
+                android:text="@string/kp_main"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="37dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/primary_color"
+                android:contentDescription="@string/btn_back"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new" />
+
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
 
         <ImageView
             android:id="@+id/iv_mhs"
             android:layout_width="match_parent"
             android:layout_height="96dp"
+            android:layout_marginTop="64dp"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/tv_namamhs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="140dp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/iv_mhs"
             android:fontFamily="@font/poppinsmedium"
@@ -207,7 +150,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_namamhs"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="140dp"
             android:layout_toRightOf="@+id/iv_mhs"
             android:fontFamily="@font/poppinsmedium"
             android:text="NIM"
@@ -219,7 +162,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_nimmhs"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="140dp"
             android:layout_toRightOf="@+id/iv_mhs"
             android:fontFamily="@font/poppinsmedium"
             android:text="Hari/Tanggal"
@@ -231,7 +174,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_haritanggal"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="140dp"
             android:layout_toRightOf="@+id/iv_mhs"
             android:fontFamily="@font/poppinsmedium"
             android:text="Jam"
@@ -243,7 +186,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_pukul"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="140dp"
             android:layout_toRightOf="@+id/iv_mhs"
             android:fontFamily="@font/poppinsmedium"
             android:text="Ruangan"
@@ -274,6 +217,60 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintVertical_bias="0.116" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="18dp"
+            android:background="@color/primary_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_home"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/primary_color"
+                    android:contentDescription="@string/app_name"
+                    app:srcCompat="@drawable/ic_baseline_home" />
+
+                <ImageButton
+                    android:id="@+id/btn_logbok"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/primary_color"
+                    android:contentDescription="@string/btn_logbook"
+                    android:minHeight="48dp"
+                    app:srcCompat="@drawable/ic_baseline_calendar_today" />
+
+                <ImageButton
+                    android:id="@+id/btn_seminar"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/primary_color"
+                    android:contentDescription="@string/btn_seminar"
+                    app:srcCompat="@drawable/ic_baseline_add_task" />
+
+                <ImageButton
+                    android:id="@+id/btn_profil"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/primary_color"
+                    android:contentDescription="@string/btn_profil"
+                    app:srcCompat="@drawable/ic_baseline_person" />
+            </LinearLayout>
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
     </LinearLayout>
 
 
