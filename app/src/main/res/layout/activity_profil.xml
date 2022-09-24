@@ -179,8 +179,8 @@
             android:id="@+id/fotodosen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="45dp"
             android:contentDescription="@string/foto_dosen"
             app:srcCompat="@drawable/photo_dosen" />
 
@@ -189,7 +189,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="210dp"
             android:fontFamily="@font/poppinsextra"
             android:text="@string/nama_dosen"
             android:textColor="@color/black"
@@ -200,7 +200,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="245dp"
+            android:layout_marginTop="235dp"
             android:fontFamily="@font/poppinsextra"
             android:text="@string/nidn_dosen"
             android:textColor="@color/black"
@@ -210,9 +210,10 @@
             android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
             android:background="@color/primary_color"
-            android:contentDescription="@string/btn_back"
+            android:contentDescription="@string/foto_dosen"
             android:minWidth="48dp"
             android:minHeight="48dp"
             app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new"
@@ -222,12 +223,12 @@
             android:id="@+id/btn_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="300dp"
+            android:layout_marginStart="350dp"
+            android:layout_marginTop="20dp"
             android:background="@color/primary_color"
             android:contentDescription="@string/btn_back"
             android:minWidth="48dp"
             android:minHeight="48dp"
-
             app:srcCompat="@drawable/ic_baseline_logout" />
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
