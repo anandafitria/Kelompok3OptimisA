@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -13,11 +16,22 @@ public class DetailActivity extends AppCompatActivity {
 
     private TextView Nama, NIM, Hari, Pukul, Ruang;
     private String yNama, yNIM, yHari, yPukul, yRuang;
+    Button BtnBerita;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        BtnBerita = findViewById(R.id.btn_beritaacara);
+
+        BtnBerita.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent berita = new Intent(DetailActivity.this, BeritaAcaraKP.class);
+                startActivity(berita);
+            }
+        });
 
         initView();
 
@@ -33,6 +47,8 @@ public class DetailActivity extends AppCompatActivity {
         Hari.setText(yHari);
         Pukul.setText(yPukul);
         Ruang.setText(yRuang);
+
+
     }
 
     private void initView() {
