@@ -35,9 +35,6 @@
             android:name=".BeritaAcaraKP"
             android:exported="false" />
         <activity
-            android:name=".SeminarKP"
-            android:exported="false" />
-        <activity
             android:name=".InputNilai"
             android:exported="false" />
         <activity

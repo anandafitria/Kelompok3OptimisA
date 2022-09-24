@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Home</string>
+    <string name="app_name">Kerja Praktek Monitoring</string>
     <string name="title_activity_testing">testing</string>
     <string name="btn_profil">Profil</string>
     <string name="btn_home">Home</string>
     <string name="btn_logbook">List Logbook</string>
     <string name="btn_seminar">List Seminar</string>
     <string name="btn_back">Back</string>
-    <string name="btn_password">Halaman Ganti Password</string>
+    <string name="btn_gantipassword">Halaman Ganti Password</string>
     <string name="kerja_praktek_monitoring">Kerja Praktek Monitoring</string>
     <string name="kp_main">Kerja Praktek Monitoring</string>
     <string name="view_nama">Nama Mahasiswa</string>
@@ -25,4 +25,13 @@
     <string name="nama_dosen">HUSNIL KAMIL, M.T.</string>
     <string name="nidn_dosen">NIDN 2001097562</string>
     <string name="input_nilai">INPUT NILAI KP</string>
+    <string name="btn_editprofil">btn_editprofil</string>
+    <string name="masukkan_password_lama">Masukkan password lama</string>
+    <string name="password_lama">Password Lama</string>
+    <string name="password_baru">Password Baru</string>
+    <string name="konfimasi_password_baru">Konfimasi Password Baru</string>
+    <string name="simpan">Simpan</string>
+    <string name="agama">Agama</string>
+    <string name="alamat">Alamat</string>
+    <string name="tempat_tanggal_lahir">Tempat/Tanggal Lahir</string>
 </resources>

@@ -88,7 +88,7 @@ public class DetailKP extends AppCompatActivity {
         BtnSeminarKP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent seminarkp = new Intent (DetailKP.this, SeminarKP.class);
+                Intent seminarkp = new Intent (DetailKP.this, DetailActivity.class);
                 startActivity(seminarkp);
             }
         });
