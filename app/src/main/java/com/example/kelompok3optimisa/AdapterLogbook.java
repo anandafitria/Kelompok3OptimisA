@@ -20,6 +20,15 @@ public class AdapterLogbook extends RecyclerView.Adapter<AdapterLogbook.LogbookV
         this.dataLogbook = dataLogbook;
     }
 
+    public interface OnItemClickCallBack {
+        void onItemClicked(ModelLogbook data2);
+    }
+
+    private AdapterLogbook.OnItemClickCallBack callBack;
+    public void setOnItemClickCallBack (AdapterLogbook.OnItemClickCallBack callBack) {
+        this.callBack = callBack;
+    }
+
     @NonNull
     @Override
     public LogbookViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -33,6 +42,13 @@ public class AdapterLogbook extends RecyclerView.Adapter<AdapterLogbook.LogbookV
 
         holder.tvNamaLogbook.setText(logbook.getNamaLogbook());
         holder.tvNimLogbook.setText(logbook.getNimLogbook());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                callBack.onItemClicked(dataLogbook.get(holder.getAdapterPosition()));
+            }
+        });
 
     }
 

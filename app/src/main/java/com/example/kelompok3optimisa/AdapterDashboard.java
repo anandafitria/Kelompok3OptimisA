@@ -19,6 +19,15 @@ public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.Dash
         this.dataDashboard = dataDashboard;
     }
 
+    public interface OnItemClickCallBack {
+        void onItemClicked(ModelDashboard data3);
+    }
+
+    private AdapterDashboard.OnItemClickCallBack callBack;
+    public void setOnItemClickCallBack (AdapterDashboard.OnItemClickCallBack callBack) {
+        this.callBack = callBack;
+    }
+
     @NonNull
     @Override
     public DashboardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -32,6 +41,13 @@ public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.Dash
 
         holder.tvNamaMain.setText(dashboard.getNamaMain());
         holder.tvNimMain.setText(dashboard.getNimMain());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                callBack.onItemClicked(dataDashboard.get(holder.getAdapterPosition()));
+            }
+        });
 
     }
 
