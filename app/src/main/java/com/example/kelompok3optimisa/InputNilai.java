@@ -21,7 +21,7 @@ public class InputNilai extends AppCompatActivity {
         BtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back = new Intent(InputNilai. this, DetailKP.class);
+                Intent back = new Intent(InputNilai. this, DetailDashboard.class);
                 startActivity(back);
             }
         });
