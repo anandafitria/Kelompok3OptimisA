@@ -65,5 +65,15 @@ public class MainActivity extends AppCompatActivity {
         rvDashboard.setLayoutManager(new LinearLayoutManager(this));
         AdapterDashboard colokanDashboard = new AdapterDashboard(data3);
         rvDashboard.setAdapter(colokanDashboard);
+
+        colokanDashboard.setOnItemClickCallBack(new AdapterDashboard.OnItemClickCallBack() {
+            @Override
+            public void onItemClicked(ModelDashboard data3) {
+                Intent pindah = new Intent(MainActivity.this, DetailDashboard.class);
+                pindah.putExtra("xNamaMain", data3.getNamaMain());
+                pindah.putExtra("xNimMain", data3.getNimMain());
+                startActivity(pindah);
+            }
+        });
     }
 }

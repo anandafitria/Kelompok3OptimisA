@@ -25,7 +25,6 @@ public class ListLogbook extends AppCompatActivity {
         rvLogbook = findViewById(R.id.rv_logbook);
         rvLogbook.setHasFixedSize(true);
 
-
         data2.addAll(DataLogbook.ambilDataLogbook());
         tampilDataLogbook();
 
@@ -62,5 +61,15 @@ public class ListLogbook extends AppCompatActivity {
         rvLogbook.setLayoutManager(new LinearLayoutManager(this));
         AdapterLogbook colokanLogbook = new AdapterLogbook(data2);
         rvLogbook.setAdapter(colokanLogbook);
+
+        colokanLogbook.setOnItemClickCallBack(new AdapterLogbook.OnItemClickCallBack() {
+            @Override
+            public void onItemClicked(ModelLogbook data2) {
+                Intent pindah = new Intent(ListLogbook.this, DetailLogbook.class);
+                pindah.putExtra("xNama", data2.getNamaLogbook());
+                pindah.putExtra("xNIM", data2.getNimLogbook());
+                startActivity(pindah);
+            }
+        });
     }
 }
