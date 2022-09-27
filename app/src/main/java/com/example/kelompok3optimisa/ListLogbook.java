@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class ListLogbook extends AppCompatActivity {
 
     private RecyclerView rvLogbook;
+    private ArrayList<ModelLogbook> data2 = new ArrayList<>();
     ImageButton BtnHome, BtnListSeminar, BtnProfil;
 
     @Override
@@ -24,6 +25,9 @@ public class ListLogbook extends AppCompatActivity {
         rvLogbook = findViewById(R.id.rv_logbook);
         rvLogbook.setHasFixedSize(true);
 
+
+        data2.addAll(DataLogbook.ambilDataLogbook());
+        tampilDataLogbook();
 
         BtnHome = findViewById(R.id.btn_home);
         BtnListSeminar = findViewById(R.id.btn_seminar);
@@ -52,5 +56,11 @@ public class ListLogbook extends AppCompatActivity {
                 startActivity(profil);
             }
         });
+    }
+
+    private void tampilDataLogbook() {
+        rvLogbook.setLayoutManager(new LinearLayoutManager(this));
+        AdapterLogbook colokanLogbook = new AdapterLogbook(data2);
+        rvLogbook.setAdapter(colokanLogbook);
     }
 }

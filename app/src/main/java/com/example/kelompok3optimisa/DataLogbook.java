@@ -15,9 +15,9 @@ public class DataLogbook {
         ArrayList<ModelLogbook> dataLogbook = new ArrayList<>();
         for (String[] varData2 : data2) {
             ModelLogbook model = new ModelLogbook();
-            model.setFoto(varData2[0]);
-            model.setNama_mhs(varData2[1]);
-            model.setNim_mhs(varData2[2]);
+            model.setFotoLogbook(varData2[0]);
+            model.setNamaLogbook(varData2[1]);
+            model.setNimLogbook(varData2[2]);
 
             dataLogbook.add(model);
         }

@@ -1,33 +1,31 @@
 package com.example.kelompok3optimisa;
 
 public class ModelLogbook {
-    private String foto;
-    private String nama_mhs;
-    private String nim_mhs;
+    private String FotoLogbook;
+    private String NamaLogbook;
+    private String NimLogbook;
 
-    public String getFoto() {
-        return foto;
+    public String getFotoLogbook() {
+        return FotoLogbook;
     }
 
-    public void setFoto(String foto) {
-        this.foto = foto;
+    public void setFotoLogbook(String fotoLogbook) {
+        FotoLogbook = fotoLogbook;
     }
 
-    public String getNama_mhs() {
-        return nama_mhs;
+    public String getNamaLogbook() {
+        return NamaLogbook;
     }
 
-    public void setNama_mhs(String nama_mhs) {
-        this.nama_mhs = nama_mhs;
+    public void setNamaLogbook(String namaLogbook) {
+        NamaLogbook = namaLogbook;
     }
 
-    public String getNim_mhs() {
-        return nim_mhs;
+    public String getNimLogbook() {
+        return NimLogbook;
     }
 
-    public void setNim_mhs(String nim_mhs) {
-        this.nim_mhs = nim_mhs;
+    public void setNimLogbook(String nimLogbook) {
+        NimLogbook = nimLogbook;
     }
-
-
 }

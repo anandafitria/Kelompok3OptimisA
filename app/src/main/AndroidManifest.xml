@@ -41,7 +41,7 @@
             android:name=".DetailKP"
             android:exported="false" />
         <activity
-            android:name=".Logbook"
+            android:name=".DetailLogbook"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
