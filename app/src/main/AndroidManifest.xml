@@ -38,9 +38,6 @@
             android:name=".InputNilai"
             android:exported="false" />
         <activity
-            android:name=".DetailKP"
-            android:exported="false" />
-        <activity
             android:name=".DetailLogbook"
             android:exported="false" />
         <activity
