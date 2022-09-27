@@ -11,11 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class AdapaterCard extends RecyclerView.Adapter<AdapaterCard.CardViewHolder> {
+public class AdapterCard extends RecyclerView.Adapter<AdapterCard.CardViewHolder> {
 
     private ArrayList<ModelMahasiswa> dataMahasiswa;
 
-    public AdapaterCard(ArrayList<ModelMahasiswa> dataMahasiswa) {
+    public AdapterCard(ArrayList<ModelMahasiswa> dataMahasiswa) {
         this.dataMahasiswa = dataMahasiswa;
     }
 
@@ -23,8 +23,8 @@ public class AdapaterCard extends RecyclerView.Adapter<AdapaterCard.CardViewHold
         void onItemClicked(ModelMahasiswa data);
     }
 
-    private AdapaterCard.OnItemClickCallBack callBack;
-    public void setOnItemClickCallBack (AdapaterCard.OnItemClickCallBack callBack) {
+    private AdapterCard.OnItemClickCallBack callBack;
+    public void setOnItemClickCallBack (AdapterCard.OnItemClickCallBack callBack) {
        this.callBack = callBack;
     }
 

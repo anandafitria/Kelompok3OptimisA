@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class DeActivity extends AppCompatActivity {
+public class DetailLogbook extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_de);
+        setContentView(R.layout.activity_detail_logbook);
     }
 }

@@ -59,10 +59,10 @@ public class ListSeminar extends AppCompatActivity {
 
     private void tampilDataCard() {
         rvMahasiswa.setLayoutManager(new LinearLayoutManager(this));
-        AdapaterCard colokanCard = new AdapaterCard(data);
+        AdapterCard colokanCard = new AdapterCard(data);
         rvMahasiswa.setAdapter(colokanCard);
 
-        colokanCard.setOnItemClickCallBack(new AdapaterCard.OnItemClickCallBack() {
+        colokanCard.setOnItemClickCallBack(new AdapterCard.OnItemClickCallBack() {
             @Override
             public void onItemClicked(ModelMahasiswa data) {
                 Intent pindah = new Intent(ListSeminar.this, DetailActivity.class);
