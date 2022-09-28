@@ -32,6 +32,7 @@
         android:background="@color/white"
         android:backgroundTint="@color/primary_color"
         android:fontFamily="@font/poppinsmedium"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:textColor="#616161"
         android:textSize="15sp"
@@ -46,6 +47,7 @@
         android:layout_marginEnd="70dp"
         android:layout_marginBottom="20dp"
         android:background="@color/white"
+        android:autofillHints=""
         android:backgroundTint="@color/primary_color"
         android:fontFamily="@font/poppinsmedium"
         android:inputType="textPersonName"
@@ -69,6 +71,7 @@
         android:textSize="15sp" />
 
     <TextView
+        android:labelFor="@id/edit_ttl"
         android:id="@+id/view_ttl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -109,7 +112,8 @@
         android:layout_marginTop="575dp"
         android:background="@drawable/button_shape"
         android:onClick="onClickSimpan"
-        android:text="@string/simpan" />
+        android:text="@string/simpan"
+        tools:ignore="UsingOnClickInXml" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_menu"

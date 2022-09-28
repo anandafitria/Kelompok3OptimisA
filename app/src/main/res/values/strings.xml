@@ -35,4 +35,5 @@
     <string name="alamat">Alamat</string>
     <string name="tempat_tanggal_lahir">Tempat/Tanggal Lahir</string>
     <string name="nama_mahasiswa">Nama Mahasiswa :</string>
+    <string name="keterangan_dashboard">Mahasiswa Bimbingan</string>
 </resources>
