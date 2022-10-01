@@ -66,8 +66,8 @@ public class ListLogbook extends AppCompatActivity {
             @Override
             public void onItemClicked(ModelLogbook data2) {
                 Intent pindah = new Intent(ListLogbook.this, DetailLogbook.class);
-                pindah.putExtra("xNama", data2.getNamaLogbook());
-                pindah.putExtra("xNIM", data2.getNimLogbook());
+                pindah.putExtra("xNamaLogbook", data2.getNamaLogbook());
+                pindah.putExtra("xNIMLogbook", data2.getNimLogbook());
                 startActivity(pindah);
             }
         });

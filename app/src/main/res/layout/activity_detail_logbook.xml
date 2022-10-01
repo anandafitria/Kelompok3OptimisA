@@ -1,41 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/secondary_color"
     tools:context=".DetailLogbook">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Laporan Kegiatan Kerja Praktek"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.099"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/show_namalogbook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="225dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="Nama                                     :"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/show_nimlogbook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="251dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="NIM                                           :"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="6dp"
         android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/iv_fotologbook"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher" />
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/upper_navigation_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/tv_namalogbook"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ananda Fitria"
-        android:padding="6dp"
-        style="@style/TextAppearance.AppCompat.Large"/>
 
-    <TextView
-        android:id="@+id/tv_nimlogbook"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="2011522014"
-        android:padding="6dp"
-        style="@style/TextAppearance.AppCompat.Medium"
-        android:justificationMode="inter_word"/>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppinssemibold"
+                android:paddingTop="15dp"
+                android:text="@string/kp_main"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="37dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/primary_color"
+                android:contentDescription="@string/btn_back"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new" />
+
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+        <ImageView
+            android:id="@+id/iv_fotologbook"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:layout_marginTop="64dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_namalogbook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Nama Mahasiswa"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_nimlogbook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="NIM"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
 
     </LinearLayout>
 
-</ScrollView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/primary_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_home"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@color/primary_color"
+                android:contentDescription="@string/btn_home"
+                app:srcCompat="@drawable/ic_baseline_home" />
+
+            <ImageButton
+                android:id="@+id/btn_logbook"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/primary_color"
+                android:contentDescription="@string/btn_logbook"
+                android:minHeight="48dp"
+                app:srcCompat="@drawable/ic_baseline_calendar_today" />
+
+            <ImageButton
+                android:id="@+id/btn_seminar"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@color/primary_color"
+                android:contentDescription="@string/btn_seminar"
+                app:srcCompat="@drawable/ic_baseline_add_task" />
+
+            <ImageButton
+                android:id="@+id/btn_profil"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/primary_color"
+                android:contentDescription="@string/btn_profil"
+                app:srcCompat="@drawable/ic_baseline_person" />
+        </LinearLayout>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+
+</RelativeLayout>
+
