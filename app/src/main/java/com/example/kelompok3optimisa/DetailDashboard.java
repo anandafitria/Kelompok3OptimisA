@@ -4,14 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import java.util.Random;
 
 public class DetailDashboard extends AppCompatActivity {
 
     private TextView NamaMain, NimMain;
     private String yNamaMain, yNimMain;
     ImageButton BtnHome, BtnListLogbook, BtnListSeminar, BtnProfil, BtnBack;
+    Button BtnLogbookKP, BtnNilaiKP, BtnSeminarKP, BtnPembatalanKP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +28,10 @@ public class DetailDashboard extends AppCompatActivity {
         BtnListSeminar = findViewById(R.id.btn_seminar);
         BtnProfil = findViewById(R.id.btn_profil);
         BtnBack = findViewById(R.id.btn_back);
+        BtnLogbookKP = findViewById(R.id.btn_logbookkp);
+        BtnNilaiKP = findViewById(R.id.btn_nilaikp);
+        BtnSeminarKP = findViewById(R.id.btn_seminarkp);
+        BtnPembatalanKP = findViewById(R.id.btn_pembatalankp);
 
         BtnHome.setOnClickListener(view -> {
             Intent home = new Intent(DetailDashboard.this, MainActivity.class);
@@ -47,6 +56,21 @@ public class DetailDashboard extends AppCompatActivity {
         BtnBack.setOnClickListener(view -> {
             Intent back = new Intent(DetailDashboard.this, MainActivity.class);
             startActivity(back);
+        });
+
+        BtnLogbookKP.setOnClickListener(view -> {
+            Intent detaillogbook = new Intent(DetailDashboard.this, DetailLogbook.class);
+            startActivity(detaillogbook);
+        });
+
+        BtnNilaiKP.setOnClickListener(view ->  {
+            Intent nilaikp = new Intent(DetailDashboard.this, InputNilai.class);
+            startActivity(nilaikp);
+        });
+
+        BtnSeminarKP.setOnClickListener(view -> {
+            Intent detailseminar = new Intent(DetailDashboard.this, DetailActivity.class);
+            startActivity(detailseminar);
         });
 
         initView();
