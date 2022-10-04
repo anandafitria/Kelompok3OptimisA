@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -86,5 +87,10 @@ public class DetailDashboard extends AppCompatActivity {
     private void initView() {
         NamaMain = findViewById(R.id.tv_namamain);
         NimMain = findViewById(R.id.tv_nimmain);
+    }
+
+
+    public void setBtnPembatalanKPOnClick(View view) {
+        Toast.makeText(DetailDashboard.this, "Berhasil Dibatalkan", Toast.LENGTH_SHORT).show();
     }
 }
