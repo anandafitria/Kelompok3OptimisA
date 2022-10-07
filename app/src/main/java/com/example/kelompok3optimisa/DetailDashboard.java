@@ -68,6 +68,10 @@ public class DetailDashboard extends AppCompatActivity {
             startActivity(detailseminar);
         });
 
+        BtnPembatalanKP.setOnClickListener(view -> {
+            Toast.makeText(this, "Berhasil Dibatalkan", Toast.LENGTH_SHORT).show();
+        });
+
         initView();
 
         Intent terima = getIntent();
@@ -84,7 +88,7 @@ public class DetailDashboard extends AppCompatActivity {
     }
 
 
-    public void setBtnPembatalanKPOnClick(View view) {
-        Toast.makeText(DetailDashboard.this, "Berhasil Dibatalkan", Toast.LENGTH_SHORT).show();
-    }
+//    public void setBtnPembatalanKPOnClick(View view) {
+//        Toast.makeText(DetailDashboard.this, "Berhasil Dibatalkan", Toast.LENGTH_SHORT).show();
+//    }
 }
