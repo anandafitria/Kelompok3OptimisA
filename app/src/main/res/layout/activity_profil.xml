@@ -144,7 +144,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/primary_color"
-                android:contentDescription="@string/btn_logbook"
+                android:contentDescription="list logbook"
                 android:minHeight="48dp"
                 app:srcCompat="@drawable/ic_baseline_calendar_today" />
 
