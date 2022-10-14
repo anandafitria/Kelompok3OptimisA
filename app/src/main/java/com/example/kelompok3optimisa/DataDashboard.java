@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 public class DataDashboard {
     public static String[][] data3 = new String[][]{
-            {"https://upload.wikimedia.org/wikipedia/common/8/87/Ahmad_Dahlan.jpg", "Ananda Fitria", "2011522014", "Padang, 13-12-2001", "Jln. Situjuh II No.10", "PT. Gojek Indonesia"},
-            {"https://upload.wikimedia.org/wikipedia/common/8/87/Ahmad_Dahlan.jpg", "Siti Nur Aisah", "2011521018", "Padang, 13-12-2001", "Jln. Situjuh II No.10", "PT. Gojek Indonesia"},
-            {"https://upload.wikimedia.org/wikipedia/common/8/87/Ahmad_Dahlan.jpg", "Daeng Febrino", "2011522014", "Padang, 13-12-2001", "Jln. Situjuh II No.10", "PT. Gojek Indonesia"},
+            {"https://upload.wikimedia.org/wikipedia/common/8/87/Ahmad_Dahlan.jpg", "Ananda Fitria", "2011522014", "Padang, 13-12-2001", "Jln. Situjuh II No.10", "PT. Shopee Indonesia"},
+            {"https://upload.wikimedia.org/wikipedia/common/8/87/Ahmad_Dahlan.jpg", "Siti Nur Aisah", "2011521018", "Padang, 13-12-2001", "Jln. Situjuh II No.10", "PT. Shopee Indonesia"},
+            {"https://upload.wikimedia.org/wikipedia/common/8/87/Ahmad_Dahlan.jpg", "Daeng Febrino", "2011522014", "Padang, 13-12-2001", "Jln. Situjuh II No.10", "PT. Shopee Indonesia"},
     };
 
     public static ArrayList<ModelDashboard> ambilDataDashboard() {
