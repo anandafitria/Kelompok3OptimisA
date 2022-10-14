@@ -8,15 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
 public class DetailDashboard extends AppCompatActivity {
-
-    private TextView NamaMain, NimMain, TtlMain, AlamatMain, LokasiKPMain;
-    private String yNamaMain, yNimMain, yTtlMain, yAlamatMain, yLokasiKPMain;
-    ImageButton BtnHome, BtnListLogbook, BtnListSeminar, BtnProfil, BtnBack;
-    Button BtnLogbookKP, BtnNilaiKP, BtnSeminarKP, BtnPembatalanKP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +20,10 @@ public class DetailDashboard extends AppCompatActivity {
         setContentView(R.layout.activity_detail_dashboard);
 
         BtnHome = findViewById(R.id.btn_home);
-        BtnListLogbook = findViewById(R.id.btn_logbook);
         BtnListSeminar = findViewById(R.id.btn_seminar);
         BtnProfil = findViewById(R.id.btn_profil);
         BtnBack = findViewById(R.id.btn_back);
-        BtnLogbookKP = findViewById(R.id.btn_logbookkp);
+        BtnListLogbook = findViewById(R.id.btn_logbookkp);
         BtnNilaiKP = findViewById(R.id.btn_nilaikp);
         BtnSeminarKP = findViewById(R.id.btn_seminarkp);
         BtnPembatalanKP = findViewById(R.id.btn_pembatalankp);
@@ -36,11 +31,6 @@ public class DetailDashboard extends AppCompatActivity {
         BtnHome.setOnClickListener(view -> {
             Intent home = new Intent(DetailDashboard.this, MainActivity.class);
             startActivity(home);
-        });
-
-        BtnListLogbook.setOnClickListener(view -> {
-            Intent listlogbook = new Intent(DetailDashboard.this, ListLogbook.class);
-            startActivity(listlogbook);
         });
 
         BtnListSeminar.setOnClickListener(view -> {
@@ -58,12 +48,12 @@ public class DetailDashboard extends AppCompatActivity {
             startActivity(back);
         });
 
-        BtnLogbookKP.setOnClickListener(view -> {
-            Intent detaillogbook = new Intent(DetailDashboard.this, DetailLogbook.class);
-            startActivity(detaillogbook);
+        BtnListLogbook.setOnClickListener(view -> {
+            Intent listlogbook = new Intent(DetailDashboard.this, ListLogbook.class);
+            startActivity(listlogbook);
         });
 
-        BtnNilaiKP.setOnClickListener(view ->  {
+        BtnNilaiKP.setOnClickListener(view -> {
             Intent nilaikp = new Intent(DetailDashboard.this, InputNilai.class);
             startActivity(nilaikp);
         });
@@ -71,6 +61,10 @@ public class DetailDashboard extends AppCompatActivity {
         BtnSeminarKP.setOnClickListener(view -> {
             Intent detailseminar = new Intent(DetailDashboard.this, DetailActivity.class);
             startActivity(detailseminar);
+        });
+
+        BtnPembatalanKP.setOnClickListener(view -> {
+            Toast.makeText(this, "Berhasil Dibatalkan", Toast.LENGTH_SHORT).show();
         });
 
         initView();
@@ -96,4 +90,9 @@ public class DetailDashboard extends AppCompatActivity {
         AlamatMain = findViewById(R.id.tv_alamatmain);
         LokasiKPMain = findViewById(R.id.tv_lokasikpmain);
     }
+
+
+//    public void setBtnPembatalanKPOnClick(View view) {
+//        Toast.makeText(DetailDashboard.this, "Berhasil Dibatalkan", Toast.LENGTH_SHORT).show();
+//    }
 }
