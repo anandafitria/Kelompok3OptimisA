@@ -13,8 +13,8 @@ import java.util.Random;
 
 public class DetailDashboard extends AppCompatActivity {
 
-    private TextView NamaMain, NimMain;
-    private String yNamaMain, yNimMain;
+    private TextView NamaMain, NimMain, TtlMain, AlamatMain, LokasiKPMain;
+    private String yNamaMain, yNimMain, yTtlMain, yAlamatMain, yLokasiKPMain;
     ImageButton BtnHome, BtnListLogbook, BtnListSeminar, BtnProfil, BtnBack;
     Button BtnLogbookKP, BtnNilaiKP, BtnSeminarKP, BtnPembatalanKP;
 
@@ -78,13 +78,22 @@ public class DetailDashboard extends AppCompatActivity {
         Intent terima = getIntent();
         yNamaMain = terima.getStringExtra("xNamaMain");
         yNimMain = terima.getStringExtra("xNimMain");
+        yTtlMain = terima.getStringExtra("xTtlMain");
+        yAlamatMain = terima.getStringExtra("xAlamatMain");
+        yLokasiKPMain = terima.getStringExtra("xLokasiKPMain");
 
         NamaMain.setText(yNamaMain);
         NimMain.setText(yNimMain);
+        TtlMain.setText(yTtlMain);
+        AlamatMain.setText(yAlamatMain);
+        LokasiKPMain.setText(yLokasiKPMain);
     }
 
     private void initView() {
         NamaMain = findViewById(R.id.tv_namamain);
         NimMain = findViewById(R.id.tv_nimmain);
+        TtlMain = findViewById(R.id.tv_ttlmain);
+        AlamatMain = findViewById(R.id.tv_alamatmain);
+        LokasiKPMain = findViewById(R.id.tv_lokasikpmain);
     }
 }

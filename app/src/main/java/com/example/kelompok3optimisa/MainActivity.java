@@ -68,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent pindah = new Intent(MainActivity.this, DetailDashboard.class);
                 pindah.putExtra("xNamaMain", data3.getNamaMain());
                 pindah.putExtra("xNimMain", data3.getNimMain());
+                pindah.putExtra("xTtlMain", data3.getTtlMain());
+                pindah.putExtra("xAlamatMain", data3.getAlamatMain());
+                pindah.putExtra("xLokasiKPMain", data3.getLokasiKPMain());
                 startActivity(pindah);
             }
         });

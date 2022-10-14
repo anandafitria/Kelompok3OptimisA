@@ -17,6 +17,7 @@
             android:fontFamily="@font/poppinsbold"
             android:justificationMode="inter_word"
             android:text="@string/nama_mahasiswa"
+            android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
         <TextView
@@ -26,6 +27,7 @@
             android:layout_below="@id/tv_namamain"
             android:justificationMode="inter_word"
             android:text="NIM"
+            android:textColor="@color/black"
             android:fontFamily="@font/poppinsbold"
             android:textStyle="bold"
             android:textSize="14sp"
