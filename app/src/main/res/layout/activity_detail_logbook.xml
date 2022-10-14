@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:fontFamily="@font/poppinsbold"
-        android:text="Laporan Kegiatan Kerja Praktek"
+        android:text="LOGBOOK KP "
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20dp"
@@ -29,11 +29,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="100dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="120dp"
         android:layout_marginTop="225dp"
         android:fontFamily="@font/poppinssemibold"
-        android:text="Nama                                     :"
+        android:text="Nama         :"
         android:textColor="@color/black"
         android:textSize="15sp" />
 
@@ -42,18 +42,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="80dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="251dp"
         android:fontFamily="@font/poppinssemibold"
-        android:text="NIM                                           :"
+        android:text="NIM              :"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/show_instansi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="280dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="Instansi     :"
         android:textColor="@color/black"
         android:textSize="15sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
         android:orientation="vertical">
+
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/upper_navigation_menu"
@@ -98,10 +120,10 @@
             android:id="@+id/tv_namalogbook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="200dp"
+            android:layout_marginLeft="180dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppinsmedium"
-            android:text="Nama Mahasiswa"
+            android:text="Ananda Fitria"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
@@ -109,11 +131,107 @@
             android:id="@+id/tv_nimlogbook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="200dp"
+            android:layout_marginLeft="180dp"
             android:fontFamily="@font/poppinsmedium"
-            android:text="NIM"
+            android:text="2011522014"
             android:textColor="@color/black"
             android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_instansi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="180dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="PT Shopee Indonesia"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="318dp"
+            android:layout_height="293dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="45dp"
+            android:layout_marginLeft="190dp"
+            android:layout_marginEnd="45dp"
+            android:background="@drawable/bg_base"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.535">
+
+
+            <TextView
+                android:id="@+id/tv_tanggal"
+                android:layout_width="209dp"
+                android:layout_height="136dp"
+                android:fontFamily="@font/poppinsextra"
+                android:text="10 Oktober 2022"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.233" />
+
+            <TextView
+                android:id="@+id/tv_tanggal1"
+                android:layout_width="209dp"
+                android:layout_height="136dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Menentukan Aplikasi untuk penjualan yang akan dibuat"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.233" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="209dp"
+                android:layout_height="136dp"
+                android:layout_marginTop="150dp"
+                android:fontFamily="@font/poppinsextra"
+                android:text="11 Oktober 2022"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.233" />
+
+            <TextView
+                android:id="@+id/tv_tanggal2"
+                android:layout_width="209dp"
+                android:layout_height="136dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="190dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Membuat Rancangan UI Aolikasi Penjualan"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.233" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </LinearLayout>
 

@@ -43,8 +43,8 @@ public class BeritaAcaraKP extends AppCompatActivity {
         BtnListLogbook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent list_logbook = new Intent(BeritaAcaraKP.this, ListLogbook.class);
-                startActivity(list_logbook);
+                Intent detaillogbook = new Intent(BeritaAcaraKP.this, DetailLogbook.class);
+                startActivity(detaillogbook);
             }
         });
 
