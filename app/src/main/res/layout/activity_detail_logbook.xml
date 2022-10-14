@@ -150,8 +150,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
-            android:layout_width="318dp"
-            android:layout_height="293dp"
+            android:layout_width="293dp"
+            android:layout_height="225dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="45dp"
@@ -233,6 +233,14 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:background="@drawable/bg_button_kuning"
+            android:text="Response" />
+
 
     </LinearLayout>
 
@@ -285,6 +293,8 @@
                 android:background="@color/primary_color"
                 android:contentDescription="@string/btn_profil"
                 app:srcCompat="@drawable/ic_baseline_person" />
+
+
         </LinearLayout>
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
