@@ -58,13 +58,16 @@ public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.Dash
 
     public class DashboardViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvNamaMain,tvNimMain;
+        TextView tvNamaMain,tvNimMain, tvTtlMain, tvAlamatMain, tvLokasiKPMain;
 
         public DashboardViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvNamaMain = itemView.findViewById(R.id.tv_namamain);
             tvNimMain = itemView.findViewById(R.id.tv_nimmain);
+            tvTtlMain = itemView.findViewById(R.id.tv_ttlmain);
+            tvAlamatMain = itemView.findViewById(R.id.tv_alamatmain);
+            tvLokasiKPMain = itemView.findViewById(R.id.tv_lokasikpmain);
         }
     }
 }
