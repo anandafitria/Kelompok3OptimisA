@@ -17,7 +17,7 @@ public class DetailDashboard extends AppCompatActivity {
     private TextView NamaMain, NimMain;
     private String yNamaMain, yNimMain;
     ImageButton BtnHome, BtnListSeminar, BtnProfil, BtnBack;
-    Button BtnLogbookKP, BtnNilaiKP, BtnSeminarKP, BtnPembatalanKP;
+    Button BtnListLogbook, BtnNilaiKP, BtnSeminarKP, BtnPembatalanKP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class DetailDashboard extends AppCompatActivity {
         BtnListSeminar = findViewById(R.id.btn_seminar);
         BtnProfil = findViewById(R.id.btn_profil);
         BtnBack = findViewById(R.id.btn_back);
-        BtnLogbookKP = findViewById(R.id.btn_logbookkp);
+        BtnListLogbook = findViewById(R.id.btn_logbookkp);
         BtnNilaiKP = findViewById(R.id.btn_nilaikp);
         BtnSeminarKP = findViewById(R.id.btn_seminarkp);
         BtnPembatalanKP = findViewById(R.id.btn_pembatalankp);
@@ -53,12 +53,12 @@ public class DetailDashboard extends AppCompatActivity {
             startActivity(back);
         });
 
-        BtnLogbookKP.setOnClickListener(view -> {
+        BtnListLogbook.setOnClickListener(view -> {
             Intent listlogbook = new Intent(DetailDashboard.this, ListLogbook.class);
             startActivity(listlogbook);
         });
 
-        BtnNilaiKP.setOnClickListener(view ->  {
+        BtnNilaiKP.setOnClickListener(view -> {
             Intent nilaikp = new Intent(DetailDashboard.this, InputNilai.class);
             startActivity(nilaikp);
         });
