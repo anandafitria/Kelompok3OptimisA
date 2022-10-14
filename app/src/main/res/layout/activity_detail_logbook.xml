@@ -142,6 +142,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="180dp"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/poppinsmedium"
             android:text="PT Shopee Indonesia"
             android:textColor="@color/black"

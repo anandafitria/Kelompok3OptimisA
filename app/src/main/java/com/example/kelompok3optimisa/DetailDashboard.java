@@ -14,6 +14,11 @@ import java.util.Random;
 
 public class DetailDashboard extends AppCompatActivity {
 
+    private TextView NamaMain, NimMain, TtlMain, AlamatMain, LokasiKPMain;
+    private String yNamaMain, yNimMain, yTtlMain, yAlamatMain, yLokasiKPMain;
+    ImageButton BtnHome, BtnListSeminar, BtnProfil, BtnBack, BtnListLogbook;
+    Button BtnLogbookKP, BtnNilaiKP, BtnSeminarKP,BtnPembatalanKP;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,10 +28,11 @@ public class DetailDashboard extends AppCompatActivity {
         BtnListSeminar = findViewById(R.id.btn_seminar);
         BtnProfil = findViewById(R.id.btn_profil);
         BtnBack = findViewById(R.id.btn_back);
-        BtnListLogbook = findViewById(R.id.btn_logbookkp);
+        BtnListLogbook = findViewById(R.id.btn_logbook);
         BtnNilaiKP = findViewById(R.id.btn_nilaikp);
         BtnSeminarKP = findViewById(R.id.btn_seminarkp);
         BtnPembatalanKP = findViewById(R.id.btn_pembatalankp);
+        BtnLogbookKP = findViewById(R.id.btn_logbookkp);
 
         BtnHome.setOnClickListener(view -> {
             Intent home = new Intent(DetailDashboard.this, MainActivity.class);
@@ -45,6 +51,11 @@ public class DetailDashboard extends AppCompatActivity {
 
         BtnBack.setOnClickListener(view -> {
             Intent back = new Intent(DetailDashboard.this, MainActivity.class);
+            startActivity(back);
+        });
+
+        BtnLogbookKP.setOnClickListener(view -> {
+            Intent back = new Intent(DetailDashboard.this, DetailLogbook.class);
             startActivity(back);
         });
 
