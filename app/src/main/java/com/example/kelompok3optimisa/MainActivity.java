@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements  AdapterDashboard.DashboardClickListener{
+public class MainActivity extends AppCompatActivity implements AdapterDashboard.DashboardClickListener{
 
     private RecyclerView rvDashboard;
-    private ArrayList<ModelDashboard> data3 = new ArrayList<>();
+    private ArrayList<ModelDashboard> dataDashboard = new ArrayList<>();
     ImageButton BtnListLogbook, BtnListSeminar, BtnProfil;
 
     @Override

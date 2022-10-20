@@ -1,6 +1,5 @@
 package com.example.kelompok3optimisa;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,19 +13,19 @@ import java.util.ArrayList;
 
 public class AdapterLogbook extends RecyclerView.Adapter<AdapterLogbook.LogbookViewHolder> {
 
-    private ArrayList<ModelLogbook> dataLogbook;
+    ArrayList<ModelLogbook> dataLogbook = new ArrayList<>();
+    LogbookClickListener listener;
 
     public AdapterLogbook(ArrayList<ModelLogbook> dataLogbook) {
         this.dataLogbook = dataLogbook;
     }
 
-    public interface OnItemClickCallBack {
-        void onItemClicked(ModelLogbook data2);
+    public void setDataLogbook(ArrayList<ModelLogbook> dataLogbook) {
+        this.dataLogbook = dataLogbook;
     }
 
-    private AdapterLogbook.OnItemClickCallBack callBack;
-    public void setOnItemClickCallBack (AdapterLogbook.OnItemClickCallBack callBack) {
-        this.callBack = callBack;
+    public void setListener(LogbookClickListener listener) {
+        this.listener = listener;
     }
 
     @NonNull
@@ -40,16 +39,10 @@ public class AdapterLogbook extends RecyclerView.Adapter<AdapterLogbook.LogbookV
     public void onBindViewHolder(@NonNull LogbookViewHolder holder, int position) {
         ModelLogbook logbook = dataLogbook.get(position);
 
+        holder.ivFotoLogbook.setImageResource(logbook.getFotoLogbook());
         holder.tvNamaLogbook.setText(logbook.getNamaLogbook());
         holder.tvNimLogbook.setText(logbook.getNimLogbook());
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                callBack.onItemClicked(dataLogbook.get(holder.getAdapterPosition()));
-            }
-        });
-
+        holder.tvLokasiKPLogbook.setText(logbook.getLokasiKPLogbook());
     }
 
     @Override
@@ -57,14 +50,30 @@ public class AdapterLogbook extends RecyclerView.Adapter<AdapterLogbook.LogbookV
         return dataLogbook.size();
     }
 
-    public class LogbookViewHolder extends RecyclerView.ViewHolder {
+    public interface LogbookClickListener{
+        void onLogbookClick(ModelLogbook logbook);
+    }
 
-        TextView tvNamaLogbook,tvNimLogbook;
+    public class LogbookViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+        public ImageView ivFotoLogbook;
+        public TextView tvNamaLogbook,tvNimLogbook, tvLokasiKPLogbook;
+
         public LogbookViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            ivFotoLogbook = itemView.findViewById(R.id.iv_fotologbook);
             tvNamaLogbook= itemView.findViewById(R.id.tv_namalogbook);
             tvNimLogbook = itemView.findViewById(R.id.tv_nimlogbook);
+            tvLokasiKPLogbook = itemView.findViewById(R.id.tv_lokasikplogbook);
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            ModelLogbook logbook = dataLogbook.get(getAdapterPosition());
+            listener.onLogbookClick(logbook);
         }
     }
 }

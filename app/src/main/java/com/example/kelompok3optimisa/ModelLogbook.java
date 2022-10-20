@@ -1,15 +1,23 @@
 package com.example.kelompok3optimisa;
 
 public class ModelLogbook {
-    private String FotoLogbook;
-    private String NamaLogbook;
-    private String NimLogbook;
+    int FotoLogbook;
+    String NamaLogbook;
+    String NimLogbook;
+    String LokasiKPLogbook;
 
-    public String getFotoLogbook() {
+    public ModelLogbook(int FotoLogbook, String NamaLogbook, String NimLogbook, String LokasiKPLogbook) {
+        this.FotoLogbook = FotoLogbook;
+        this.NamaLogbook = NamaLogbook;
+        this.NimLogbook = NimLogbook;
+        this.LokasiKPLogbook = LokasiKPLogbook;
+    }
+
+    public int getFotoLogbook() {
         return FotoLogbook;
     }
 
-    public void setFotoLogbook(String fotoLogbook) {
+    public void setFotoLogbook(int fotoLogbook) {
         FotoLogbook = fotoLogbook;
     }
 
@@ -27,5 +35,13 @@ public class ModelLogbook {
 
     public void setNimLogbook(String nimLogbook) {
         NimLogbook = nimLogbook;
+    }
+
+    public String getLokasiKPLogbook() {
+        return LokasiKPLogbook;
+    }
+
+    public void setLokasiKPLogbook(String lokasiKPLogbook) {
+        LokasiKPLogbook = lokasiKPLogbook;
     }
 }
