@@ -13,19 +13,19 @@ import java.util.ArrayList;
 
 public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.DashboardViewHolder> {
 
-    private ArrayList<ModelDashboard> dataDashboard;
+    ArrayList<ModelDashboard> dataDashboard = new ArrayList<>();
+    DashboardClickListener listener;
 
     public AdapterDashboard(ArrayList<ModelDashboard> dataDashboard) {
         this.dataDashboard = dataDashboard;
     }
 
-    public interface OnItemClickCallBack {
-        void onItemClicked(ModelDashboard data3);
+    public void setDataDashboard(ArrayList<ModelDashboard> dataDashboard) {
+        this.dataDashboard = dataDashboard;
     }
 
-    private AdapterDashboard.OnItemClickCallBack callBack;
-    public void setOnItemClickCallBack (AdapterDashboard.OnItemClickCallBack callBack) {
-        this.callBack = callBack;
+    public void setListener(DashboardClickListener listener) {
+        this.listener = listener;
     }
 
     @NonNull
@@ -39,15 +39,9 @@ public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.Dash
     public void onBindViewHolder(@NonNull DashboardViewHolder holder, int position) {
         ModelDashboard dashboard = dataDashboard.get(position);
 
+        holder.ivFotoMain.setImageResource(R.drawable.logo_unand);
         holder.tvNamaMain.setText(dashboard.getNamaMain());
         holder.tvNimMain.setText(dashboard.getNimMain());
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                callBack.onItemClicked(dataDashboard.get(holder.getAdapterPosition()));
-            }
-        });
 
     }
 
@@ -56,18 +50,31 @@ public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.Dash
         return dataDashboard.size();
     }
 
-    public class DashboardViewHolder extends RecyclerView.ViewHolder {
+    public interface DashboardClickListener{
+        void onDashboardClick(ModelDashboard dashboard);
+    }
 
-        TextView tvNamaMain,tvNimMain, tvTtlMain, tvAlamatMain, tvLokasiKPMain;
+    public class DashboardViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        public ImageView ivFotoMain;
+        public TextView tvNamaMain, tvNimMain, tvTtlMain, tvAlamatMain, tvLokasiKPMain;
 
-        public DashboardViewHolder(@NonNull View itemView) {
+        public DashboardViewHolder (@NonNull View itemView) {
             super(itemView);
-
+            ivFotoMain = itemView.findViewById(R.id.iv_fotomain);
             tvNamaMain = itemView.findViewById(R.id.tv_namamain);
             tvNimMain = itemView.findViewById(R.id.tv_nimmain);
             tvTtlMain = itemView.findViewById(R.id.tv_ttlmain);
             tvAlamatMain = itemView.findViewById(R.id.tv_alamatmain);
             tvLokasiKPMain = itemView.findViewById(R.id.tv_lokasikpmain);
+
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+            ModelDashboard dashboard = dataDashboard.get(getAdapterPosition());
+            listener.onDashboardClick(dashboard);
+        }
+
     }
 }

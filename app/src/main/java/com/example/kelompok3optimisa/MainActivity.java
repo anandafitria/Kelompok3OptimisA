@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements  AdapterDashboard.DashboardClickListener{
 
     private RecyclerView rvDashboard;
     private ArrayList<ModelDashboard> data3 = new ArrayList<>();
@@ -25,8 +26,12 @@ public class MainActivity extends AppCompatActivity {
         rvDashboard = findViewById(R.id.rv_dashboard);
         rvDashboard.setHasFixedSize(true);
 
-        data3.addAll(DataDashboard.ambilDataDashboard());
-        tampilDataDashboard();
+        AdapterDashboard adapterDashboard = new AdapterDashboard(getDashboard());
+        adapterDashboard.setListener(this);
+        LinearLayoutManager layoutManagerDashboard = new LinearLayoutManager(this);
+
+        rvDashboard.setLayoutManager(layoutManagerDashboard);
+        rvDashboard.setAdapter(adapterDashboard);
 
         BtnListLogbook = findViewById(R.id.btn_logbook);
         BtnListSeminar = findViewById(R.id.btn_seminar);
@@ -57,22 +62,47 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void tampilDataDashboard() {
-        rvDashboard.setLayoutManager(new LinearLayoutManager(this));
-        AdapterDashboard colokanDashboard = new AdapterDashboard(data3);
-        rvDashboard.setAdapter(colokanDashboard);
+    public ArrayList<ModelDashboard> getDashboard() {
+        ArrayList<ModelDashboard> dataDashboard = new ArrayList<>();
 
-        colokanDashboard.setOnItemClickCallBack(new AdapterDashboard.OnItemClickCallBack() {
-            @Override
-            public void onItemClicked(ModelDashboard data3) {
-                Intent pindah = new Intent(MainActivity.this, DetailDashboard.class);
-                pindah.putExtra("xNamaMain", data3.getNamaMain());
-                pindah.putExtra("xNimMain", data3.getNimMain());
-                pindah.putExtra("xTtlMain", data3.getTtlMain());
-                pindah.putExtra("xAlamatMain", data3.getAlamatMain());
-                pindah.putExtra("xLokasiKPMain", data3.getLokasiKPMain());
-                startActivity(pindah);
-            }
-        });
+        dataDashboard.add(new ModelDashboard(
+                null,
+                "Ananda Fitria",
+                "2011522014",
+                "Padang, 13 Desember 2001",
+                "Jalan Situjuh 2 No.10",
+                "PT Semen Padang"
+        ));
+
+        dataDashboard.add(new ModelDashboard(
+                null,
+                "Siti Nur Aisah",
+                "2011521018",
+                "Padang, 16 Oktober 2002",
+                "Jalan Irigasi Pasar Baru",
+                "PT Gojek Indonesia"
+        ));
+
+        dataDashboard.add(new ModelDashboard(
+                null,
+                "Daeng Febrino",
+                "2011521019",
+                "Lubuk Sikaping,8 Maret 2002",
+                "Jalan Bandes Kampung Dalam",
+                "PT Shopee Indonesia"
+        ));
+
+        return dataDashboard;
+    }
+
+    @Override
+    public void onDashboardClick(ModelDashboard dashboard) {
+       Intent detailDashboard = new Intent(this, DetailDashboard.class);
+       detailDashboard.putExtra("Nama", dashboard.getNamaMain());
+       detailDashboard.putExtra("NIM", dashboard.getNimMain());
+       detailDashboard.putExtra("TTL", dashboard.getTtlMain());
+       detailDashboard.putExtra("Alamat", dashboard.getAlamatMain());
+       detailDashboard.putExtra("Lokasi KP", dashboard.getLokasiKPMain());
+       startActivity(detailDashboard);
     }
 }
