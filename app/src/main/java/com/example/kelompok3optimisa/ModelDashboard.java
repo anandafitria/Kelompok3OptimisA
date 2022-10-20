@@ -1,7 +1,7 @@
 package com.example.kelompok3optimisa;
 
 public class ModelDashboard {
-    String FotoMain;
+    int FotoMain;
     String NamaMain;
     String NimMain;
     String TtlMain;
@@ -10,7 +10,7 @@ public class ModelDashboard {
 
     public ModelDashboard() { }
 
-    public ModelDashboard (String FotoMain, String NamaMain, String NimMain, String TtlMain, String AlamatMain, String LokasiKPMain) {
+    public ModelDashboard (int FotoMain, String NamaMain, String NimMain, String TtlMain, String AlamatMain, String LokasiKPMain) {
         this.FotoMain = FotoMain;
         this.NamaMain = NamaMain;
         this.NimMain = NimMain;
@@ -19,11 +19,11 @@ public class ModelDashboard {
         this.LokasiKPMain = LokasiKPMain;
     }
 
-    public String getFotoMain() {
+    public int getFotoMain() {
         return FotoMain;
     }
 
-    public void setFotoMain(String fotoMain) {
+    public void setFotoMain(int fotoMain) {
         FotoMain = fotoMain;
     }
 

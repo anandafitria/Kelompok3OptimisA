@@ -39,7 +39,7 @@ public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.Dash
     public void onBindViewHolder(@NonNull DashboardViewHolder holder, int position) {
         ModelDashboard dashboard = dataDashboard.get(position);
 
-        holder.ivFotoMain.setImageResource(R.drawable.logo_unand);
+        holder.ivFotoMain.setImageResource(dashboard.getFotoMain());
         holder.tvNamaMain.setText(dashboard.getNamaMain());
         holder.tvNimMain.setText(dashboard.getNimMain());
 
