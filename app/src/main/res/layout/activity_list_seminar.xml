@@ -9,11 +9,11 @@
     android:background="@color/secondary_color">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_mahasiswa"
+        android:id="@+id/rv_seminar"
         android:layout_width="match_parent"
         android:layout_height="600dp"
         android:layout_below="@id/textView2"
-        tools:listitem="@layout/card_mahasiswa" />
+        tools:listitem="@layout/card_seminar" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_menu"

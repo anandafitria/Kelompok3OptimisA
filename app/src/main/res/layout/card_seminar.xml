@@ -11,67 +11,67 @@
         android:padding="6dp">
 
         <ImageView
-            android:id="@+id/iv_mhs"
+            android:id="@+id/iv_fotoseminar"
             android:layout_width="100dp"
             android:layout_height="120dp"
             android:scaleType="centerCrop"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
-            android:id="@+id/tv_namamhs"
+            android:id="@+id/tv_namaseminar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/iv_mhs"
+            android:layout_toRightOf="@+id/iv_fotoseminar"
             android:fontFamily="@font/poppinssemibold"
             android:text="Nama"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tv_nimmhs"
+            android:id="@+id/tv_nimseminar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_namamhs"
+            android:layout_below="@id/tv_namaseminar"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/iv_mhs"
+            android:layout_toRightOf="@+id/iv_fotoseminar"
             android:fontFamily="@font/poppinssemibold"
             android:text="NIM"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tv_haritanggal"
+            android:id="@+id/tv_hariseminar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_nimmhs"
+            android:layout_below="@id/tv_nimseminar"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="6dp"
-            android:layout_toRightOf="@+id/iv_mhs"
+            android:layout_toRightOf="@+id/iv_fotoseminar"
             android:fontFamily="@font/poppinsregular"
             android:text="Hari/Tanggal"
             android:textColor="@color/black"
             android:textSize="13sp" />
 
         <TextView
-            android:id="@+id/tv_pukul"
+            android:id="@+id/tv_jamseminar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_haritanggal"
+            android:layout_below="@id/tv_hariseminar"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/iv_mhs"
+            android:layout_toRightOf="@+id/iv_fotoseminar"
             android:fontFamily="@font/poppinsregular"
             android:text="Jam"
             android:textColor="@color/black"
             android:textSize="13sp" />
 
         <TextView
-            android:id="@+id/tv_ruang"
+            android:id="@+id/tv_ruangseminar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_pukul"
+            android:layout_below="@id/tv_jamseminar"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/iv_mhs"
+            android:layout_toRightOf="@+id/iv_fotoseminar"
             android:fontFamily="@font/poppinsregular"
             android:text="Ruangan"
             android:textColor="@color/black"

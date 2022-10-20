@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/secondary_color"
-    tools:context=".DetailActivity">
+    tools:context=".DetailSeminar">
 
     <TextView
         android:id="@+id/textView2"
@@ -214,7 +214,7 @@
             android:id="@+id/tv_nimmain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_namamhs"
+            android:layout_below="@id/tv_namamain"
             android:layout_marginLeft="130dp"
             android:fontFamily="@font/poppinsmedium"
             android:text="NIM"
