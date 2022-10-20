@@ -5,8 +5,113 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".InputNilai"
     android:background="@color/secondary_color">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Input Nilai Seminar Kerja Praktek"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.099"
+        tools:layout_editor_absoluteX="0dp" />
+
+
+    <TextView
+        android:id="@+id/show_namainput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsmedium"
+        android:paddingStart="25dp"
+        android:text="Nama"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.177"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/isinaman"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsmedium"
+        android:paddingStart="115dp"
+        android:text=":"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.177"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/show_niminput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsmedium"
+        android:paddingStart="25dp"
+        android:text="NIM"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.213"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/isinimn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsmedium"
+        android:paddingStart="115dp"
+        android:text=":"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.213"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/show_lokasikpinput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsmedium"
+        android:paddingStart="25dp"
+        android:text="Lokasi KP"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.247"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/lokasikpn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsmedium"
+        android:paddingStart="115dp"
+        android:text=":"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.247"
+        tools:layout_editor_absoluteX="0dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_menu"
@@ -61,365 +166,260 @@
         </LinearLayout>
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppinsbold"
-        android:text="Input Nilai Seminar Kerja Praktek"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <TextView
-        android:id="@+id/txt_kpinput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppinsmedium"
-        android:paddingStart="15dp"
-        android:text="Nama Perusahaan"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.247"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <TextView
-        android:id="@+id/txt_alamatkpinput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppinsmedium"
-        android:paddingStart="15dp"
-        android:text="Alamat Perusahaan"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.281"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <TextView
-        android:id="@+id/txt_namamhsinput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppinsmedium"
-        android:paddingStart="15dp"
-        android:text="Nama"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.177"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <TextView
-        android:id="@+id/txt_nimmhsinput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppinsmedium"
-        android:paddingStart="15dp"
-        android:text="NIM"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.213"
-        tools:layout_editor_absoluteX="16dp" />
-
-
-    <EditText
-        android:id="@+id/view_namainput"
-        android:layout_width="208dp"
-        android:layout_height="21dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/white"
-        android:fontFamily="@font/poppinsmedium"
-        android:paddingLeft="5dp"
-        android:paddingTop="5dp"
-        android:text="Ananda Fitria"
-        android:textColor="@color/black"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_namamhsinput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txt_namamhsinput"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <EditText
-        android:id="@+id/view_niminput"
-        android:layout_width="208dp"
-        android:layout_height="21dp"
-        android:background="@color/white"
-        android:fontFamily="@font/poppinsmedium"
-        android:paddingLeft="5dp"
-        android:paddingTop="5dp"
-        android:text="2011522014"
-        android:textColor="@color/black"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_kpinput"
-        app:layout_constraintEnd_toEndOf="@+id/txt_nimmhsinput"
-        app:layout_constraintHorizontal_bias="0.921"
-        app:layout_constraintStart_toStartOf="@+id/txt_nimmhsinput"
-        app:layout_constraintTop_toBottomOf="@+id/txt_namamhsinput"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <EditText
-        android:id="@+id/view_ptinput"
-        android:layout_width="208dp"
-        android:layout_height="21dp"
-        android:background="@color/white"
-        android:fontFamily="@font/poppinsmedium"
-        android:paddingLeft="5dp"
-        android:paddingTop="5dp"
-        android:text="PT. Shopee Indonesia"
-        android:textColor="@color/black"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_kpinput"
-        app:layout_constraintEnd_toEndOf="@+id/txt_kpinput"
-        app:layout_constraintHorizontal_bias="0.921"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txt_kpinput"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <EditText
-        android:id="@+id/view_alamatinput"
-        android:layout_width="208dp"
-        android:layout_height="21dp"
-        android:background="@color/white"
-        android:fontFamily="@font/poppinsmedium"
-        android:paddingLeft="5dp"
-        android:paddingTop="5dp"
-        android:text="Jalan Sudirman Blok A No.45-46"
-        android:textColor="@color/black"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_alamatkpinput"
-        app:layout_constraintEnd_toEndOf="@+id/txt_alamatkpinput"
-        app:layout_constraintHorizontal_bias="0.921"
-        app:layout_constraintStart_toStartOf="@+id/txt_alamatkpinput"
-        app:layout_constraintTop_toBottomOf="@+id/view_ptinput"
-        app:layout_constraintVertical_bias="0.4"
-        tools:ignore="TouchTargetSizeCheck" />
-
     <EditText
         android:id="@+id/inputnilai1"
         android:layout_width="31dp"
         android:layout_height="32dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="40dp"
         android:background="@color/white"
         android:fontFamily="@font/poppinsmedium"
         android:paddingTop="5dp"
         android:text="A"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_alamatkpinput"
-        tools:ignore="TouchTargetSizeCheck"
-        android:textAlignment="center"/>
+        app:layout_constraintTop_toBottomOf="@+id/show_lokasikpinput"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/inputnilai2"
         android:layout_width="31dp"
         android:layout_height="32dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="40dp"
         android:background="@color/white"
         android:fontFamily="@font/poppinsmedium"
         android:paddingTop="5dp"
         android:text="A"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputnilai1"
-        tools:ignore="TouchTargetSizeCheck"
-        android:textAlignment="center"/>
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/inputnilai3"
         android:layout_width="31dp"
         android:layout_height="32dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="40dp"
         android:background="@color/white"
         android:fontFamily="@font/poppinsmedium"
         android:paddingTop="5dp"
         android:text="A"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputnilai2"
-        tools:ignore="TouchTargetSizeCheck"
-        android:textAlignment="center"/>
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/inputnilai4"
         android:layout_width="31dp"
         android:layout_height="32dp"
         android:layout_marginTop="21dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="40dp"
         android:background="@color/white"
         android:fontFamily="@font/poppinsmedium"
         android:paddingTop="5dp"
         android:text="A"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputnilai3"
-        tools:ignore="TouchTargetSizeCheck"
-        android:textAlignment="center" />
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/inputnilai5"
         android:layout_width="31dp"
         android:layout_height="32dp"
         android:layout_marginTop="23dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="40dp"
         android:background="@color/white"
         android:fontFamily="@font/poppinsmedium"
         android:paddingTop="5dp"
         android:text="A"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputnilai4"
-        tools:ignore="TouchTargetSizeCheck"
-        android:textAlignment="center"/>
+        tools:ignore="TouchTargetSizeCheck" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/upper_navigation_menu"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/primary_color"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-
-        <ImageButton
-            android:id="@+id/btn_back"
-            android:layout_width="37dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/upper_navigation_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:background="@color/primary_color"
-            android:contentDescription="@string/btn_back"
-            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppinssemibold"
+                android:paddingTop="15dp"
+                android:text="@string/kp_main"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="37dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/primary_color"
+                android:contentDescription="@string/btn_back"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new" />
+
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv_namamain"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textAlignment="center"
-            android:paddingTop="13dp"
-            android:fontFamily="@font/poppinssemibold"
-            android:text="Kerja Praktek Monitoring"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="135dp"
+            android:layout_marginTop="70dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Nama Mahasiswa"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        <TextView
+            android:id="@+id/tv_nimmain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_namamain"
+            android:layout_marginLeft="135dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="NIM"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_lokasikpmain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_nimmain"
+            android:layout_marginLeft="135dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Hari/Tanggal"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+
+        <Button
+            android:id="@+id/btn_editnilai"
+            android:layout_width="98dp"
+            android:layout_height="46dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="320dp"
+            android:layout_marginStart="20dp"
+            android:width="200dp"
+            android:background="@drawable/button_caution"
+            android:fontFamily="@font/poppinssemibold"
+            android:paddingTop="5dp"
+            android:text="EDIT"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation_menu"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_seminarkp"
+            android:layout_width="98dp"
+            android:layout_height="46dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:width="200dp"
+            android:background="@drawable/button_save"
+            android:fontFamily="@font/poppinssemibold"
+            android:paddingTop="5dp"
+            android:text="SIMPAN"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation_menu"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </LinearLayout>
 
     <EditText
-        android:id="@+id/view_kualitaskerja"
+        android:id="@+id/nilai1"
         android:layout_width="262dp"
         android:layout_height="53dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="17dp"
+        android:layout_marginTop="30dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Kualitas Kerja"
         app:layout_constraintEnd_toStartOf="@+id/inputnilai1"
-        app:layout_constraintTop_toBottomOf="@+id/txt_alamatkpinput" />
+        app:layout_constraintHorizontal_bias="0.74"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/show_lokasikpinput" />
 
     <EditText
-        android:id="@+id/view_inisiatifmotivasi"
+        android:id="@+id/nilai2"
         android:layout_width="262dp"
         android:layout_height="53dp"
-        android:layout_marginEnd="18dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Inisiatif dan Motivasi"
         app:layout_constraintEnd_toStartOf="@+id/inputnilai2"
-        app:layout_constraintTop_toBottomOf="@+id/view_kualitaskerja" />
+        app:layout_constraintHorizontal_bias="0.734"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nilai1" />
 
     <EditText
-        android:id="@+id/view_kemampuankerja"
+        android:id="@+id/nilai3"
         android:layout_width="262dp"
         android:layout_height="53dp"
-        android:layout_marginEnd="17dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Kemampuan Kerja"
         app:layout_constraintEnd_toStartOf="@+id/inputnilai3"
-        app:layout_constraintTop_toBottomOf="@+id/view_inisiatifmotivasi" />
+        app:layout_constraintHorizontal_bias="0.734"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nilai2" />
 
     <EditText
-        android:id="@+id/view_kepribadian"
+        android:id="@+id/nilai4"
         android:layout_width="262dp"
         android:layout_height="53dp"
-        android:layout_marginEnd="98dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Kepribadian"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_kemampuankerja" />
+        app:layout_constraintEnd_toStartOf="@+id/inputnilai4"
+        app:layout_constraintHorizontal_bias="0.734"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nilai3" />
 
     <EditText
-        android:id="@+id/view_disiplin"
+        android:id="@+id/nilai5"
         android:layout_width="262dp"
         android:layout_height="53dp"
-        android:layout_marginEnd="17dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Disiplin"
         app:layout_constraintEnd_toStartOf="@+id/inputnilai5"
-        app:layout_constraintTop_toBottomOf="@+id/view_kepribadian" />
-
-    <Button
-        android:id="@+id/btn_seminarkp2"
-        android:layout_width="98dp"
-        android:layout_height="46dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="136dp"
-        android:width="200dp"
-        android:background="@drawable/button_caution"
-        android:fontFamily="@font/poppinssemibold"
-        android:paddingTop="5dp"
-        android:text="EDIT"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation_menu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.325"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_seminarkp"
-        android:layout_width="98dp"
-        android:layout_height="46dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="136dp"
-        android:width="200dp"
-        android:background="@drawable/button_save"
-        android:fontFamily="@font/poppinssemibold"
-        android:paddingTop="5dp"
-        android:text="SIMPAN"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation_menu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.69"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.734"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nilai4" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

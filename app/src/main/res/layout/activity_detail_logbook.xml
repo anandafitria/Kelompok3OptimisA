@@ -281,9 +281,9 @@
             android:id="@+id/btn_response"
             android:layout_width="120dp"
             android:layout_height="50dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="200dp"
             android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="25dp"
             android:background="@drawable/button_caution"
             android:fontFamily="@font/poppinssemibold"
             android:paddingTop="10dp"
@@ -358,4 +358,3 @@
 
 
 </RelativeLayout>
-
