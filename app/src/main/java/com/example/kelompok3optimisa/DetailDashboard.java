@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,7 +16,9 @@ import java.util.Random;
 public class DetailDashboard extends AppCompatActivity {
 
     String NamaMain,NimMain, TtlMain, AlamatMain, LokasiKPMain;
-    TextView tvNamaMain, tvNimMain, tvTtlMain, tvAlamatMain, tvLokasiKPMain;;
+    TextView tvNamaMain, tvNimMain, tvTtlMain, tvAlamatMain, tvLokasiKPMain;
+    Integer FotoMain;
+    ImageView ivFotoMain;
     ImageButton BtnHome, BtnListSeminar, BtnProfil, BtnBack, BtnListLogbook;
     Button BtnLogbookKP, BtnNilaiKP, BtnSeminarKP,BtnPembatalanKP;
 
@@ -26,6 +29,11 @@ public class DetailDashboard extends AppCompatActivity {
 
         Intent detailDashboard = getIntent();
         if(detailDashboard != null){
+
+            FotoMain = detailDashboard.getIntExtra("Foto", 0);
+            ivFotoMain = findViewById(R.id.iv_fotomain);
+            ivFotoMain.setImageResource(FotoMain);
+
             NamaMain = detailDashboard.getStringExtra("Nama");
             tvNamaMain = findViewById(R.id.tv_namamain);
             tvNamaMain.setText(NamaMain);

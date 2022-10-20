@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements  AdapterDashboard
         ArrayList<ModelDashboard> dataDashboard = new ArrayList<>();
 
         dataDashboard.add(new ModelDashboard(
-                null,
+                R.drawable.nanda,
                 "Ananda Fitria",
                 "2011522014",
                 "Padang, 13 Desember 2001",
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements  AdapterDashboard
         ));
 
         dataDashboard.add(new ModelDashboard(
-                null,
+                R.drawable.aii,
                 "Siti Nur Aisah",
                 "2011521018",
                 "Padang, 16 Oktober 2002",
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements  AdapterDashboard
         ));
 
         dataDashboard.add(new ModelDashboard(
-                null,
+                R.drawable.daeng,
                 "Daeng Febrino",
                 "2011521019",
                 "Lubuk Sikaping,8 Maret 2002",
@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements  AdapterDashboard
     @Override
     public void onDashboardClick(ModelDashboard dashboard) {
        Intent detailDashboard = new Intent(this, DetailDashboard.class);
+       detailDashboard.putExtra("Foto", dashboard.getFotoMain());
        detailDashboard.putExtra("Nama", dashboard.getNamaMain());
        detailDashboard.putExtra("NIM", dashboard.getNimMain());
        detailDashboard.putExtra("TTL", dashboard.getTtlMain());
