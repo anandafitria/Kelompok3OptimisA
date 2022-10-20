@@ -14,8 +14,8 @@ import java.util.Random;
 
 public class DetailDashboard extends AppCompatActivity {
 
-    private TextView NamaMain, NimMain, TtlMain, AlamatMain, LokasiKPMain;
-    private String yNamaMain, yNimMain, yTtlMain, yAlamatMain, yLokasiKPMain;
+    String NamaMain,NimMain, TtlMain, AlamatMain, LokasiKPMain;
+    TextView tvNamaMain, tvNimMain, tvTtlMain, tvAlamatMain, tvLokasiKPMain;;
     ImageButton BtnHome, BtnListSeminar, BtnProfil, BtnBack, BtnListLogbook;
     Button BtnLogbookKP, BtnNilaiKP, BtnSeminarKP,BtnPembatalanKP;
 
@@ -23,6 +23,29 @@ public class DetailDashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_dashboard);
+
+        Intent detailDashboard = getIntent();
+        if(detailDashboard != null){
+            NamaMain = detailDashboard.getStringExtra("Nama");
+            tvNamaMain = findViewById(R.id.tv_namamain);
+            tvNamaMain.setText(NamaMain);
+
+            NimMain = detailDashboard.getStringExtra("NIM");
+            tvNimMain = findViewById(R.id.tv_nimmain);
+            tvNimMain.setText(NimMain);
+
+            TtlMain = detailDashboard.getStringExtra("TTL");
+            tvTtlMain = findViewById(R.id.tv_ttlmain);
+            tvTtlMain.setText(TtlMain);
+
+            AlamatMain = detailDashboard.getStringExtra("Alamat");
+            tvAlamatMain = findViewById(R.id.tv_alamatmain);
+            tvAlamatMain.setText(AlamatMain);
+
+            LokasiKPMain = detailDashboard.getStringExtra("Lokasi KP");
+            tvLokasiKPMain = findViewById(R.id.tv_lokasikpmain);
+            tvLokasiKPMain.setText(LokasiKPMain);
+        }
 
         BtnHome = findViewById(R.id.btn_home);
         BtnListSeminar = findViewById(R.id.btn_seminar);
@@ -78,32 +101,5 @@ public class DetailDashboard extends AppCompatActivity {
             Toast.makeText(this, "Berhasil Dibatalkan", Toast.LENGTH_SHORT).show();
         });
 
-        initView();
-
-        Intent terima = getIntent();
-        yNamaMain = terima.getStringExtra("xNamaMain");
-        yNimMain = terima.getStringExtra("xNimMain");
-        yTtlMain = terima.getStringExtra("xTtlMain");
-        yAlamatMain = terima.getStringExtra("xAlamatMain");
-        yLokasiKPMain = terima.getStringExtra("xLokasiKPMain");
-
-        NamaMain.setText(yNamaMain);
-        NimMain.setText(yNimMain);
-        TtlMain.setText(yTtlMain);
-        AlamatMain.setText(yAlamatMain);
-        LokasiKPMain.setText(yLokasiKPMain);
     }
-
-    private void initView() {
-        NamaMain = findViewById(R.id.tv_namamain);
-        NimMain = findViewById(R.id.tv_nimmain);
-        TtlMain = findViewById(R.id.tv_ttlmain);
-        AlamatMain = findViewById(R.id.tv_alamatmain);
-        LokasiKPMain = findViewById(R.id.tv_lokasikpmain);
-    }
-
-
-//    public void setBtnPembatalanKPOnClick(View view) {
-//        Toast.makeText(DetailDashboard.this, "Berhasil Dibatalkan", Toast.LENGTH_SHORT).show();
-//    }
 }
