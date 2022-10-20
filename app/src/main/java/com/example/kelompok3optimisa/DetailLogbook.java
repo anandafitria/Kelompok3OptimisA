@@ -1,14 +1,14 @@
 package com.example.kelompok3optimisa;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class DetailLogbook extends AppCompatActivity {
 
@@ -23,7 +23,7 @@ public class DetailLogbook extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_logbook);
-
+        BtnResponse = findViewById(R.id.btn_response);
         Intent detailLogbook = getIntent();
         if(detailLogbook != null){
 
@@ -49,7 +49,6 @@ public class DetailLogbook extends AppCompatActivity {
         BtnListSeminar = findViewById(R.id.btn_seminar);
         BtnProfil = findViewById(R.id.btn_profil);
         BtnBack = findViewById(R.id.btn_back);
-        BtnResponse = findViewById(R.id.btn_response);
 
         BtnHome.setOnClickListener(view -> {
             Intent home = new Intent(DetailLogbook.this, MainActivity.class);
@@ -76,10 +75,12 @@ public class DetailLogbook extends AppCompatActivity {
             startActivity(back);
         });
 
-        BtnResponse.setOnClickListener(view -> {
-            Intent response = new Intent(DetailLogbook.this, ResponKp.class);
-            startActivity(response);
+        BtnResponse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent response = new Intent(DetailLogbook.this, ResponKp.class);
+                startActivity(response);
+            }
         });
-
     }
 }
