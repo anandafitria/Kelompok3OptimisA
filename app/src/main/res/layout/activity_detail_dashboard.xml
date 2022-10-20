@@ -29,11 +29,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="20dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="225dp"
         android:fontFamily="@font/poppinssemibold"
-        android:text="Nama                                     :"
+        android:text="Nama"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/isinamad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="225dp"
+        android:layout_toRightOf="@id/show_namamain"
+        android:fontFamily="@font/poppinssemibold"
+        android:text=":"
         android:textColor="@color/black"
         android:textSize="15sp" />
 
@@ -42,11 +56,102 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="20dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="251dp"
         android:fontFamily="@font/poppinssemibold"
-        android:text="NIM                                           :"
+        android:text="NIM"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/isinimd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="251dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text=":"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/show_ttlmain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/show_nimmain"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="TTL"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/isittld"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/show_nimmain"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginLeft="110dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text=":"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/show_alamatmain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/show_ttlmain"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="Alamat"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/isialamatd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/show_ttlmain"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginLeft="110dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text=":"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/show_lokasikpmain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/show_alamatmain"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="Lokasi KP"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/isilokasikpd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/show_alamatmain"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginLeft="110dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text=":"
         android:textColor="@color/black"
         android:textSize="15sp" />
 
@@ -98,7 +203,7 @@
             android:id="@+id/tv_namamain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="200dp"
+            android:layout_marginLeft="130dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppinsmedium"
             android:text="Nama Mahasiswa"
@@ -110,9 +215,39 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_namamhs"
-            android:layout_marginLeft="200dp"
+            android:layout_marginLeft="130dp"
             android:fontFamily="@font/poppinsmedium"
             android:text="NIM"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_ttlmain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="TTL"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_alamatmain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Alamat"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_lokasikpmain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Lokasi KP"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
@@ -122,8 +257,8 @@
             android:layout_width="180dp"
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginStart="105dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="25dp"
             android:width="200dp"
             android:background="@drawable/button_shape"
             android:fontFamily="@font/poppinssemibold"
@@ -144,7 +279,7 @@
             android:layout_width="180dp"
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginStart="105dp"
+            android:layout_marginStart="100dp"
             android:layout_marginTop="15dp"
             android:width="200dp"
             android:background="@drawable/button_shape"
@@ -166,7 +301,7 @@
             android:layout_width="180dp"
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginStart="105dp"
+            android:layout_marginStart="100dp"
             android:layout_marginTop="15dp"
             android:width="200dp"
             android:background="@drawable/button_shape"
@@ -188,7 +323,7 @@
             android:layout_width="180dp"
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginStart="105dp"
+            android:layout_marginStart="100dp"
             android:layout_marginTop="15dp"
             android:width="200dp"
             android:background="@drawable/button_warning"

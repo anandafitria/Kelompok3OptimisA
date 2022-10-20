@@ -51,7 +51,9 @@
         android:fontFamily="@font/poppinsmedium"
         android:paddingLeft="5dp"
         android:paddingTop="5dp"
-        android:text="NIDN"
+        android:hint="NIDN"
+        android:drawableStart="@drawable/ic_baseline_person"
+        android:drawablePadding="24dp"
         android:textColor="#616161"
         android:textSize="15sp" />
 
@@ -67,7 +69,10 @@
         android:fontFamily="@font/poppinsmedium"
         android:paddingLeft="5dp"
         android:paddingTop="5dp"
-        android:text="Password"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:drawableStart="@drawable/ic_baseline_lock"
+        android:drawablePadding="24dp"
         android:textColor="#616161"
         android:textSize="15sp" />
 
