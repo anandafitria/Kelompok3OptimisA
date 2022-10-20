@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Button;
 
 public class DetailLogbook extends AppCompatActivity {
 
     private TextView NamaLogbook, NIMLogbook;
     private String yNamaLogbook, yNIMLogbook;
     ImageButton BtnHome, BtnListLogbook, BtnListSeminar, BtnProfil, BtnBack;
+    Button BtnResponse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class DetailLogbook extends AppCompatActivity {
         BtnListSeminar = findViewById(R.id.btn_seminar);
         BtnProfil = findViewById(R.id.btn_profil);
         BtnBack = findViewById(R.id.btn_back);
+        BtnResponse = findViewById(R.id.btn_response);
 
         BtnHome.setOnClickListener(view -> {
             Intent home = new Intent(DetailLogbook.this, MainActivity.class);
@@ -46,8 +49,13 @@ public class DetailLogbook extends AppCompatActivity {
         });
 
         BtnBack.setOnClickListener(view -> {
-            Intent back = new Intent(DetailLogbook.this, MainActivity.class);
+            Intent back = new Intent(DetailLogbook.this, DetailDashboard.class);
             startActivity(back);
+        });
+
+        BtnResponse.setOnClickListener(view -> {
+            Intent response = new Intent(DetailLogbook.this, ResponKp.class);
+            startActivity(response);
         });
 
 
