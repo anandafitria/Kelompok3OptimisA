@@ -17,7 +17,7 @@
             android:name=".DetailDashboard"
             android:exported="false" />
         <activity
-            android:name=".DetailActivity"
+            android:name=".DetailSeminar"
             android:exported="false" />
         <activity
             android:name=".ListLogbook"
