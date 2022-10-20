@@ -8,8 +8,6 @@ public class ModelDashboard {
     String AlamatMain;
     String LokasiKPMain;
 
-    public ModelDashboard() { }
-
     public ModelDashboard (int FotoMain, String NamaMain, String NimMain, String TtlMain, String AlamatMain, String LokasiKPMain) {
         this.FotoMain = FotoMain;
         this.NamaMain = NamaMain;

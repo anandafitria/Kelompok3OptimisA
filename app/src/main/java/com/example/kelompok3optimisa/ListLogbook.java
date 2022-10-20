@@ -11,10 +11,10 @@ import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
-public class ListLogbook extends AppCompatActivity {
+public class ListLogbook extends AppCompatActivity implements AdapterLogbook.LogbookClickListener {
 
     private RecyclerView rvLogbook;
-    private ArrayList<ModelLogbook> data2 = new ArrayList<>();
+    private ArrayList<ModelLogbook> dataLogbook = new ArrayList<>();
     ImageButton BtnHome, BtnListSeminar, BtnProfil;
 
     @Override
@@ -25,8 +25,12 @@ public class ListLogbook extends AppCompatActivity {
         rvLogbook = findViewById(R.id.rv_logbook);
         rvLogbook.setHasFixedSize(true);
 
-        data2.addAll(DataLogbook.ambilDataLogbook());
-        tampilDataLogbook();
+        AdapterLogbook adapterLogbook = new AdapterLogbook(getLogbook());
+        adapterLogbook.setListener(this);
+        LinearLayoutManager layoutManagerLogbook = new LinearLayoutManager(this);
+
+        rvLogbook.setLayoutManager(layoutManagerLogbook);
+        rvLogbook.setAdapter(adapterLogbook);
 
         BtnHome = findViewById(R.id.btn_home);
         BtnListSeminar = findViewById(R.id.btn_seminar);
@@ -57,19 +61,40 @@ public class ListLogbook extends AppCompatActivity {
         });
     }
 
-    private void tampilDataLogbook() {
-        rvLogbook.setLayoutManager(new LinearLayoutManager(this));
-        AdapterLogbook colokanLogbook = new AdapterLogbook(data2);
-        rvLogbook.setAdapter(colokanLogbook);
+    public ArrayList<ModelLogbook> getLogbook() {
+        ArrayList<ModelLogbook> dataLogbook = new ArrayList<>();
 
-        colokanLogbook.setOnItemClickCallBack(new AdapterLogbook.OnItemClickCallBack() {
-            @Override
-            public void onItemClicked(ModelLogbook data2) {
-                Intent pindah = new Intent(ListLogbook.this, DetailLogbook.class);
-                pindah.putExtra("xNamaLogbook", data2.getNamaLogbook());
-                pindah.putExtra("xNIMLogbook", data2.getNimLogbook());
-                startActivity(pindah);
-            }
-        });
+        dataLogbook.add(new ModelLogbook(
+                R.drawable.nanda,
+                "Ananda Fitria",
+                "2011522014",
+                "PT Semen Padang"
+        ));
+
+        dataLogbook.add(new ModelLogbook(
+                R.drawable.aii,
+                "Siti Nur Aisah",
+                "2011521018",
+                "PT Gojek Indonesia"
+        ));
+
+        dataLogbook.add(new ModelLogbook(
+                R.drawable.daeng,
+                "Daeng Febrino",
+                "2011521019",
+                "PT Shopee Indonesia"
+        ));
+
+        return dataLogbook;
+    }
+
+    @Override
+    public void onLogbookClick(ModelLogbook logbook) {
+        Intent detailLogbook = new Intent(this, DetailLogbook.class);
+        detailLogbook.putExtra("Foto", logbook.getFotoLogbook());
+        detailLogbook.putExtra("Nama", logbook.getNamaLogbook());
+        detailLogbook.putExtra("NIM", logbook.getNimLogbook());
+        detailLogbook.putExtra("Lokasi KP", logbook.getLokasiKPLogbook());
+        startActivity(detailLogbook);
     }
 }

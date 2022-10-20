@@ -22,8 +22,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="6dp"
+            android:layout_marginTop="4dp"
             android:layout_toRightOf="@+id/iv_fotologbook"
-            android:text="Ananda Fitria"
+            android:text="Nama Mahasiswa"
             android:textColor="@color/black"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -36,7 +37,18 @@
             android:layout_marginLeft="6dp"
             android:textColor="@color/black"
             android:layout_below="@+id/tv_namalogbook"
-            android:text="2011522014"
+            android:text="NIM"
+            android:justificationMode="inter_word"/>
+
+        <TextView
+            android:id="@+id/tv_lokasikplogbook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_fotologbook"
+            android:layout_marginLeft="6dp"
+            android:textColor="@color/black"
+            android:layout_below="@+id/tv_nimlogbook"
+            android:text="Lokasi KP"
             android:justificationMode="inter_word"/>
     </RelativeLayout>
 

@@ -29,11 +29,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="50dp"
         android:layout_marginLeft="120dp"
         android:layout_marginTop="225dp"
         android:fontFamily="@font/poppinssemibold"
-        android:text="Nama         :"
+        android:text="Nama"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/isinamal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="225dp"
+        android:layout_toRightOf="@id/show_namalogbook"
+        android:fontFamily="@font/poppinssemibold"
+        android:text=":"
         android:textColor="@color/black"
         android:textSize="15sp" />
 
@@ -42,24 +56,51 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="50dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="251dp"
         android:fontFamily="@font/poppinssemibold"
-        android:text="NIM              :"
+        android:text="NIM"
         android:textColor="@color/black"
         android:textSize="15sp" />
 
     <TextView
-        android:id="@+id/show_instansi"
+        android:id="@+id/isiniml"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="140dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="251dp"
+        android:layout_toRightOf="@id/show_nimlogbook"
         android:fontFamily="@font/poppinssemibold"
-        android:text="Instansi     :"
+        android:text=":"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/show_lokasikplogbook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="276dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="Lokasi KP"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/isilokasikpl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="276dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text=":"
         android:textColor="@color/black"
         android:textSize="15sp" />
 
@@ -120,10 +161,10 @@
             android:id="@+id/tv_namalogbook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="180dp"
+            android:layout_marginLeft="160dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppinsmedium"
-            android:text="Ananda Fitria"
+            android:text="Nama"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
@@ -131,60 +172,50 @@
             android:id="@+id/tv_nimlogbook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="180dp"
+            android:layout_marginLeft="160dp"
             android:fontFamily="@font/poppinsmedium"
-            android:text="2011522014"
+            android:text="NIM"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tv_instansi"
+            android:id="@+id/tv_lokasikplogbook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="180dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginLeft="160dp"
             android:fontFamily="@font/poppinsmedium"
-            android:text="PT Shopee Indonesia"
+            android:text="Lokasi KP"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="293dp"
-            android:layout_height="225dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="45dp"
-            android:layout_marginLeft="190dp"
-            android:layout_marginEnd="45dp"
-            android:background="@drawable/bg_base"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.535">
+            android:layout_height="222dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/bg_base">
 
 
             <TextView
                 android:id="@+id/tv_tanggal"
-                android:layout_width="209dp"
-                android:layout_height="136dp"
+                android:layout_width="195dp"
+                android:layout_height="32dp"
                 android:fontFamily="@font/poppinsextra"
                 android:text="10 Oktober 2022"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintHorizontal_bias="0.214"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.233" />
+                app:layout_constraintVertical_bias="0.082" />
 
             <TextView
                 android:id="@+id/tv_tanggal1"
-                android:layout_width="209dp"
-                android:layout_height="136dp"
+                android:layout_width="206dp"
+                android:layout_height="43dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="40dp"
                 android:fontFamily="@font/poppinsmedium"
@@ -193,53 +224,79 @@
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintHorizontal_bias="0.241"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.233" />
+                app:layout_constraintVertical_bias="0.056" />
 
             <TextView
                 android:id="@+id/textView20"
-                android:layout_width="209dp"
-                android:layout_height="136dp"
-                android:layout_marginTop="150dp"
+                android:layout_width="190dp"
+                android:layout_height="29dp"
                 android:fontFamily="@font/poppinsextra"
                 android:text="11 Oktober 2022"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintHorizontal_bias="0.203"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.233" />
+                app:layout_constraintVertical_bias="0.505" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="190dp"
+                android:layout_height="29dp"
+                android:fontFamily="@font/poppinsextra"
+                android:text="11 Oktober 2022"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.203"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.505" />
 
             <TextView
                 android:id="@+id/tv_tanggal2"
-                android:layout_width="209dp"
-                android:layout_height="136dp"
+                android:layout_width="220dp"
+                android:layout_height="38dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="190dp"
                 android:fontFamily="@font/poppinsmedium"
                 android:text="Membuat Rancangan UI Aolikasi Penjualan"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintHorizontal_bias="0.287"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.233" />
+                app:layout_constraintVertical_bias="0.684" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
             android:id="@+id/btn_response"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="250dp"
-            android:background="@drawable/bg_button_kuning"
-            android:text="Response" />
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="200dp"
+            android:background="@drawable/button_caution"
+            android:fontFamily="@font/poppinssemibold"
+            android:paddingTop="10dp"
+            android:text="Respon"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation_menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_kp"
+            app:layout_constraintVertical_bias="0.549" />
 
 
     </LinearLayout>

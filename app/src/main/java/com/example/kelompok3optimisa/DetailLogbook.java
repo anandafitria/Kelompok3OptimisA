@@ -6,13 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Button;
 
 public class DetailLogbook extends AppCompatActivity {
 
-    private TextView NamaLogbook, NIMLogbook;
-    private String yNamaLogbook, yNIMLogbook;
+    String NamaLogbook, NimLogbook, LokasiKPLogbook;
+    TextView tvNamaLogbook, tvNimLogbook, tvLokasiKPLogbook;
+    Integer FotoLogbook;
+    ImageView ivFotoLogbook;
     ImageButton BtnHome, BtnListLogbook, BtnListSeminar, BtnProfil, BtnBack;
     Button BtnResponse;
 
@@ -20,6 +23,26 @@ public class DetailLogbook extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_logbook);
+
+        Intent detailLogbook = getIntent();
+        if(detailLogbook != null){
+
+            FotoLogbook = detailLogbook.getIntExtra("Foto", 0);
+            ivFotoLogbook = findViewById(R.id.iv_fotologbook);
+            ivFotoLogbook.setImageResource(FotoLogbook);
+
+            NamaLogbook = detailLogbook.getStringExtra("Nama");
+            tvNamaLogbook = findViewById(R.id.tv_namalogbook);
+            tvNamaLogbook.setText(NamaLogbook);
+
+            NimLogbook = detailLogbook.getStringExtra("NIM");
+            tvNimLogbook = findViewById(R.id.tv_nimlogbook);
+            tvNimLogbook.setText(NimLogbook);
+
+            LokasiKPLogbook = detailLogbook.getStringExtra("Lokasi KP");
+            tvLokasiKPLogbook = findViewById(R.id.tv_lokasikplogbook);
+            tvLokasiKPLogbook.setText(LokasiKPLogbook);
+        }
 
         BtnHome = findViewById(R.id.btn_home);
         BtnListLogbook = findViewById(R.id.btn_logbook);
@@ -58,19 +81,5 @@ public class DetailLogbook extends AppCompatActivity {
             startActivity(response);
         });
 
-
-        initView();
-
-        Intent terima = getIntent();
-        yNamaLogbook = terima.getStringExtra("xNamaLogbook");
-        yNIMLogbook = terima.getStringExtra("xNIMLogbook");
-
-        NamaLogbook.setText(yNamaLogbook);
-        NIMLogbook.setText(yNIMLogbook);
-    }
-
-    private void initView() {
-        NamaLogbook = findViewById(R.id.tv_namalogbook);
-        NIMLogbook = findViewById(R.id.tv_nimlogbook);
     }
 }
