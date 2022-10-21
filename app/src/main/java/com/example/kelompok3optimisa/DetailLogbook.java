@@ -71,7 +71,7 @@ public class DetailLogbook extends AppCompatActivity {
         });
 
         BtnBack.setOnClickListener(view -> {
-            Intent back = new Intent(DetailLogbook.this, DetailDashboard.class);
+            Intent back = new Intent(DetailLogbook.this, MainActivity.class);
             startActivity(back);
         });
 

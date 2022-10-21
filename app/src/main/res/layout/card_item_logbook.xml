@@ -10,12 +10,12 @@
         android:layout_height="wrap_content"
         android:padding="6dp" >
 
-     <ImageView
-         android:id="@+id/iv_fotologbook"
-         android:layout_width="70dp"
-         android:layout_height="70dp"
-         android:scaleType="centerCrop"
-         android:src="@mipmap/ic_launcher"/>
+        <ImageView
+            android:id="@+id/iv_fotologbook"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/tv_namalogbook"
@@ -33,23 +33,23 @@
             android:id="@+id/tv_nimlogbook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/iv_fotologbook"
-            android:layout_marginLeft="6dp"
-            android:textColor="@color/black"
             android:layout_below="@+id/tv_namalogbook"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@id/iv_fotologbook"
+            android:justificationMode="inter_word"
             android:text="NIM"
-            android:justificationMode="inter_word"/>
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/tv_lokasikplogbook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/iv_fotologbook"
-            android:layout_marginLeft="6dp"
-            android:textColor="@color/black"
             android:layout_below="@+id/tv_nimlogbook"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@id/iv_fotologbook"
+            android:justificationMode="inter_word"
             android:text="Lokasi KP"
-            android:justificationMode="inter_word"/>
+            android:textColor="@color/black" />
     </RelativeLayout>
 
 
