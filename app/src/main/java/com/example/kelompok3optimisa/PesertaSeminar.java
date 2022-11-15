@@ -8,14 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class BeritaAcaraKP extends AppCompatActivity {
+public class PesertaSeminar extends AppCompatActivity {
 
     ImageButton BtnBack, BtnHome, BtnListLogbook, BtnListSeminar, BtnProfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_berita_acara_kp);
+        setContentView(R.layout.activity_peserta_seminar);
 
         BtnBack = findViewById(R.id.btn_back);
         BtnBack = findViewById(R.id.btn_back);
@@ -27,7 +27,7 @@ public class BeritaAcaraKP extends AppCompatActivity {
         BtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back = new Intent(BeritaAcaraKP.this, DetailSeminar.class);
+                Intent back = new Intent(PesertaSeminar.this, DetailSeminar.class);
                 startActivity(back);
             }
         });
@@ -35,7 +35,7 @@ public class BeritaAcaraKP extends AppCompatActivity {
         BtnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home = new Intent(BeritaAcaraKP.this, MainActivity.class);
+                Intent home = new Intent(PesertaSeminar.this, MainActivity.class);
                 startActivity(home);
             }
         });
@@ -43,7 +43,7 @@ public class BeritaAcaraKP extends AppCompatActivity {
         BtnListLogbook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent detaillogbook = new Intent(BeritaAcaraKP.this, DetailLogbook.class);
+                Intent detaillogbook = new Intent(PesertaSeminar.this, DetailLogbook.class);
                 startActivity(detaillogbook);
             }
         });
@@ -51,7 +51,7 @@ public class BeritaAcaraKP extends AppCompatActivity {
         BtnListSeminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent list_seminar = new Intent(BeritaAcaraKP.this, ListSeminar.class);
+                Intent list_seminar = new Intent(PesertaSeminar.this, ListSeminar.class);
                 startActivity(list_seminar);
             }
         });
@@ -59,7 +59,7 @@ public class BeritaAcaraKP extends AppCompatActivity {
         BtnProfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent profil = new Intent(BeritaAcaraKP.this, ProfilActivity.class);
+                Intent profil = new Intent(PesertaSeminar.this, ProfilActivity.class);
                 startActivity(profil);
             }
         });
