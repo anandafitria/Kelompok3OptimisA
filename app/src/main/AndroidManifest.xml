@@ -14,8 +14,15 @@
         android:theme="@style/Theme.Kelompok3OptimisA"
         tools:targetApi="31">
         <activity
+            android:name=".PesertaSeminar"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ResponKp"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".DetailDashboard"
             android:exported="false" />

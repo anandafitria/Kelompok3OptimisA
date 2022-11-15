@@ -16,8 +16,8 @@ public class DetailSeminar extends AppCompatActivity {
     TextView tvNamaSeminar, tvNimSeminar, tvHariSeminar, tvJamSeminar, tvRuangSeminar;
     Integer FotoSeminar;
     ImageView ivFotoSeminar;
-    Button BtnBerita;
-    ImageButton BtnHome, BtnListSeminar, BtnProfil, BtnBack, BtnListLogbook;
+    Button BtnBerita, BtnPesertaSeminar;
+    ImageButton BtnHome, BtnListSeminar, BtnProfil, BtnListLogbook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +55,9 @@ public class DetailSeminar extends AppCompatActivity {
         BtnHome = findViewById(R.id.btn_home);
         BtnListSeminar = findViewById(R.id.btn_seminar);
         BtnProfil = findViewById(R.id.btn_profil);
-        BtnBack = findViewById(R.id.btn_back);
         BtnListLogbook = findViewById(R.id.btn_logbook);
         BtnBerita = findViewById(R.id.btn_beritaacara);
+        BtnPesertaSeminar = findViewById(R.id.btn_pesertaseminar);
 
         BtnHome.setOnClickListener(view -> {
             Intent home = new Intent(DetailSeminar.this, MainActivity.class);
@@ -80,11 +80,6 @@ public class DetailSeminar extends AppCompatActivity {
             startActivity(profil);
         });
 
-        BtnBack.setOnClickListener(view -> {
-            Intent back = new Intent(DetailSeminar.this, ListSeminar.class);
-            startActivity(back);
-        });
-
         BtnBerita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,6 +88,13 @@ public class DetailSeminar extends AppCompatActivity {
             }
         });
 
+        BtnPesertaSeminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent berita = new Intent(DetailSeminar.this, PesertaSeminar.class);
+                startActivity(berita);
+            }
+        });
     }
 
 }
