@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:elevation="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/tv_namapeserta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsbold"
+            android:layout_marginLeft="6dp"
+            android:justificationMode="inter_word"
+            android:text="@string/nama_mahasiswa"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_nimpeserta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:justificationMode="inter_word"
+            android:layout_marginLeft="6dp"
+            android:text="NIM"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppinsbold"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            />
+
+        <Button
+            android:id="@+id/konfirmasipeserta"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:text="Setujui"
+            android:layout_marginStart="290dp"
+            android:background="@color/warning"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
