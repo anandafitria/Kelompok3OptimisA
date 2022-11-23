@@ -1,6 +1,8 @@
 package com.example.kelompok3optimisa;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.media.Image;
@@ -10,12 +12,16 @@ import android.widget.ImageButton;
 
 public class PesertaSeminar extends AppCompatActivity {
 
+    private RecyclerView rvPesertaSeminar;
     ImageButton BtnBack, BtnHome, BtnListLogbook, BtnListSeminar, BtnProfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_peserta_seminar);
+
+        rvPesertaSeminar = findViewById(R.id.rv_peserta);
+        rvPesertaSeminar.setHasFixedSize(true);
 
         BtnBack = findViewById(R.id.btn_back);
         BtnBack = findViewById(R.id.btn_back);
@@ -27,7 +33,7 @@ public class PesertaSeminar extends AppCompatActivity {
         BtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back = new Intent(PesertaSeminar.this, DetailSeminar.class);
+                Intent back = new Intent(PesertaSeminar.this, MainActivity.class);
                 startActivity(back);
             }
         });
