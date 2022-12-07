@@ -81,7 +81,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppinsbold"
-        android:text="Pesera Seminar Kerja Praktek"
+        android:text="Peserta Seminar Kerja Praktek"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"

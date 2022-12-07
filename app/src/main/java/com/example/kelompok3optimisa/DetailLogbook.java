@@ -23,7 +23,7 @@ public class DetailLogbook extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_logbook);
-        BtnResponse = findViewById(R.id.btn_response);
+
         Intent detailLogbook = getIntent();
         if(detailLogbook != null){
 
@@ -47,6 +47,7 @@ public class DetailLogbook extends AppCompatActivity {
         BtnHome = findViewById(R.id.btn_home);
         BtnProfil = findViewById(R.id.btn_profil);
         BtnListLogbook = findViewById(R.id.btn_logbook);
+        BtnResponse = findViewById(R.id.btn_response);
 
         BtnHome.setOnClickListener(view -> {
             Intent home = new Intent(DetailLogbook.this, MainActivity.class);

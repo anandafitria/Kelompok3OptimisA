@@ -68,12 +68,9 @@ public class DetailSeminar extends AppCompatActivity {
             startActivity(profil);
         });
 
-        BtnListLogbook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent listlogbook = new Intent(DetailSeminar.this, ListLogbook.class);
-                startActivity(listlogbook);
-            }
+        BtnListLogbook.setOnClickListener(view -> {
+            Intent listlogbook = new Intent(DetailSeminar.this, ListLogbook.class);
+            startActivity(listlogbook);
         });
 
         BtnBerita.setOnClickListener(new View.OnClickListener() {

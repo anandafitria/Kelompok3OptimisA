@@ -3,6 +3,7 @@ package com.example.kelompok3optimisa;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -11,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ResponKp extends AppCompatActivity {
 
-    ImageButton BtnHome, BtnProfil, BtnListLogbook, BtnBack;
+    ImageButton BtnHome, BtnProfil, BtnListLogbook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,6 @@ public class ResponKp extends AppCompatActivity {
 
         BtnHome = findViewById(R.id.btn_home);
         BtnProfil = findViewById(R.id.btn_profil);
-        BtnBack = findViewById(R.id.btn_back);
         BtnListLogbook = findViewById(R.id.btn_logbook);
 
         BtnHome.setOnClickListener(view -> {
@@ -31,11 +31,6 @@ public class ResponKp extends AppCompatActivity {
         BtnProfil.setOnClickListener(view -> {
             Intent profil = new Intent(ResponKp.this, ProfilActivity.class);
             startActivity(profil);
-        });
-
-        BtnBack.setOnClickListener(view -> {
-            Intent back = new Intent(ResponKp.this, MainActivity.class);
-            startActivity(back);
         });
 
         BtnListLogbook.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +46,4 @@ public class ResponKp extends AppCompatActivity {
         Toast.makeText(ResponKp.this, "Berhasil Diupdate", Toast.LENGTH_SHORT).show();
     }
 
-    public void editOnClick(View view) {
-        Toast.makeText(ResponKp.this, "Berhasil Diedit", Toast.LENGTH_SHORT).show();
-    }
 }

@@ -9,11 +9,16 @@ import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Button;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class PesertaSeminar extends AppCompatActivity {
 
     private RecyclerView rvPesertaSeminar;
-    ImageButton BtnBack, BtnHome, BtnProfil, BtnListLogbook;
+    private ArrayList<ModelPesertaSeminar> dataPesertaSeminar = new ArrayList<>();
+    ImageButton BtnHome, BtnProfil, BtnListLogbook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,19 +28,15 @@ public class PesertaSeminar extends AppCompatActivity {
         rvPesertaSeminar = findViewById(R.id.rv_peserta);
         rvPesertaSeminar.setHasFixedSize(true);
 
-        BtnBack = findViewById(R.id.btn_back);
-        BtnBack = findViewById(R.id.btn_back);
         BtnHome = findViewById(R.id.btn_home);
         BtnProfil = findViewById(R.id.btn_profil);
         BtnListLogbook = findViewById(R.id.btn_logbook);
 
-        BtnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent back = new Intent(PesertaSeminar.this, MainActivity.class);
-                startActivity(back);
-            }
-        });
+        AdapterPesertaSeminar adapterPesertaSeminar = new AdapterPesertaSeminar(getPesertaSeminar());
+        LinearLayoutManager layoutManagerPesertaSeminar = new LinearLayoutManager(this);
+
+        rvPesertaSeminar.setLayoutManager(layoutManagerPesertaSeminar);
+        rvPesertaSeminar.setAdapter(adapterPesertaSeminar);
 
         BtnHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,5 +61,38 @@ public class PesertaSeminar extends AppCompatActivity {
                 startActivity(listlogbook);
             }
         });
+
     }
+
+    public ArrayList<ModelPesertaSeminar> getPesertaSeminar() {
+        ArrayList<ModelPesertaSeminar> dataPesertaSeminar = new ArrayList<>();
+
+        dataPesertaSeminar.add(new ModelPesertaSeminar(
+                "Udin",
+                "2011522456"
+        ));
+
+        dataPesertaSeminar.add(new ModelPesertaSeminar(
+                "Ali",
+                "2011522567"
+        ));
+
+        dataPesertaSeminar.add(new ModelPesertaSeminar(
+                "Mayang",
+                "2011522000"
+        ));
+
+        dataPesertaSeminar.add(new ModelPesertaSeminar(
+                "Syamsudin",
+                "2011522333"
+        ));
+
+        dataPesertaSeminar.add(new ModelPesertaSeminar(
+                "Elon",
+                "2011522067"
+        ));
+
+        return dataPesertaSeminar;
+    }
+
 }

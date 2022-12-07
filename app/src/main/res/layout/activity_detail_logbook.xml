@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:fontFamily="@font/poppinsbold"
-        android:text="LOGBOOK KP "
+        android:text="Logbook Kerja Praktek"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20dp"
