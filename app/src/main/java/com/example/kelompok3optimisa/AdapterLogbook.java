@@ -30,7 +30,7 @@ public class AdapterLogbook extends RecyclerView.Adapter<AdapterLogbook.LogbookV
     @NonNull
     @Override
     public LogbookViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item_logbook,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_list_logbook,parent,false);
         return new LogbookViewHolder(view);
     }
 
@@ -38,7 +38,7 @@ public class AdapterLogbook extends RecyclerView.Adapter<AdapterLogbook.LogbookV
     public void onBindViewHolder(@NonNull LogbookViewHolder holder, int position) {
         ModelLogbook logbook = dataLogbook.get(position);
 
-        holder.ivFotoLogbook.setImageResource(logbook.getFotoLogbook());
+        holder.tvHariTglLogbook.setText(logbook.getHariTglLogbook());
         holder.tvNamaLogbook.setText(logbook.getNamaLogbook());
         holder.tvNimLogbook.setText(logbook.getNimLogbook());
         holder.tvLokasiKPLogbook.setText(logbook.getLokasiKPLogbook());
@@ -56,12 +56,13 @@ public class AdapterLogbook extends RecyclerView.Adapter<AdapterLogbook.LogbookV
     public class LogbookViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public ImageView ivFotoLogbook;
-        public TextView tvNamaLogbook,tvNimLogbook, tvLokasiKPLogbook;
+        public TextView tvHariTglLogbook, tvNamaLogbook,tvNimLogbook, tvLokasiKPLogbook;
 
         public LogbookViewHolder(@NonNull View itemView) {
             super(itemView);
 
             ivFotoLogbook = itemView.findViewById(R.id.iv_fotologbook);
+            tvHariTglLogbook = itemView.findViewById(R.id.tv_haritgllogbook);
             tvNamaLogbook= itemView.findViewById(R.id.tv_namalogbook);
             tvNimLogbook = itemView.findViewById(R.id.tv_nimlogbook);
             tvLokasiKPLogbook = itemView.findViewById(R.id.tv_lokasikplogbook);

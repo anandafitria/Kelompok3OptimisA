@@ -66,6 +66,7 @@ public class ListLogbook extends AppCompatActivity implements AdapterLogbook.Log
 
         dataLogbook.add(new ModelLogbook(
                 R.drawable.nanda,
+                "Senin/12 Desember 2022",
                 "Ananda Fitria",
                 "2011522014",
                 "PT Semen Padang"
@@ -73,6 +74,7 @@ public class ListLogbook extends AppCompatActivity implements AdapterLogbook.Log
 
         dataLogbook.add(new ModelLogbook(
                 R.drawable.aii,
+                "Senin/12 Desember 2022",
                 "Siti Nur Aisah",
                 "2011521018",
                 "PT Gojek Indonesia"
@@ -80,10 +82,36 @@ public class ListLogbook extends AppCompatActivity implements AdapterLogbook.Log
 
         dataLogbook.add(new ModelLogbook(
                 R.drawable.daeng,
+                "Selasa/13 Desember 2022",
                 "Daeng Febrino",
                 "2011521019",
                 "PT Shopee Indonesia"
         ));
+
+        dataLogbook.add(new ModelLogbook(
+                R.drawable.aii,
+                "Selasa/13 Desember 2022",
+                "Siti Nur Aisah",
+                "2011521018",
+                "PT Gojek Indonesia"
+        ));
+
+        dataLogbook.add(new ModelLogbook(
+                R.drawable.nanda,
+                "Rabu/14 Desember 2022",
+                "Ananda Fitria",
+                "2011522014",
+                "PT Semen Padang"
+        ));
+
+        dataLogbook.add(new ModelLogbook(
+                R.drawable.daeng,
+                "Rabu/14 Desember 2022",
+                "Daeng Febrino",
+                "2011521019",
+                "PT Shopee Indonesia"
+        ));
+
 
         return dataLogbook;
     }
@@ -92,6 +120,7 @@ public class ListLogbook extends AppCompatActivity implements AdapterLogbook.Log
     public void onLogbookClick(ModelLogbook logbook) {
         Intent detailLogbook = new Intent(this, DetailLogbook.class);
         detailLogbook.putExtra("Foto", logbook.getFotoLogbook());
+        detailLogbook.putExtra("Hari", logbook.getHariTglLogbook());
         detailLogbook.putExtra("Nama", logbook.getNamaLogbook());
         detailLogbook.putExtra("NIM", logbook.getNimLogbook());
         detailLogbook.putExtra("Lokasi KP", logbook.getLokasiKPLogbook());
