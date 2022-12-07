@@ -5,16 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailLogbook"
+    tools:context=".ListLogbook"
     android:background="@color/secondary_color">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_logbook"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="556dp"
         android:layout_below="@id/textView2"
-        tools:listitem="@layout/card_item_logbook" />
+        tools:listitem="@layout/card_list_logbook" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_menu"

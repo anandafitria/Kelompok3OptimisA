@@ -16,7 +16,7 @@ public class DetailLogbook extends AppCompatActivity {
     TextView tvNamaLogbook, tvNimLogbook, tvLokasiKPLogbook;
     Integer FotoLogbook;
     ImageView ivFotoLogbook;
-    ImageButton BtnHome, BtnProfil, BtnBack, BtnListLogbook;
+    ImageButton BtnHome, BtnProfil, BtnListLogbook;
     Button BtnResponse;
 
     @Override
@@ -46,7 +46,6 @@ public class DetailLogbook extends AppCompatActivity {
 
         BtnHome = findViewById(R.id.btn_home);
         BtnProfil = findViewById(R.id.btn_profil);
-        BtnBack = findViewById(R.id.btn_back);
         BtnListLogbook = findViewById(R.id.btn_logbook);
 
         BtnHome.setOnClickListener(view -> {
@@ -57,11 +56,6 @@ public class DetailLogbook extends AppCompatActivity {
         BtnProfil.setOnClickListener(view -> {
             Intent profil = new Intent(DetailLogbook.this, ProfilActivity.class);
             startActivity(profil);
-        });
-
-        BtnBack.setOnClickListener(view -> {
-            Intent back = new Intent(DetailLogbook.this, MainActivity.class);
-            startActivity(back);
         });
 
         BtnListLogbook.setOnClickListener(new View.OnClickListener() {

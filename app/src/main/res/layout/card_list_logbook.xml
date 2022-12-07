@@ -10,24 +10,24 @@
         android:layout_height="wrap_content"
         android:padding="6dp" >
 
-        <ImageView
-            android:id="@+id/iv_fotologbook"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/ic_launcher" />
+        <TextView
+            android:id="@+id/tv_haritgllogbook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:text="Hari/Tanggal"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_namalogbook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="6dp"
-            android:layout_marginTop="4dp"
-            android:layout_toRightOf="@+id/iv_fotologbook"
+            android:layout_marginTop="35dp"
             android:text="Nama Mahasiswa"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tv_nimlogbook"
@@ -35,7 +35,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_namalogbook"
             android:layout_marginLeft="6dp"
-            android:layout_toRightOf="@id/iv_fotologbook"
             android:justificationMode="inter_word"
             android:text="NIM"
             android:textColor="@color/black" />
@@ -46,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_nimlogbook"
             android:layout_marginLeft="6dp"
-            android:layout_toRightOf="@id/iv_fotologbook"
+            android:layout_marginBottom="2dp"
             android:justificationMode="inter_word"
             android:text="Lokasi KP"
             android:textColor="@color/black" />
