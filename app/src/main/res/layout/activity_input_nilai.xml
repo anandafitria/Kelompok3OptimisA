@@ -123,47 +123,53 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_alignParentBottom="true" >
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/btn_home"
-                android:layout_width="100dp"
+                android:layout_width="137dp"
                 android:layout_height="match_parent"
                 android:background="@color/primary_color"
                 android:contentDescription="@string/app_name"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_logbook"
+                app:layout_constraintEnd_toEndOf="@+id/btn_profil"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/ic_baseline_home" />
 
             <ImageButton
                 android:id="@+id/btn_logbook"
-                android:layout_width="60dp"
+                android:layout_width="137dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/primary_color"
-                android:contentDescription="List logbook"
+                android:contentDescription="@string/btn_logbook"
                 android:minHeight="48dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btn_profil"
+                app:layout_constraintStart_toStartOf="@+id/btn_home"
+                app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_baseline_calendar_today" />
 
             <ImageButton
-                android:id="@+id/btn_seminar"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/primary_color"
-                android:contentDescription="@string/btn_seminar"
-                app:srcCompat="@drawable/ic_baseline_add_task" />
-
-            <ImageButton
                 android:id="@+id/btn_profil"
-                android:layout_width="60dp"
+                android:layout_width="137dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/primary_color"
                 android:contentDescription="@string/btn_profil"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_baseline_person" />
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <EditText
@@ -254,7 +260,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/upper_navigation_menu"
@@ -327,8 +335,8 @@
             android:layout_width="98dp"
             android:layout_height="46dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="320dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="320dp"
             android:width="200dp"
             android:background="@drawable/button_caution"
             android:fontFamily="@font/poppinssemibold"

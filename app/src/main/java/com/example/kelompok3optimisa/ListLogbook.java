@@ -15,7 +15,7 @@ public class ListLogbook extends AppCompatActivity implements AdapterLogbook.Log
 
     private RecyclerView rvLogbook;
     private ArrayList<ModelLogbook> dataLogbook = new ArrayList<>();
-    ImageButton BtnHome, BtnListSeminar, BtnProfil;
+    ImageButton BtnHome, BtnListLogbook, BtnProfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class ListLogbook extends AppCompatActivity implements AdapterLogbook.Log
         rvLogbook.setAdapter(adapterLogbook);
 
         BtnHome = findViewById(R.id.btn_home);
-        BtnListSeminar = findViewById(R.id.btn_seminar);
+        BtnListLogbook = findViewById(R.id.btn_logbook);
         BtnProfil = findViewById(R.id.btn_profil);
 
         BtnHome.setOnClickListener(new View.OnClickListener() {
@@ -44,11 +44,11 @@ public class ListLogbook extends AppCompatActivity implements AdapterLogbook.Log
             }
         });
 
-        BtnListSeminar.setOnClickListener(new View.OnClickListener() {
+        BtnListLogbook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent listseminar = new Intent(ListLogbook.this, ListSeminar.class);
-                startActivity(listseminar);
+                Intent listlogbook = new Intent(ListLogbook.this, ListLogbook.class);
+                startActivity(listlogbook);
             }
         });
 

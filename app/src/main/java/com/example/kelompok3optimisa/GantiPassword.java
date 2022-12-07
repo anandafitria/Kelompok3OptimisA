@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class GantiPassword extends AppCompatActivity {
 
-    ImageButton BtnHome, BtnListLogbook, BtnListSeminar, BtnProfil, BtnBack, BtnLogout;
+    ImageButton BtnHome, BtnListLogbook, BtnProfil, BtnBack, BtnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +18,9 @@ public class GantiPassword extends AppCompatActivity {
         setContentView(R.layout.activity_ganti_password);
 
         BtnHome = findViewById(R.id.btn_home);
-        BtnListLogbook = findViewById(R.id.btn_logbook);
-        BtnListSeminar = findViewById(R.id.btn_seminar);
         BtnProfil = findViewById(R.id.btn_editprofil);
         BtnBack = findViewById(R.id.btn_back);
+        BtnListLogbook = findViewById(R.id.btn_logbook);
         BtnLogout = findViewById(R.id.btn_logout);
 
         BtnLogout.setOnClickListener(view ->{
@@ -38,6 +37,14 @@ public class GantiPassword extends AppCompatActivity {
             startActivity(profil);
         });
 
+        BtnListLogbook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent listlogbook = new Intent(GantiPassword.this, ListLogbook.class);
+                startActivity(listlogbook);
+            }
+        });
+
         BtnHome.setOnClickListener(view ->
 
             {
@@ -45,19 +52,6 @@ public class GantiPassword extends AppCompatActivity {
                 startActivity(home);
             });
 
-        BtnListLogbook.setOnClickListener(view ->
-
-            {
-                Intent listlogbook = new Intent(GantiPassword.this, ListLogbook.class);
-                startActivity(listlogbook);
-            });
-
-        BtnListSeminar.setOnClickListener(view ->
-
-            {
-                Intent listseminar = new Intent(GantiPassword.this, ListSeminar.class);
-                startActivity(listseminar);
-            });
         }
 
         public void onClickSimpan(View view) {

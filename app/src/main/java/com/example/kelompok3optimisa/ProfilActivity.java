@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class ProfilActivity extends AppCompatActivity {
 
-    ImageButton BtnHome, BtnListLogbook, BtnListSeminar, BtnGantiPassword, BtnBack, BtnLogout;
+    ImageButton BtnHome, BtnGantiPassword, BtnBack, BtnListLogbook, BtnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +18,9 @@ public class ProfilActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profil);
 
         BtnHome = findViewById(R.id.btn_home);
-        BtnListLogbook = findViewById(R.id.btn_logbook);
-        BtnListSeminar = findViewById(R.id.btn_seminar);
         BtnGantiPassword = findViewById(R.id.btn_gantipassword);
         BtnBack = findViewById(R.id.btn_back);
+        BtnListLogbook = findViewById(R.id.btn_logbook);
         BtnLogout = findViewById(R.id.btn_logout);
 
         BtnLogout.setOnClickListener(new View.OnClickListener() {
@@ -31,9 +30,18 @@ public class ProfilActivity extends AppCompatActivity {
                 startActivity(logout);
             }
         });
+
         BtnBack.setOnClickListener(view -> {
             Intent back = new Intent(ProfilActivity.this, MainActivity.class);
             startActivity(back);
+        });
+
+        BtnListLogbook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent listlogbook = new Intent(ProfilActivity.this, ListLogbook.class);
+                startActivity(listlogbook);
+            }
         });
 
         BtnGantiPassword.setOnClickListener(view -> {
@@ -44,16 +52,6 @@ public class ProfilActivity extends AppCompatActivity {
         BtnHome.setOnClickListener(view -> {
             Intent home = new Intent(ProfilActivity.this, MainActivity.class);
             startActivity(home);
-        });
-
-        BtnListLogbook.setOnClickListener(view -> {
-            Intent listlogbook = new Intent(ProfilActivity.this, ListLogbook.class);
-            startActivity(listlogbook);
-        });
-
-        BtnListSeminar.setOnClickListener(view -> {
-            Intent listseminar = new Intent(ProfilActivity.this, ListSeminar.class);
-            startActivity(listseminar);
         });
     }
     public void onClickSimpan(View view) {

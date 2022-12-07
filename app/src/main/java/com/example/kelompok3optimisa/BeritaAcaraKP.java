@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 
 public class BeritaAcaraKP extends AppCompatActivity {
 
-    ImageButton BtnBack, BtnHome, BtnListLogbook, BtnListSeminar, BtnProfil;
+    ImageButton BtnBack, BtnHome, BtnProfil, BtnListLogbook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +18,9 @@ public class BeritaAcaraKP extends AppCompatActivity {
         setContentView(R.layout.activity_berita_acara_kp);
 
         BtnBack = findViewById(R.id.btn_back);
-        BtnBack = findViewById(R.id.btn_back);
         BtnHome = findViewById(R.id.btn_home);
-        BtnListLogbook = findViewById(R.id.btn_logbook);
-        BtnListSeminar = findViewById(R.id.btn_seminar);
         BtnProfil = findViewById(R.id.btn_profil);
+        BtnListLogbook = findViewById(R.id.btn_logbook);
 
         BtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,16 +41,8 @@ public class BeritaAcaraKP extends AppCompatActivity {
         BtnListLogbook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent detaillogbook = new Intent(BeritaAcaraKP.this, DetailLogbook.class);
-                startActivity(detaillogbook);
-            }
-        });
-
-        BtnListSeminar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent list_seminar = new Intent(BeritaAcaraKP.this, ListSeminar.class);
-                startActivity(list_seminar);
+                Intent listlogbook = new Intent(BeritaAcaraKP.this, ListLogbook.class);
+                startActivity(listlogbook);
             }
         });
 

@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 public class InputNilai extends AppCompatActivity {
 
-    ImageButton BtnHome, BtnListLogbook, BtnListSeminar, BtnProfil, BtnBack;
+    ImageButton BtnHome, BtnProfil, BtnBack, BtnListLogbook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,29 +17,27 @@ public class InputNilai extends AppCompatActivity {
         setContentView(R.layout.activity_input_nilai);
 
         BtnHome = findViewById(R.id.btn_home);
-        BtnListLogbook = findViewById(R.id.btn_logbook);
-        BtnListSeminar = findViewById(R.id.btn_seminar);
         BtnProfil = findViewById(R.id.btn_profil);
         BtnBack = findViewById(R.id.btn_back);
+        BtnListLogbook = findViewById(R.id.btn_logbook);
+
 
         BtnHome.setOnClickListener(view -> {
             Intent home = new Intent(InputNilai.this, MainActivity.class);
             startActivity(home);
         });
 
-        BtnListLogbook.setOnClickListener(view -> {
-            Intent listlogbook = new Intent(InputNilai.this, ListLogbook.class);
-            startActivity(listlogbook);
-        });
-
-        BtnListSeminar.setOnClickListener(view -> {
-            Intent listseminar = new Intent(InputNilai.this, ListSeminar.class);
-            startActivity(listseminar);
-        });
-
         BtnProfil.setOnClickListener(view -> {
             Intent profil = new Intent(InputNilai.this, ProfilActivity.class);
             startActivity(profil);
+        });
+
+        BtnListLogbook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent listlogbook = new Intent(InputNilai.this, ListLogbook.class);
+                startActivity(listlogbook);
+            }
         });
 
         BtnBack.setOnClickListener(view -> {

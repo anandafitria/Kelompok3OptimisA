@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -16,7 +17,7 @@ public class DetailDashboard extends AppCompatActivity {
     TextView tvNamaMain, tvNimMain, tvTtlMain, tvAlamatMain, tvLokasiKPMain;
     Integer FotoMain;
     ImageView ivFotoMain;
-    ImageButton BtnHome, BtnListSeminar, BtnProfil, BtnBack, BtnListLogbook;
+    ImageButton BtnHome, BtnProfil, BtnBack, BtnListLogbook;
     Button BtnLogbookKP, BtnNilaiKP, BtnSeminarKP,BtnPembatalanKP;
 
     @Override
@@ -53,7 +54,6 @@ public class DetailDashboard extends AppCompatActivity {
         }
 
         BtnHome = findViewById(R.id.btn_home);
-        BtnListSeminar = findViewById(R.id.btn_seminar);
         BtnProfil = findViewById(R.id.btn_profil);
         BtnBack = findViewById(R.id.btn_back);
         BtnListLogbook = findViewById(R.id.btn_logbook);
@@ -67,11 +67,6 @@ public class DetailDashboard extends AppCompatActivity {
             startActivity(home);
         });
 
-        BtnListSeminar.setOnClickListener(view -> {
-            Intent listseminar = new Intent(DetailDashboard.this, ListSeminar.class);
-            startActivity(listseminar);
-        });
-
         BtnProfil.setOnClickListener(view -> {
             Intent profil = new Intent(DetailDashboard.this, ProfilActivity.class);
             startActivity(profil);
@@ -82,14 +77,17 @@ public class DetailDashboard extends AppCompatActivity {
             startActivity(back);
         });
 
+        BtnListLogbook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent listlogbook = new Intent(DetailDashboard.this, ListLogbook.class);
+                startActivity(listlogbook);
+            }
+        });
+
         BtnLogbookKP.setOnClickListener(view -> {
             Intent back = new Intent(DetailDashboard.this, DetailLogbook.class);
             startActivity(back);
-        });
-
-        BtnListLogbook.setOnClickListener(view -> {
-            Intent listlogbook = new Intent(DetailDashboard.this, ListLogbook.class);
-            startActivity(listlogbook);
         });
 
         BtnNilaiKP.setOnClickListener(view -> {
