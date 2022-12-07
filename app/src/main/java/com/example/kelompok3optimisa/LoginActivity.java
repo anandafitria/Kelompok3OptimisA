@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         Password = findViewById(R.id.edit_2);
         BtnLogin = findViewById(R.id.btn_1);
 
-        //1. Ambil notifikationManager
+        //1. Ambil notificationManager
         notificationManager = NotificationManagerCompat.from(this);
 
         //2b Buat channel notifikasi
