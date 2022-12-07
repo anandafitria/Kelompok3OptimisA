@@ -28,50 +28,7 @@
             android:textColor="@color/black"
             android:textSize="20sp" />
 
-        <ImageButton
-            android:id="@+id/btn_back"
-            android:layout_width="37dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/primary_color"
-            android:contentDescription="@string/btn_back"
-            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new" />
-
     </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="319dp"
-        android:layout_height="271dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="213dp"
-        android:background="@drawable/bg_base"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.535">
-
-
-        <EditText
-            android:id="@+id/tm_responkp"
-            android:layout_width="266dp"
-            android:layout_height="88dp"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:text="Projek yang dikerjakan sudah bagus, lebih semangat lagi untuk menyelsaikannya"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.49"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.231" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_menu"
@@ -134,104 +91,57 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="356dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="111dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="27dp"
-        android:layout_marginBottom="558dp"
+        android:layout_marginBottom="614dp"
         android:fontFamily="@font/poppinsbold"
-        android:text="Respon Kegiatan Kerja Praktek"
+        android:text="Respon Logbook"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20dp" />
 
+
+    <EditText
+        android:id="@+id/formrespon"
+        android:layout_width="273dp"
+        android:layout_height="116dp"
+        android:layout_above="@+id/bottom_navigation_menu"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="406dp"
+        android:background="@color/white"
+        android:drawablePadding="24dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:hint="Form Respon"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:textAlignment="center"
+        android:textColor="#616161"
+        android:textSize="15sp" />
+
     <Button
         android:id="@+id/btn_update"
-        android:layout_width="98dp"
+        android:layout_width="268dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="553dp"
-        android:layout_marginEnd="267dp"
-        android:layout_marginBottom="133dp"
-        android:background="@drawable/bg_base"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="302dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="370dp"
+        android:background="@drawable/button_save"
         android:onClick="updateOnClick"
-        android:text="Update" />
-
-    <Button
-        android:id="@+id/btn_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="69dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="176dp"
-        android:layout_marginBottom="129dp"
-        android:background="@drawable/bg_button_kuning"
-        android:onClick="editOnClick"
-        android:text="Edit" />
-
-    <TextView
-        android:id="@+id/tv_lokasikplogbook"
-        android:layout_width="325dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="51dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="197dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="508dp"
-        android:fontFamily="@font/poppinsmedium"
-        android:text="Lokasi KP    :"
-        android:textColor="@color/black"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/tv_nimlogbook"
-        android:layout_width="252dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="51dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="174dp"
-        android:layout_marginEnd="108dp"
-        android:layout_marginBottom="532dp"
-        android:fontFamily="@font/poppinsmedium"
-        android:text="NIM               :"
-        android:textColor="@color/black"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/tv_namalogbook"
-        android:layout_width="243dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="51dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="149dp"
-        android:layout_marginEnd="117dp"
-        android:layout_marginBottom="557dp"
-        android:fontFamily="@font/poppinsmedium"
-        android:text="Nama          :"
-        android:textColor="@color/black"
-        android:textSize="15sp" />
+        android:text="Update"
+        android:textSize="20dp" />
 
 </RelativeLayout>
