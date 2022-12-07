@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements AdapterDashboard.
 
     private RecyclerView rvDashboard;
     private ArrayList<ModelDashboard> dataDashboard = new ArrayList<>();
-    ImageButton BtnListLogbook, BtnListSeminar, BtnProfil;
+    ImageButton BtnListLogbook, BtnListSeminar, BtnProfil, BtnHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,23 +33,23 @@ public class MainActivity extends AppCompatActivity implements AdapterDashboard.
         rvDashboard.setLayoutManager(layoutManagerDashboard);
         rvDashboard.setAdapter(adapterDashboard);
 
-        BtnListLogbook = findViewById(R.id.btn_logbook);
-        BtnListSeminar = findViewById(R.id.btn_seminar);
         BtnProfil = findViewById(R.id.btn_profil);
+        BtnHome = findViewById(R.id.btn_home);
+        BtnListLogbook = findViewById(R.id.btn_logbook);
+
+        BtnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(home);
+            }
+        });
 
         BtnListLogbook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent listlogbook = new Intent(MainActivity.this, ListLogbook.class);
                 startActivity(listlogbook);
-            }
-        });
-
-        BtnListSeminar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent listseminar = new Intent(MainActivity. this, ListSeminar.class);
-                startActivity(listseminar);
             }
         });
 

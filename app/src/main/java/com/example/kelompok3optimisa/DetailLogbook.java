@@ -16,7 +16,7 @@ public class DetailLogbook extends AppCompatActivity {
     TextView tvNamaLogbook, tvNimLogbook, tvLokasiKPLogbook;
     Integer FotoLogbook;
     ImageView ivFotoLogbook;
-    ImageButton BtnHome, BtnListLogbook, BtnListSeminar, BtnProfil, BtnBack;
+    ImageButton BtnHome, BtnProfil, BtnBack, BtnListLogbook;
     Button BtnResponse;
 
     @Override
@@ -45,24 +45,13 @@ public class DetailLogbook extends AppCompatActivity {
         }
 
         BtnHome = findViewById(R.id.btn_home);
-        BtnListLogbook = findViewById(R.id.btn_logbook);
-        BtnListSeminar = findViewById(R.id.btn_seminar);
         BtnProfil = findViewById(R.id.btn_profil);
         BtnBack = findViewById(R.id.btn_back);
+        BtnListLogbook = findViewById(R.id.btn_logbook);
 
         BtnHome.setOnClickListener(view -> {
             Intent home = new Intent(DetailLogbook.this, MainActivity.class);
             startActivity(home);
-        });
-
-        BtnListLogbook.setOnClickListener(view -> {
-            Intent listlogbook = new Intent(DetailLogbook.this, ListLogbook.class);
-            startActivity(listlogbook);
-        });
-
-        BtnListSeminar.setOnClickListener(view -> {
-            Intent listseminar = new Intent(DetailLogbook.this, ListSeminar.class);
-            startActivity(listseminar);
         });
 
         BtnProfil.setOnClickListener(view -> {
@@ -73,6 +62,14 @@ public class DetailLogbook extends AppCompatActivity {
         BtnBack.setOnClickListener(view -> {
             Intent back = new Intent(DetailLogbook.this, MainActivity.class);
             startActivity(back);
+        });
+
+        BtnListLogbook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent listlogbook = new Intent(DetailLogbook.this, ListLogbook.class);
+                startActivity(listlogbook);
+            }
         });
 
         BtnResponse.setOnClickListener(new View.OnClickListener() {

@@ -17,7 +17,7 @@ public class DetailSeminar extends AppCompatActivity {
     Integer FotoSeminar;
     ImageView ivFotoSeminar;
     Button BtnBerita, BtnPesertaSeminar;
-    ImageButton BtnHome, BtnListSeminar, BtnProfil, BtnListLogbook;
+    ImageButton BtnHome, BtnProfil, BtnListLogbook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +53,6 @@ public class DetailSeminar extends AppCompatActivity {
         }
 
         BtnHome = findViewById(R.id.btn_home);
-        BtnListSeminar = findViewById(R.id.btn_seminar);
         BtnProfil = findViewById(R.id.btn_profil);
         BtnListLogbook = findViewById(R.id.btn_logbook);
         BtnBerita = findViewById(R.id.btn_beritaacara);
@@ -64,20 +63,17 @@ public class DetailSeminar extends AppCompatActivity {
             startActivity(home);
         });
 
-        BtnListSeminar.setOnClickListener(view -> {
-            Intent listseminar = new Intent(DetailSeminar.this, ListSeminar.class);
-            startActivity(listseminar);
-        });
-
-        BtnListLogbook.setOnClickListener(view -> {
-            Intent listlogbook = new Intent(DetailSeminar.this, ListLogbook.class);
-            startActivity(listlogbook);
-        });
-
-
         BtnProfil.setOnClickListener(view -> {
             Intent profil = new Intent(DetailSeminar.this, ProfilActivity.class);
             startActivity(profil);
+        });
+
+        BtnListLogbook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent listlogbook = new Intent(DetailSeminar.this, ListLogbook.class);
+                startActivity(listlogbook);
+            }
         });
 
         BtnBerita.setOnClickListener(new View.OnClickListener() {

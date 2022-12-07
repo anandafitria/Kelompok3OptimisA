@@ -13,7 +13,7 @@ import android.widget.ImageButton;
 public class PesertaSeminar extends AppCompatActivity {
 
     private RecyclerView rvPesertaSeminar;
-    ImageButton BtnBack, BtnHome, BtnListLogbook, BtnListSeminar, BtnProfil;
+    ImageButton BtnBack, BtnHome, BtnProfil, BtnListLogbook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +26,8 @@ public class PesertaSeminar extends AppCompatActivity {
         BtnBack = findViewById(R.id.btn_back);
         BtnBack = findViewById(R.id.btn_back);
         BtnHome = findViewById(R.id.btn_home);
-        BtnListLogbook = findViewById(R.id.btn_logbook);
-        BtnListSeminar = findViewById(R.id.btn_seminar);
         BtnProfil = findViewById(R.id.btn_profil);
+        BtnListLogbook = findViewById(R.id.btn_logbook);
 
         BtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,27 +45,19 @@ public class PesertaSeminar extends AppCompatActivity {
             }
         });
 
-        BtnListLogbook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent detaillogbook = new Intent(PesertaSeminar.this, DetailLogbook.class);
-                startActivity(detaillogbook);
-            }
-        });
-
-        BtnListSeminar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent list_seminar = new Intent(PesertaSeminar.this, ListSeminar.class);
-                startActivity(list_seminar);
-            }
-        });
-
         BtnProfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent profil = new Intent(PesertaSeminar.this, ProfilActivity.class);
                 startActivity(profil);
+            }
+        });
+
+        BtnListLogbook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent listlogbook = new Intent(PesertaSeminar.this, ListLogbook.class);
+                startActivity(listlogbook);
             }
         });
     }
