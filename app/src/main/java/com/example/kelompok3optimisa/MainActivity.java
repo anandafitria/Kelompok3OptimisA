@@ -1,6 +1,8 @@
 package com.example.kelompok3optimisa;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -22,6 +24,9 @@ public class MainActivity extends AppCompatActivity implements AdapterDashboard.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        String token = sharedPref.getString("TOKEN","");
 
         rvDashboard = findViewById(R.id.rv_dashboard);
         rvDashboard.setHasFixedSize(true);
