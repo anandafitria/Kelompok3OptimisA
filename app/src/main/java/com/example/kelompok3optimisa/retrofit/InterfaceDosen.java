@@ -2,6 +2,7 @@ package com.example.kelompok3optimisa.retrofit;
 
 import com.example.kelompok3optimisa.datamodels.GetProfilResponse;
 import com.example.kelompok3optimisa.datamodels.LoginResponse;
+import com.example.kelompok3optimisa.datamodels.LogoutResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -18,6 +19,6 @@ public interface InterfaceDosen {
     @GET("api/me")
     Call<GetProfilResponse> getProfile(@Header("Authorization") String token);
 
-//    @POST("api/logout")
-//    Call<LogoutResponse> logout(@Header("Authorization") String token);
+    @POST("api/logout/")
+    Call<LogoutResponse> logout(@Header("token")String token);
 }
