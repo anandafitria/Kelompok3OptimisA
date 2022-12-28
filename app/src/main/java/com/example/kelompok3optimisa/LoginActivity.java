@@ -1,5 +1,6 @@
 package com.example.kelompok3optimisa;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -30,6 +31,9 @@ import com.example.kelompok3optimisa.API.UserService;
 import com.example.kelompok3optimisa.room.AppDatabase;
 import com.example.kelompok3optimisa.room.User;
 import com.example.kelompok3optimisa.room.UserDao;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import okhttp3.OkHttpClient;
 import okhttp3.internal.http.RetryAndFollowUpInterceptor;
@@ -42,6 +46,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class LoginActivity extends AppCompatActivity {
 
 
+    private static final String TAG = "MainActivity-Debug";
     private static final String CHANNEL_ID = "Login_kanal";
     EditText NIDN, Password;
 
@@ -54,7 +59,21 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+                        // Get new FCM registration token
+                        String token = task.getResult();
+                        // Log and toast
+                        Log.d(TAG, token);
+                        Toast.makeText(LoginActivity.this, token, Toast.LENGTH_SHORT).show();
+                    }
+                });
         cekLogin();
     }
 
@@ -77,7 +96,11 @@ public class LoginActivity extends AppCompatActivity {
         notificationManager = NotificationManagerCompat.from(this);
 
         //2b Buat channel notifikasi
-        createNotificationChannel();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "Kanal login", NotificationManager.IMPORTANCE_HIGH);
+            channel.setDescription("Kanal notifikasi Login");
+            notificationManager.createNotificationChannel(channel);
+        }
 
         BtnLogin = findViewById(R.id.btn_1);
 

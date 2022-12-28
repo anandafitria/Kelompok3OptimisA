@@ -143,7 +143,7 @@ public class DetailDashboard extends AppCompatActivity {
                 Notification notification = builder.build();
 
                 //5. Tampilkan notifikasi
-                notificationManager.notify(102, notification);
+                notificationManager.notify(103, notification);
             }
         });
 }
