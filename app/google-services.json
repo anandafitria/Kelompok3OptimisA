@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1004769523454",
+    "project_id": "kelompok3optimisa",
+    "storage_bucket": "kelompok3optimisa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004769523454:android:c5e336b3718044bf6ad7af",
+        "android_client_info": {
+          "package_name": "com.example.kelompok3optimisa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1004769523454-b8v7atf6qte56f03k7u7sfgnnifjnk1u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOD9Drx9skamUpqyvPdMru5tVQCL-maqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1004769523454-b8v7atf6qte56f03k7u7sfgnnifjnk1u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
