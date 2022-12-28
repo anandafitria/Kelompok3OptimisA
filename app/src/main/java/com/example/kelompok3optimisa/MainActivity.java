@@ -4,17 +4,32 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.kelompok3optimisa.datamodels.GetProfilResponse;
+import com.example.kelompok3optimisa.retrofit.InterfaceDosen;
+
+import okhttp3.OkHttpClient;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 import java.util.ArrayList;
 
+
 public class MainActivity extends AppCompatActivity implements AdapterDashboard.DashboardClickListener{
+
+    private  boolean isLoogedIn = false;
 
     private RecyclerView rvDashboard;
     private ArrayList<ModelDashboard> dataDashboard = new ArrayList<>();
@@ -27,6 +42,45 @@ public class MainActivity extends AppCompatActivity implements AdapterDashboard.
 
         SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
         String token = sharedPref.getString("TOKEN","");
+        Log.d("ListMahasiswa-Debug", token);
+
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("TOKEN", token);
+        editor.apply();
+
+        // Minta data ke server
+        String API_BASE_URL = "http://ptb-api.husnilkamil.my.id/";
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(API_BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create() )
+                .client(new OkHttpClient.Builder().build())
+                .build();
+
+        InterfaceDosen client = retrofit.create(InterfaceDosen.class);
+
+        Call<GetProfilResponse> login = client.getProfile("Bearer " + token);
+        login.enqueue(new Callback<GetProfilResponse>() {
+            @Override
+            public void onResponse(Call<GetProfilResponse> call, Response<GetProfilResponse> response) {
+                Log.d("ProfileAct-Debug", response.toString());
+                GetProfilResponse getProfileResponse = response.body();
+                if(getProfileResponse != null){
+                    String nip = getProfileResponse.getUsername();
+                    String name = getProfileResponse.getName();
+                    String email = getProfileResponse.getEmail();
+
+                    Log.d("ProfileAct-Debug", nip + " : " + name + " : " + email);
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<GetProfilResponse> call, Throwable t) {
+
+            }
+        });
+
 
         rvDashboard = findViewById(R.id.rv_dashboard);
         rvDashboard.setHasFixedSize(true);

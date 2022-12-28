@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.room.Room;
-import androidx.room.RoomDatabase;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -16,23 +15,21 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.kelompok3optimisa.API.ApiClient;
-import com.example.kelompok3optimisa.API.LoginRequest;
-import com.example.kelompok3optimisa.API.LoginResponse;
-import com.example.kelompok3optimisa.API.UserService;
+import com.example.kelompok3optimisa.datamodels.LoginResponse;
+import com.example.kelompok3optimisa.retrofit.ApiClient;
+import com.example.kelompok3optimisa.retrofit.InterfaceDosen;
 import com.example.kelompok3optimisa.room.AppDatabase;
 import com.example.kelompok3optimisa.room.User;
 import com.example.kelompok3optimisa.room.UserDao;
 
 import okhttp3.OkHttpClient;
-import okhttp3.internal.http.RetryAndFollowUpInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -47,15 +44,30 @@ public class LoginActivity extends AppCompatActivity {
 
     private Button BtnLogin;
     private NotificationManagerCompat notificationManager;
-    private EditText editNIDN, editPassword;
+
+    InterfaceDosen interfaceDosen;
+    SharedPreferences sharedPref;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        BtnLogin = findViewById(R.id.btn_1);
+        NIDN = findViewById(R.id.edit_1);
+        Password = findViewById(R.id.edit_2);
 
-        cekLogin();
+        interfaceDosen = ApiClient.getClient().create(InterfaceDosen.class);
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+
+        BtnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cekLogin();
+            }
+        });
+
     }
 
     //2. Buat channel
@@ -69,108 +81,86 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void cekLogin() {
-        editNIDN = findViewById(R.id.edit_1);
-        editPassword = findViewById(R.id.edit_2);
-        BtnLogin = findViewById(R.id.btn_1);
+        String username= NIDN.getText().toString();
+        String password = Password.getText().toString();
 
         //1. Ambil notificationManager
         notificationManager = NotificationManagerCompat.from(this);
 
         //2b Buat channel notifikasi
         createNotificationChannel();
-
-        BtnLogin = findViewById(R.id.btn_1);
-
-        BtnLogin.setOnClickListener(new View.OnClickListener(){
+        Call<LoginResponse> call = interfaceDosen.login(username, password);
+        call.enqueue(new Callback<LoginResponse>() {
             @Override
-            public void onClick(View view) {
-                String API_BASE_URL = "http://ptb-api.husnilkamil.my.id/";
-                String username = editNIDN.getText().toString().trim();
-                String password = editPassword.getText().toString().trim();
-                Log.d("LoginAct-Debug", username + " : " +password);
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                LoginResponse loginResponse = response.body();
+                if (loginResponse != null) {
+                    String token = loginResponse.getAuthorisation().getToken();
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putString("TOKEN", token);
+                    editor.putString("USERNAME", NIDN.getText().toString());
+                    editor.putString("PASSWORD", Password.getText().toString());
+                    editor.putString("NAME", response.body().getUser().getName());
+                    editor.putString("EMAIL", response.body().getUser().getEmail());
+                    editor.commit();
+                    Toast.makeText(LoginActivity.this, "Berhasil Login" + username, Toast.LENGTH_SHORT).show();
+                    Intent homeIntent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(homeIntent);
+                } else {
+                    Toast.makeText(LoginActivity.this, "Username atau pasword salah", Toast.LENGTH_SHORT).show();
+                }
+            }
 
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(API_BASE_URL)
-                                .addConverterFactory(GsonConverterFactory.create())
-                                        .client(new OkHttpClient.Builder().build())
-                                                .build();
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                Toast.makeText(LoginActivity.this, "Gagal menghubungi Server", Toast.LENGTH_SHORT).show();
 
-                UserService client = retrofit.create(UserService.class);
-
-                Call<LoginResponse> call = client.login(NIDN,Password);
-
-                call.enqueue(new Callback<LoginResponse>() {
-                    @Override
-                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                        LoginResponse loginResponse = response.body();
-                        Log.d("LoginAct-Debug", response.toString());
-
-                        if (loginResponse != null && LoginResponse.getMessage() == "succes") {
-                            Toast.makeText(LoginActivity.this, "Sukses Login", Toast.LENGTH_SHORT).show();
-
-                            String token = loginResponse.getLoginResult().getToken();
-
-                            SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
-                            SharedPreferences.Editor editor = sharedPref.edit();
-                            editor.putString("TOKEN", token);
-                            editor.apply();
-
-                            Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(mainIntent);
-                        }
-                        else{
-                            Toast.makeText(LoginActivity.this,"Username dan Password Anda salah", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<LoginResponse> call, Throwable t) {
-                        Toast.makeText(LoginActivity.this, "Gagal menghubungi server", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-
-                Intent resultIntent = new Intent(LoginActivity.this, ProfilActivity.class);
-                TaskStackBuilder stackBuilder = TaskStackBuilder.create(LoginActivity.this);
-                stackBuilder.addNextIntentWithParentStack(resultIntent);
-                PendingIntent resultPendingIntent =
-                        stackBuilder.getPendingIntent(0,
-                                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-
-                //3. Buat builder untuk membuat notifikasi
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(LoginActivity.this, CHANNEL_ID)
-                        .setSmallIcon(R.drawable.ic_baseline_notification)
-                        .setContentTitle("INFO LOGIN")
-                        .setContentText("Anda baru saja login menggunakan akun husnil*")
-                        .setContentIntent(resultPendingIntent)
-                        .addAction(R.drawable.ic_baseline_notification, "LIHAT", resultPendingIntent)
-                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-
-                //4. Buat objek notifikasi
-                Notification notification = builder.build();
-
-                //5. Tampilkan notifikasi
-                notificationManager.notify(101, notification);
-
-                //a. buat object db
-                AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-                                AppDatabase.class, "rooms.db")
-                        .allowMainThreadQueries()
-                        .build();
-
-                //b. buat object dao
-                UserDao dao = db.userDao();
-
-                User user = new User();
-                user.NIDN = username;
-                user.password = password;
-
-                dao.insert(user);
             }
         });
     }
+
+
+
+////                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+////                startActivity(intent);
+////
+////                Intent resultIntent = new Intent(LoginActivity.this, ProfilActivity.class);
+////                TaskStackBuilder stackBuilder = TaskStackBuilder.create(LoginActivity.this);
+////                stackBuilder.addNextIntentWithParentStack(resultIntent);
+////                PendingIntent resultPendingIntent =
+////                        stackBuilder.getPendingIntent(0,
+////                                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+////
+////                //3. Buat builder untuk membuat notifikasi
+////                NotificationCompat.Builder builder = new NotificationCompat.Builder(LoginActivity.this, CHANNEL_ID)
+////                        .setSmallIcon(R.drawable.ic_baseline_notification)
+////                        .setContentTitle("INFO LOGIN")
+////                        .setContentText("Anda baru saja login menggunakan akun husnil*")
+////                        .setContentIntent(resultPendingIntent)
+////                        .addAction(R.drawable.ic_baseline_notification, "LIHAT", resultPendingIntent)
+////                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+////
+////                //4. Buat objek notifikasi
+////                Notification notification = builder.build();
+////
+////                //5. Tampilkan notifikasi
+////                notificationManager.notify(101, notification);
+////
+////                //a. buat object db
+////                AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+////                                AppDatabase.class, "rooms.db")
+////                        .allowMainThreadQueries()
+////                        .build();
+////
+////                //b. buat object dao
+////                UserDao dao = db.userDao();
+////
+////                User user = new User();
+////                user.NIDN = username;
+////                user.password = password;
+////
+////                dao.insert(user);
+////            }
+//        });
 
 }
