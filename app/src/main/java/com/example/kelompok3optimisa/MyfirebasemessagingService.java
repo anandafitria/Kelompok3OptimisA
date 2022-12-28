@@ -56,7 +56,6 @@ public class MyfirebasemessagingService extends FirebaseMessagingService {
                 stackBuilder.getPendingIntent(0,
                         PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
-        //3. Buat builder untuk membuat notifikasi
         builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_baseline_notification)
                 .setContentTitle(notification.getTitle())
@@ -76,7 +75,6 @@ public class MyfirebasemessagingService extends FirebaseMessagingService {
         }
         NotificationCompat.Builder builder = null;
 
-        //3. Buat builder untuk membuat notifikasi
         builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_baseline_notification)
                 .setContentTitle(notification.getTitle())
