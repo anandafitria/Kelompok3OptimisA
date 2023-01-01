@@ -16,6 +16,7 @@ public class ProfilActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
+        //aa
 
         BtnHome = findViewById(R.id.btn_home);
         BtnGantiPassword = findViewById(R.id.btn_gantipassword);
