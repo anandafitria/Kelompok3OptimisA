@@ -48,6 +48,8 @@ public class VerifikasiPesertaSeminar extends AppCompatActivity {
         interfaceDosen = ApiClient.getClient().create(InterfaceDosen.class);
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
 
+        String token = sharedPref.getString("TOKEN", "");
+
         Intent detailVerifPeserta = getIntent();
         if(detailVerifPeserta != null){
 
@@ -88,12 +90,15 @@ public class VerifikasiPesertaSeminar extends AppCompatActivity {
         BtnAccept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Call<ApprovePesertaSeminar> call = interfaceDosen.approvePesertaSeminar();
+                Call<ApprovePesertaSeminar> call = interfaceDosen.approvePesertaSeminar("Bearer " + token);
 
                 call.enqueue(new Callback<ApprovePesertaSeminar>() {
                     @Override
                     public void onResponse(Call<ApprovePesertaSeminar> call, Response<ApprovePesertaSeminar> response) {
                         ApprovePesertaSeminar approvePesertaSeminar = response.body();
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.remove("TOKEN");
+                        editor.apply();
                         finish();
                         Toast.makeText(VerifikasiPesertaSeminar.this,"Mahasiswa Tidak Ditemukan", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(VerifikasiPesertaSeminar.this, PesertaSeminar.class);
@@ -110,12 +115,15 @@ public class VerifikasiPesertaSeminar extends AppCompatActivity {
         BtnReject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Call<RejectPesertaSeminar> call = interfaceDosen.rejectPesertaSeminar();
+                Call<RejectPesertaSeminar> call = interfaceDosen.rejectPesertaSeminar("Bearer " + token);
 
                 call.enqueue(new Callback<RejectPesertaSeminar>() {
                     @Override
                     public void onResponse(Call<RejectPesertaSeminar> call, Response<RejectPesertaSeminar> response) {
                         RejectPesertaSeminar rejectPesertaSeminar = response.body();
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.remove("TOKEN");
+                        editor.apply();
                         finish();
                         Toast.makeText(VerifikasiPesertaSeminar.this,"Mahasiswa Tidak Ditemukan", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(VerifikasiPesertaSeminar.this, PesertaSeminar.class);
