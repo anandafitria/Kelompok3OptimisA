@@ -27,4 +27,7 @@ public interface InterfaceDosen {
 
     @PATCH("api/internship-students/1/approve-audiences")
     Call<ApprovePesertaSeminar> approvePesertaSeminar();
+
+    @PATCH("api/internship-students/1/reject-audiences")
+    Call<RejectPesertaSeminar> rejectPesertaSeminar();
 }

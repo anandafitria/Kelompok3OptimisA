@@ -94,25 +94,39 @@ public class VerifikasiPesertaSeminar extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<ApprovePesertaSeminar> call, Response<ApprovePesertaSeminar> response) {
                         ApprovePesertaSeminar approvePesertaSeminar = response.body();
-                        SharedPreferences.Editor editor = sharedPref.edit();
-                        editor.apply();
                         finish();
-                        Toast.makeText(VerifikasiPesertaSeminar.this,"Peserta Berhasil Disetujui", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(VerifikasiPesertaSeminar.this,"Mahasiswa Tidak Ditemukan", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(VerifikasiPesertaSeminar.this, PesertaSeminar.class);
                         startActivity(intent);
                     }
 
                     @Override
                     public void onFailure(Call<ApprovePesertaSeminar> call, Throwable t) {
-
                     }
                 });
             }
         });
 
-        BtnReject.setOnClickListener(view -> {
-            Intent reject = new Intent(VerifikasiPesertaSeminar.this, PesertaSeminar.class);
-            startActivity(reject);
+        BtnReject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Call<RejectPesertaSeminar> call = interfaceDosen.rejectPesertaSeminar();
+
+                call.enqueue(new Callback<RejectPesertaSeminar>() {
+                    @Override
+                    public void onResponse(Call<RejectPesertaSeminar> call, Response<RejectPesertaSeminar> response) {
+                        RejectPesertaSeminar rejectPesertaSeminar = response.body();
+                        finish();
+                        Toast.makeText(VerifikasiPesertaSeminar.this,"Mahasiswa Tidak Ditemukan", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(VerifikasiPesertaSeminar.this, PesertaSeminar.class);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onFailure(Call<RejectPesertaSeminar> call, Throwable t) {
+                    }
+                });
+            }
         });
     }
 }
