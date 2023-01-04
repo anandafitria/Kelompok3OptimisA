@@ -1,14 +1,17 @@
 package com.example.kelompok3optimisa.retrofit;
 
+import com.example.kelompok3optimisa.datamodels.ApprovePesertaSeminar;
 import com.example.kelompok3optimisa.datamodels.GetProfilResponse;
 import com.example.kelompok3optimisa.datamodels.LoginResponse;
 import com.example.kelompok3optimisa.datamodels.LogoutResponse;
+import com.example.kelompok3optimisa.datamodels.RejectPesertaSeminar;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 
 public interface InterfaceDosen {
@@ -21,4 +24,7 @@ public interface InterfaceDosen {
 
     @POST("api/logout/")
     Call<LogoutResponse> logout(@Header("token")String token);
+
+    @PATCH("api/internship-students/1/approve-audiences")
+    Call<ApprovePesertaSeminar> approvePesertaSeminar();
 }

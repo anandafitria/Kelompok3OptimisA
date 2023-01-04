@@ -15,6 +15,7 @@ public class Authorisation{
     }
 
     public String getToken(){
+
         return token;
     }
 }

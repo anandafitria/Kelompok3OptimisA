@@ -84,8 +84,8 @@ public class DetailSeminar extends AppCompatActivity {
         BtnPesertaSeminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent berita = new Intent(DetailSeminar.this, PesertaSeminar.class);
-                startActivity(berita);
+                Intent peserta = new Intent(DetailSeminar.this, PesertaSeminar.class);
+                startActivity(peserta);
             }
         });
     }

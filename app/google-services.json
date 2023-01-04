@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1004769523454",
-    "project_id": "kelompok3optimisa",
-    "storage_bucket": "kelompok3optimisa.appspot.com"
+    "project_number": "560204315603",
+    "project_id": "ptb-3a",
+    "storage_bucket": "ptb-3a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1004769523454:android:c5e336b3718044bf6ad7af",
+        "mobilesdk_app_id": "1:560204315603:android:1061638173b1139ec80d26",
         "android_client_info": {
           "package_name": "com.example.kelompok3optimisa"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1004769523454-b8v7atf6qte56f03k7u7sfgnnifjnk1u.apps.googleusercontent.com",
+          "client_id": "560204315603-dmru2rj9dh1iafdhkep8nuqjb29oeh76.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCOD9Drx9skamUpqyvPdMru5tVQCL-maqk"
+          "current_key": "AIzaSyAyNPkt3EUiFTxyirPvwkq9h-REfrex75Q"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1004769523454-b8v7atf6qte56f03k7u7sfgnnifjnk1u.apps.googleusercontent.com",
+              "client_id": "560204315603-dmru2rj9dh1iafdhkep8nuqjb29oeh76.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

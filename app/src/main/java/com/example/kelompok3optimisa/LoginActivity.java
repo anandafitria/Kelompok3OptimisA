@@ -6,6 +6,7 @@ import androidx.core.app.NotificationManagerCompat;
 import androidx.room.Room;
 
 import android.app.Notification;
+import androidx.annotation.NonNull;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -21,6 +22,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import com.example.kelompok3optimisa.datamodels.LoginResponse;
 import com.example.kelompok3optimisa.retrofit.ApiClient;
@@ -38,8 +43,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
 
-
-    private static final String CHANNEL_ID = "Login_kanal";
+    private static final String TAG = "LoginActivity-Debug";
+    private static final String CHANNEL_ID = "login";
     EditText NIDN, Password;
 
     private Button BtnLogin;
@@ -53,6 +58,24 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+                        // Get new FCM registration token
+                        String token = task.getResult();
+                        // Log and toast
+                        Log.d(TAG, token);
+                        Toast.makeText(LoginActivity.this, token, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        notificationManager = NotificationManagerCompat.from(this);
 
         BtnLogin = findViewById(R.id.btn_1);
         NIDN = findViewById(R.id.edit_1);
@@ -73,10 +96,9 @@ public class LoginActivity extends AppCompatActivity {
     //2. Buat channel
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "Kanal login", NotificationManager.IMPORTANCE_HIGH);
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "login", NotificationManager.IMPORTANCE_HIGH);
             channel.setDescription("Kanal notifikasi Login");
             notificationManager.createNotificationChannel(channel);
-
         }
     }
 
