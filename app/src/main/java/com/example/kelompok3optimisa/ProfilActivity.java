@@ -28,6 +28,7 @@ public class ProfilActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
+        //aa
 
         interfaceDosen = ApiClient.getClient().create(InterfaceDosen.class);
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
