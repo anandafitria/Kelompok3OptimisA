@@ -9,11 +9,13 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -53,7 +55,9 @@ public class DetailDashboard extends AppCompatActivity {
         interfaceDosen = ApiClient.getClient().create(InterfaceDosen.class);
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
 
-        String token = sharedPref.getString("TOKEN", "");
+        SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("com.example.kelompok3optimisa.SHARED_KEY", Context.MODE_PRIVATE);
+        String token = sharedPref.getString("TOKEN","");
+        Log.d("DetailMain-Debug", token);
 
         Intent detailDashboard = getIntent();
         if(detailDashboard != null){

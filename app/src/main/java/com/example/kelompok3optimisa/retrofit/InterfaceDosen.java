@@ -20,7 +20,10 @@ import retrofit2.http.POST;
 public interface InterfaceDosen {
     @FormUrlEncoded
     @POST("api/login")
-    Call<LoginResponse> login (@Field("username") String username, @Field("password") String password);
+    Call<LoginResponse> login (
+            @Field("username")String username,
+            @Field("password")String password
+    );
 
     @GET("api/me")
     Call<GetProfilResponse> getProfile(@Header("Authorization") String token);

@@ -1,16 +1,13 @@
 package com.example.kelompok3optimisa;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-import androidx.room.Room;
 
-import android.app.Notification;
+import org.json.JSONObject;
+
 import androidx.annotation.NonNull;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -30,9 +27,6 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import com.example.kelompok3optimisa.datamodels.LoginResponse;
 import com.example.kelompok3optimisa.retrofit.ApiClient;
 import com.example.kelompok3optimisa.retrofit.InterfaceDosen;
-import com.example.kelompok3optimisa.room.AppDatabase;
-import com.example.kelompok3optimisa.room.User;
-import com.example.kelompok3optimisa.room.UserDao;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
@@ -109,12 +103,33 @@ public class LoginActivity extends AppCompatActivity {
         //1. Ambil notificationManager
         notificationManager = NotificationManagerCompat.from(this);
 
+
         //2b Buat channel notifikasi
         createNotificationChannel();
-        Call<LoginResponse> call = interfaceDosen.login(username, password);
+
+        String API_BASE_URL = "http://ptb-api.husnilkamil.my.id/";
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(API_BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create() )
+                .client(new OkHttpClient.Builder().build())
+                .build();
+
+        interfaceDosen = ApiClient.getClient().create(InterfaceDosen.class);
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+
+        SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("com.example.kelompok3optimisa.SHARED_KEY", Context.MODE_PRIVATE);
+        String token = sharedPref.getString("TOKEN","");
+        Log.d("Login-Debug", username + " : " + password);
+
+        InterfaceDosen client = retrofit.create(InterfaceDosen.class);
+
+        Call<LoginResponse> call = interfaceDosen.login(username,password);
         call.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                String message = null;
+                JSONObject jsonObject = null;
                 LoginResponse loginResponse = response.body();
                 if (loginResponse != null) {
                     String token = loginResponse.getAuthorisation().getToken();
@@ -125,9 +140,10 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putString("NAME", response.body().getUser().getName());
                     editor.putString("EMAIL", response.body().getUser().getEmail());
                     editor.commit();
+                    Log.i("success", token);
                     Toast.makeText(LoginActivity.this, "Berhasil Login" + username, Toast.LENGTH_SHORT).show();
-                    Intent homeIntent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(homeIntent);
+                    Intent login = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(login);
                 } else {
                     Toast.makeText(LoginActivity.this, "Username atau pasword salah", Toast.LENGTH_SHORT).show();
                 }
