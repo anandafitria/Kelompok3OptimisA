@@ -115,7 +115,7 @@ public class DetailDashboard extends AppCompatActivity {
         });
 
         BtnLogbookKP.setOnClickListener(view -> {
-            Intent back = new Intent(DetailDashboard.this, DetailLogbook.class);
+            Intent back = new Intent(DetailDashboard.this, LogbookPribadi.class);
             startActivity(back);
         });
 

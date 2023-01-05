@@ -3,6 +3,7 @@ package com.example.kelompok3optimisa.retrofit;
 import com.example.kelompok3optimisa.datamodels.ApprovePesertaSeminar;
 import com.example.kelompok3optimisa.datamodels.DetailKpResponse;
 import com.example.kelompok3optimisa.datamodels.GetProfilResponse;
+import com.example.kelompok3optimisa.datamodels.ListLogbookResponse;
 import com.example.kelompok3optimisa.datamodels.LoginResponse;
 import com.example.kelompok3optimisa.datamodels.LogoutResponse;
 import com.example.kelompok3optimisa.datamodels.PembatalanKpResponse;
@@ -33,9 +34,12 @@ public interface InterfaceDosen {
     @PATCH("api/internship-students/1/reject-audiences")
     Call<RejectPesertaSeminar> rejectPesertaSeminar(@Header("Authorization")String token);
 
-    @GET("api/my-internship/4")
-    Call<DetailKpResponse> getKpResponse(@Header("Authorization")String token);
+//    @GET("api/my-internship/4")
+//    Call<DetailKpResponse> getKpResponse(@Header("Authorization")String token);
 
     @POST("api/internship-students/3/cancellation")
     Call<PembatalanKpResponse> pembatalanKp (@Header("Authorization")String token);
+
+    @GET("api/my-internship/5/logbook")
+    Call<ListLogbookResponse> listlogbook (@Header("Authorization")String token);
 }
