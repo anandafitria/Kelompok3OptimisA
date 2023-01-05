@@ -43,7 +43,7 @@
         <entry key="..\:/Users/User/Kelompok3OptimisA/app/src/main/res/drawable/bg_button_kuning.xml" value="0.151" />
         <entry key="..\:/Users/User/Kelompok3OptimisA/app/src/main/res/layout/activity_berita_acara_kp.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/User/Kelompok3OptimisA/app/src/main/res/layout/activity_detail_dashboard.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/User/Kelompok3OptimisA/app/src/main/res/layout/activity_detail_logbook.xml" value="0.15555555555555556" />
+        <entry key="..\:/Users/User/Kelompok3OptimisA/app/src/main/res/layout/activity_detail_logbook.xml" value="0.1" />
         <entry key="..\:/Users/User/Kelompok3OptimisA/app/src/main/res/layout/activity_detail_seminar.xml" value="0.15806159420289856" />
         <entry key="..\:/Users/User/Kelompok3OptimisA/app/src/main/res/layout/activity_ganti_password.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/User/Kelompok3OptimisA/app/src/main/res/layout/activity_input_nilai.xml" value="0.17552083333333332" />
@@ -57,6 +57,7 @@
         <entry key="..\:/Users/User/Kelompok3OptimisA/app/src/main/res/layout/activity_respon_kp.xml" value="0.22" />
         <entry key="..\:/Users/User/Kelompok3OptimisA/app/src/main/res/layout/card_dashboard.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/User/Kelompok3OptimisA/app/src/main/res/layout/card_item_logbook.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/User/Kelompok3OptimisA/app/src/main/res/layout/card_list_logbook.xml" value="0.2" />
         <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/drawable-v24/button_shape.xml" value="0.1" />
         <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/drawable-v24/ic_baseline_add_task.xml" value="0.1" />
         <entry key="..\:/Users/daengfebrino20115210/AndroidStudioProjects/Kelompok3OptimisA/app/src/main/res/drawable-v24/ic_baseline_arrow_back_ios_new.xml" value="0.1" />

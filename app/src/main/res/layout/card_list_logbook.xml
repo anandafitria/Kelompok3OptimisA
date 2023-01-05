@@ -1,57 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_logbook"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="6dp"
-    android:elevation="6dp">
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="12dp">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="6dp" >
+        android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/tv_haritgllogbook"
-            android:layout_width="match_parent"
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="6dp"
-            android:text="Hari/Tanggal"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:text="Konsultasi Alternatif Judul Tugas Akhir"
+            android:textColor="#5C5757"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_namalogbook"
-            android:layout_width="match_parent"
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="6dp"
-            android:layout_marginTop="35dp"
-            android:text="Nama Mahasiswa"
-            android:textColor="@color/black"/>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="1dp"
+            android:text="Senin, 17 Juli 2022"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progress" />
 
-        <TextView
-            android:id="@+id/tv_nimlogbook"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_namalogbook"
-            android:layout_marginLeft="6dp"
-            android:justificationMode="inter_word"
-            android:text="NIM"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/tv_lokasikplogbook"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_nimlogbook"
-            android:layout_marginLeft="6dp"
-            android:layout_marginBottom="2dp"
-            android:justificationMode="inter_word"
-            android:text="Lokasi KP"
-            android:textColor="@color/black" />
-    </RelativeLayout>
-
-
-
-
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
