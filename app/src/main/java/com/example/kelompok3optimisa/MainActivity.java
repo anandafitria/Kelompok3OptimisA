@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements AdapterDashboard.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("com.example.kelompok3optimisa.SHARED_KEY", Context.MODE_PRIVATE);
         String token = sharedPref.getString("TOKEN","");
         Log.d("ListMahasiswa-Debug", token);
 

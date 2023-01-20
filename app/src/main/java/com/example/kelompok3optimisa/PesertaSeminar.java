@@ -1,20 +1,32 @@
 package com.example.kelompok3optimisa;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.media.Image;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.Button;
-import android.widget.Toast;
+import com.example.kelompok3optimisa.datamodels.GetProfilResponse;
+import com.example.kelompok3optimisa.retrofit.InterfaceDosen;
+
+import okhttp3.OkHttpClient;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.util.ArrayList;
 
-public class PesertaSeminar extends AppCompatActivity {
+public class PesertaSeminar extends AppCompatActivity implements AdapterPesertaSeminar.PesertaSeminarClickListener {
 
     private RecyclerView rvPesertaSeminar;
     private ArrayList<ModelPesertaSeminar> dataPesertaSeminar = new ArrayList<>();
@@ -33,6 +45,7 @@ public class PesertaSeminar extends AppCompatActivity {
         BtnListLogbook = findViewById(R.id.btn_logbook);
 
         AdapterPesertaSeminar adapterPesertaSeminar = new AdapterPesertaSeminar(getPesertaSeminar());
+        adapterPesertaSeminar.setListener(this);
         LinearLayoutManager layoutManagerPesertaSeminar = new LinearLayoutManager(this);
 
         rvPesertaSeminar.setLayoutManager(layoutManagerPesertaSeminar);
@@ -93,6 +106,16 @@ public class PesertaSeminar extends AppCompatActivity {
         ));
 
         return dataPesertaSeminar;
+
+    }
+
+    @Override
+    public void onPesertaSeminarClick(ModelPesertaSeminar pesertaSeminar) {
+        Intent detailVerifPeserta = new Intent(this, VerifikasiPesertaSeminar.class);
+        detailVerifPeserta.putExtra("Nama", pesertaSeminar.getNamaPeserta());
+        detailVerifPeserta.putExtra("NIM", pesertaSeminar.getNimPeserta());
+        startActivity(detailVerifPeserta);
     }
 
 }
+

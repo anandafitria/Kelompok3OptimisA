@@ -9,15 +9,28 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.kelompok3optimisa.datamodels.ApprovePesertaSeminar;
+import com.example.kelompok3optimisa.datamodels.PembatalanKpResponse;
+import com.example.kelompok3optimisa.retrofit.ApiClient;
+import com.example.kelompok3optimisa.retrofit.InterfaceDosen;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DetailDashboard extends AppCompatActivity {
 
@@ -28,6 +41,8 @@ public class DetailDashboard extends AppCompatActivity {
     ImageView ivFotoMain;
     ImageButton BtnHome, BtnProfil, BtnBack, BtnListLogbook;
     Button BtnLogbookKP, BtnNilaiKP, BtnSeminarKP;
+    InterfaceDosen interfaceDosen;
+    SharedPreferences sharedPref;
 
     private Button BtnPembatalanKP;
     private NotificationManagerCompat notificationManager;
@@ -36,6 +51,13 @@ public class DetailDashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_dashboard);
+
+        interfaceDosen = ApiClient.getClient().create(InterfaceDosen.class);
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+
+        SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("com.example.kelompok3optimisa.SHARED_KEY", Context.MODE_PRIVATE);
+        String token = sharedPref.getString("TOKEN","");
+        Log.d("DetailMain-Debug", token);
 
         Intent detailDashboard = getIntent();
         if(detailDashboard != null){
@@ -97,7 +119,7 @@ public class DetailDashboard extends AppCompatActivity {
         });
 
         BtnLogbookKP.setOnClickListener(view -> {
-            Intent back = new Intent(DetailDashboard.this, DetailLogbook.class);
+            Intent back = new Intent(DetailDashboard.this, LogbookPribadi.class);
             startActivity(back);
         });
 
@@ -121,6 +143,7 @@ public class DetailDashboard extends AppCompatActivity {
         BtnPembatalanKP.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+
                 Intent resultIntent = new Intent(DetailDashboard.this, InputNilai.class);
                 TaskStackBuilder stackBuilder = TaskStackBuilder.create(DetailDashboard.this);
                 stackBuilder.addNextIntentWithParentStack(resultIntent);
@@ -146,7 +169,34 @@ public class DetailDashboard extends AppCompatActivity {
                 notificationManager.notify(103, notification);
             }
         });
-}
+
+        BtnPembatalanKP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Call<PembatalanKpResponse> call = interfaceDosen.pembatalanKp("Bearer " + token);
+
+                call.enqueue(new Callback<PembatalanKpResponse>() {
+                    @Override
+                    public void onResponse(Call<PembatalanKpResponse> call, Response<PembatalanKpResponse> response) {
+                        PembatalanKpResponse pembatalanKpResponse = response.body();
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.remove("TOKEN");
+                        editor.apply();
+                        finish();
+                        Toast.makeText(DetailDashboard.this,"Pengajuan pembatalan KP selesai", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(DetailDashboard.this, MainActivity.class);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onFailure(Call<PembatalanKpResponse> call, Throwable t) {
+                        Toast.makeText(DetailDashboard.this,"Pengajuan pembatalan KP gagal", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
+    }
     //2. Buat channel
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

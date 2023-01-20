@@ -1,5 +1,6 @@
 package com.example.kelompok3optimisa;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 
 public class AdapterPesertaSeminar extends RecyclerView.Adapter<AdapterPesertaSeminar.PesertaSeminarViewHolder> {
@@ -54,12 +56,15 @@ public class AdapterPesertaSeminar extends RecyclerView.Adapter<AdapterPesertaSe
     public class PesertaSeminarViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView tvNamaPeserta, tvNimPeserta;
+        public ImageView BtnAccept, BtnReject;
 
         public PesertaSeminarViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvNamaPeserta= itemView.findViewById(R.id.tv_namapeserta);
             tvNimPeserta = itemView.findViewById(R.id.tv_nimpeserta);
+            BtnAccept = itemView.findViewById(R.id.btn_verifya);
+            BtnReject = itemView.findViewById(R.id.btn_verifga);
 
             itemView.setOnClickListener(this);
         }
@@ -70,4 +75,5 @@ public class AdapterPesertaSeminar extends RecyclerView.Adapter<AdapterPesertaSe
             listener.onPesertaSeminarClick(pesertaSeminar);
         }
     }
+
 }

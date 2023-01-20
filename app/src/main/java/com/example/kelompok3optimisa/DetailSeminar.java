@@ -24,34 +24,6 @@ public class DetailSeminar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_seminar);
 
-        Intent detailSeminar = getIntent();
-        if(detailSeminar != null){
-
-            FotoSeminar = detailSeminar.getIntExtra("Foto", 0);
-            ivFotoSeminar = findViewById(R.id.iv_fotoseminar);
-            ivFotoSeminar.setImageResource(FotoSeminar);
-
-            NamaSeminar = detailSeminar.getStringExtra("Nama");
-            tvNamaSeminar = findViewById(R.id.tv_namaseminar);
-            tvNamaSeminar.setText(NamaSeminar);
-
-            NimSeminar = detailSeminar.getStringExtra("NIM");
-            tvNimSeminar = findViewById(R.id.tv_nimseminar);
-            tvNimSeminar.setText(NimSeminar);
-
-            HariSeminar = detailSeminar.getStringExtra("Hari");
-            tvHariSeminar = findViewById(R.id.tv_hariseminar);
-            tvHariSeminar.setText(HariSeminar);
-
-            JamSeminar = detailSeminar.getStringExtra("Jam");
-            tvJamSeminar = findViewById(R.id.tv_jamseminar);
-            tvJamSeminar.setText(JamSeminar);
-
-            RuangSeminar = detailSeminar.getStringExtra("Ruangan");
-            tvRuangSeminar = findViewById(R.id.tv_ruangseminar);
-            tvRuangSeminar.setText(RuangSeminar);
-        }
-
         BtnHome = findViewById(R.id.btn_home);
         BtnProfil = findViewById(R.id.btn_profil);
         BtnListLogbook = findViewById(R.id.btn_logbook);
